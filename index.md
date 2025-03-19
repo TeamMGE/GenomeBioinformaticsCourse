@@ -22,6 +22,3 @@ This lesson uses the [Software Carpentry]({{ site.swc_site }}) and [Data Carpent
 
 > A [cheat sheet](files/cheatsheet.pdf) of the used Linux commands is available.
 {: .prereq}
-
-
-#{% include links.md %}
