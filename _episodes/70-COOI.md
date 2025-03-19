@@ -29,7 +29,7 @@ Throughout these COOs, we’ll use the bakers’ yeast and allied species as mod
 # Recent ploidy changes in the Saccharomycotina
 The bakers' yeast belongs to the Saccharomycotina subphylum, a taxonomic group that contains many species colloquially referred to as budding yeasts. Budding yeasts are mainly thriving as saprophytes, but some are important pathogens of plants and animals, including human. Furthermore, many members of this sub-phylum are commonly exploited in agriculture, food production, or biotechnology. Interestingly, many of these important species are hybrids that are formed by the fusion of two genetically distinct parents. Next to the doubling of the number of chromosomes by hybridization (also referred to as allopolyploidy), genomes of a single species can also double (autopolyploid). Changes in ploidy, either due to allo- or autoployploidy can generate important variation and is thought to play an important role to fuel adaptive genome evolution.
 
-## 1. Estimate genome size, heterozygosity, and repeat content using k-mer frequencies (~120 min)
+## 1. Estimate genome size, heterozygosity, and repeat content using k-mer frequencies
 The genome size, heterozygosity rate and repeat content are important genome characteristics that provide a framework to study genome evolution, but also to assess for instance the quality (completness) of genome assemblies.
 
 Some of these characteristics can be directly derived from unprocessed short reads using k-mer profiles. The k-mer profile (sometimes called k-mer spectrum) measures how often k-mers, substrings of length k, occur in the sequencing data. The profiles reflect the complexity of the genome: homozygous genomes have a simple Poisson profile with a single peak approximately at the overall genome-wide coverage of the data, i.e. if a single region in the genome is sequenced x times, we expect to identify the same k-mer to also occur x times in our data. Furthermore, this distribution provides an indication of the sequencing errors present in the data, i.e. k-mers that are are unique or very rare in the data. Heterozygous genomes typically show a characteristic bimodal profile where one of the peaks represents the homozygous fraction and another peak the heterozygous fraction. Repetetive regions such as transposons and/or duplications can add additional peaks at even higher k-mer frequencies. Thus, we can directly obtain information based on the genome size, the estimated heterozygosity and the repeat content directly from the shape of the k-mer frequency distribution and from the abundances of k-mers in the data.
@@ -111,5 +111,3 @@ $ cat assembly_summary.txt | grep -v "^#" | cut -f8 | cut -f1,2 -d" " | sort | u
 > Can you think about a code that would give you the number of complete (chromosome-level) genome assemblies?
 >
 {: .challenge}
-
-{% include links.md %}
