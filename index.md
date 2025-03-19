@@ -24,4 +24,4 @@ This lesson uses the [Software Carpentry]({{ site.swc_site }}) and [Data Carpent
 {: .prereq}
 
 
-{% include links.md %}
+#{% include links.md %}
