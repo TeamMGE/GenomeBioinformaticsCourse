@@ -15,5 +15,3 @@ You will need a terminal program to access the server. This **is already availab
 - Follow the installation instructions, if any 
 
 If you have any problems, don't hesitate to ask the teachers to ask for help, or arrive early on the first day to get help.
-
-{% include links.md %}
