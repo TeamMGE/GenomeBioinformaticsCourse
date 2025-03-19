@@ -1,5 +1,6 @@
 ---
 title: "Genome assembly information"
+start: true
 teaching: 0
 exercises: 20
 questions:
