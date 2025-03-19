@@ -1,40 +1,70 @@
 ---
-title: "Block 3 - COOI"
+title: "Block 3 - COOI: Recent ploidy changes in the Saccharomycotina (part 1)"
 start: true
 teaching: 0
-exercises: 660
+exercises: 120
+
 questions:
-- How can you obtain and interpret genome assembly information from NCBI?
+- How can you determine changes in ploidy using next-generation sequencing data?
+
 objectives:
-- Practice the usage of command line to get files from the internet and examine their content
-- Interpret genome assembly overview from the internet
+- Generate k-mer profiles from short-read data
+- Analyze and interprete k-mer profiles to estimate genome size, heterozygocity, repeat content
+- Analyze and interprete k-mer profiles to estimate ploidies
+- Generate allele frequency plots from short-read data
+- Analyze and interprete allele frequencies to estimate ploidies
+
 keypoints:
-- You can obtain assembly information from NCBI
-- You can subset this information and determine the number of genome assemblies
+- You can work with next-generation sequencing data
+- You can detect (recent) ploidy changes in fungi using next-generation sequencing data 
 ---
 
-#  Genome assembly information
-In our exercises, we will examine the quality of assembled *Z. tritici* genomes that are publicly available. We will use genome assemblies from NCBI. Unfortunately, generating eukaryote *de novo* genome assembly is beyond the scope of the exercises; in contrast to bacterial genomes, assembly of eukaryotic genomes requires significantly more computational power and time.
+# Saccharomyces cerevisiae as a model system to study eukaryotic genome evolution
+The focus of the three COOs in Block 3 is ‘Eukaryotic genomes and genome evolution’. We will apply different bioinformatics approaches to analyze genome sequencing data to obtain insights into different processes or phenomena that generate genetic variations such as ploidy shifts (COOI and COOII) and large-scale structural variation (COOII and COOIII).
 
-The genome assemblies of some _Z. tritici_ isolates downloaded from NCBI GenBank can be found **data/fungalgenomics_seidl/assemblies/** (state: 2018). There are continuously more and more genome assemblies being generated and deposited at NCBI. 
+The bakers' yeast Saccharomyces cerevisiae is one of the most well-known eukaryotic model organisms. The *S. cerevisiae* genome was the first completely sequenced eukaryotic genome. The bakers’ yeast genome is only ~12 Mb in size and only encodes ~6,000 protein-coding genes, which is rather small compared with most other fungi or other eukaryotes. *S. cerevisiae* played an important role in advancing our understanding mechanisms contributing eukaryotic genome evolution, and its experimental and genetic tractability greatly facilitated research into gene functions. Consequently, *S. cerevisiae* serves as a model for more complex eukaryotes, including humans.
 
-To get an overview of the number of genome assemblies currently at NCBI. We can obtain an overview file from NCBI with information of all genomes belonging to *fungi*.
+Throughout these COOs, we’ll use the bakers’ yeast and allied species as models for other more complex eukaryotes. Due to the small size and the rich available data, it provides an ideal starting point and test case to explore genome evolution in eukaryotes.
+
+# Recent ploidy changes in the Saccharomycotina
+The bakers' yeast belongs to the Saccharomycotina subphylum, a taxonomic group that contains many species colloquially referred to as budding yeasts. Budding yeasts are mainly thriving as saprophytes, but some are important pathogens of plants and animals, including human. Furthermore, many members of this sub-phylum are commonly exploited in agriculture, food production, or biotechnology. Interestingly, many of these important species are hybrids that are formed by the fusion of two genetically distinct parents. Next to the doubling of the number of chromosomes by hybridization (also referred to as allopolyploidy), genomes of a single species can also double (autopolyploid). Changes in ploidy, either due to allo- or autoployploidy can generate important variation and is thought to play an important role to fuel adaptive genome evolution.
+
+## 1. Estimate genome size, heterozygosity, and repeat content using k-mer frequencies (~120 min)
+The genome size, heterozygosity rate and repeat content are important genome characteristics that provide a framework to study genome evolution, but also to assess for instance the quality (completness) of genome assemblies.
+
+Some of these characteristics can be directly derived from unprocessed short reads using k-mer profiles. The k-mer profile (sometimes called k-mer spectrum) measures how often k-mers, substrings of length k, occur in the sequencing data. The profiles reflect the complexity of the genome: homozygous genomes have a simple Poisson profile with a single peak approximately at the overall genome-wide coverage of the data, i.e. if a single region in the genome is sequenced x times, we expect to identify the same k-mer to also occur x times in our data. Furthermore, this distribution provides an indication of the sequencing errors present in the data, i.e. k-mers that are are unique or very rare in the data. Heterozygous genomes typically show a characteristic bimodal profile where one of the peaks represents the homozygous fraction and another peak the heterozygous fraction. Repetetive regions such as transposons and/or duplications can add additional peaks at even higher k-mer frequencies. Thus, we can directly obtain information based on the genome size, the estimated heterozygosity and the repeat content directly from the shape of the k-mer frequency distribution and from the abundances of k-mers in the data.
+
+We will use this approach to first estimate the haploid genome size of a single yeast strain.
+
+**a.** Use commands including ls and pwd to localize the short-read sequencing data from *S. cerevisiae* strain CBS7837 in the data storage folder (**~/data/**). Then create a symbolic link to your own folder with the ln -s command. 
 
 ~~~
-$ wget https://ftp.ncbi.nlm.nih.gov/genomes/genbank/fungi/assembly_summary.txt
+$ ln -s ~/data/Block3/genomes/XXXX .
 ~~~
 {: .bash}
 
+To determine the genome size, we first need to calculate the k-mer profile using the short-read data for CBS7837. We will use jellyfish to summarize the k-mers that are present in the short-read data.
+
+Take a look at the command line parameters
+
+~~~
+$ jellyfish count --help
+~~~
+{: .bash}
 > ## Exercise
-> 
-> How many fungal genomes are deposited in the database today?
 >
+> Prepare but do not execute a simple jellyfish count command that will count k-mers length 21 and k-mers occuring on both strands (canonical). You have to define the memory (-s option) and set it to 1000000000 (1 Gb). Store the output in a new file (-o option). Important Running jellyfish will take quite some time (~30 min). To be able to continue within the timeframe of this COO, obtain the jellyfish count file (ends with .jf) from the intermediate results folder.
 >> ## Solution
->> 
->> `cat assembly_summary.txt | grep -v "^#" | wc -l`
->> 
+>>
+>> `jellyfish count -C -m 21 -s 1000000000 -o ScereCBS7837.jf <(zcat ScereCBS7837_R1.fastq.gz) <(zcat ScereCBS7837_R2.fastq.gz)`
+>> This will execute jellyfish count. It is important to use canonical counts (-C, both strands), and provide the kmer length (m, 21). As read files are often zipped (due to their size), these need to first be unzipped. This can also be done 'dynamically' during the jellyfish call using `<(zcat file1.fq.gz) <(zcat file2.fq.gz)` (see the example above.
 > {: .solution}
 {: .challenge}
+
+
+
+
+
 
 Inspect the assembly_summary file further. You can look at [README_assembly_summary.txt](https://ftp.ncbi.nlm.nih.gov/genomes/README_assembly_summary.txt) for a description of the columns.
 
