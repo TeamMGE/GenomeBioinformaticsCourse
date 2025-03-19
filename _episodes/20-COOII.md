@@ -1,5 +1,5 @@
 ---
-title: "Block 1 - COOI"
+title: "Block 1 - COOII"
 start: true
 teaching: 0
 exercises: 20
