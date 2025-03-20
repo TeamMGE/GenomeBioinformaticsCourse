@@ -153,9 +153,9 @@ We can use the information to estimate the overall genome size under the assumpt
 > ## Excercise
 >
 > Inspect the data in Python and/or R ...
-> ... to identify a reasonable coverage threshold for sequencing errors and generate a subselection of the data that only contains k-mer information we want to keep (i.e., exclude k-mer coverage and frequencies likely associated with errors)
+> - ... to identify a reasonable coverage threshold for sequencing errors and generate a subselection of the data that only contains k-mer information we want to keep (i.e., exclude k-mer coverage and frequencies likely associated with errors)
 >
-> ... to identify the k-mer coverage of the homozygous peak.
+> - ... to identify the k-mer coverage of the homozygous peak.
 >
 >> ## Solution
 >>
