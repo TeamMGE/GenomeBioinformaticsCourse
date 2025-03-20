@@ -163,3 +163,23 @@ $ cut -f1,4,5,9 Yue2017_S288C.features.gff3  | awk '{print $1,$2-1,$3,$4}' | tr 
 {: .bash}
 
 We can then use `bedtools intersect` to identify which features are localized in the regions on chromosome III that are present in the long-read assemby but absent in the S288C reference genome. Note the different parameters of bedtools intersect command and prepare and execute a command.
+
+~~~
+$ cut -f1,4,5,9 Yue2017_S288C.features.gff3  | awk '{print $1,$2-1,$3,$4}' | tr " " "\t" > Yue2017_S288C.features.bed #get the features in bed format (See above)
+$ bedtools genomecov -g Yue2017_S288C.genome.size -i Yue2017_S288C.chrIII.bed -d | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools merge -i - | grep "chrIII" > Yue2017_S288C.chrIII.uncovered.bed #get the coverage (as above) and store in a file
+$ bedtools intersect -a Yue2017_S288C.features.bed -b  Yue2017_S288C.chrIII.uncovered.bed #get the intersections between features and missing regions
+~~~
+{: .bash}
+
+> ## Excercise
+>
+> How many features overlap and what type of feature overlap? Does your finding confirm the previous observations by [Yue and colleagues](https://www.nature.com/articles/ng.3847)?
+>
+>> ## Solution
+>>
+>> In total, five genomic features overlap with the regions lacking the int reference genome. These are all *Ty* elements as reported by Yue and colleagues in their paper.
+>>
+> {: .solution}
+{: .challenge}
+
+
