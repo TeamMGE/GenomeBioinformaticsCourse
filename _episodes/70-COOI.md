@@ -126,9 +126,11 @@ To be able to better analyse the k-mer distribution to determine the peak in k-m
 >
 >> # Solution
 >>
->> `sns.scatterplot(data=kmers, x='Coverage', y='Frequency')`
->> `plt.ylim(0,350000) #focusses the y-axis to maximum 350000`
->> `plt.xlim(0,200) #focusses the x-axis to a maximum of 200`
+>> ~~~
+>> sns.scatterplot(data=kmers, x='Coverage', y='Frequency')
+>> plt.ylim(0,350000) #focusses the y-axis to maximum 350000
+>> plt.xlim(0,200) #focusses the x-axis to a maximum of 200
+>> ~~~
 >> 
 > {: .solution}
 {: .challenge}
@@ -157,9 +159,11 @@ We can use the information to estimate the overall genome size under the assumpt
 >
 >> ## Solution
 >>
->> `kmers_sub = kmers.iloc[20:,] #we assume kmers < 20x coverage are errors`
->> `kmers_cov_hom = kmers_sub.loc[kmers_sub['Frequency'].idxmax(),"Coverage"]` #the peak (maximum of data) is at 82. An approximate peak could have also been  determined by inspecting the figure
->> `print(kmers_cov_hom)`
+>> ~~~
+>>  kmers_sub = kmers.iloc[20:,] #we assume kmers < 20x coverage are errors
+>> kmers_cov_hom = kmers_sub.loc[kmers_sub['Frequency'].idxmax(),"Coverage"] #the peak (maximum of data) is at 82. An approximate peak could have also been  determined by inspecting the figure
+>> print(kmers_cov_hom)
+>> ~~~
 >>
 > {: .solution}
 {: .challenge}
@@ -173,8 +177,11 @@ Now that we have the subset and the k-mer coverage of the homozygous peak, we ca
 > What could be a possible explanation for the discrepancy?
 >
 >> ## Solution
->> `kmer_count = (kmers_sub['Coverage'] * kmers_sub['Frequency']).sum() #obtain the total k-mers`
->> `kmer_count / kmers_cov_hom #divide the total number of k-mers by the coverage at the homozygous peak`
+>>
+>> ~~~
+>> kmer_count = (kmers_sub['Coverage'] * kmers_sub['Frequency']).sum() #obtain the total k-mers
+>> kmer_count / kmers_cov_hom #divide the total number of k-mers by the coverage at the homozygous peak
+>> ~~~
 >>
 >> We obtain an estaimate of around 14.05 Mb, which is slight bigger than the expected 12 Mb of a typical yeast genome. One reason could be that we still considered all k-mers up to 10,000 and that we only ignored some errors on a ad hoc cutoff.
 >>
