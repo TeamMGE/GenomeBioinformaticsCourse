@@ -175,7 +175,7 @@ Now that we have the subset and the k-mer coverage of the homozygous peak, we ca
 > {: .solution}
 {: .challenge}
 
-We now estimated the genome size by hand. However, there is also dedicated bioinformatic software that can be used to analyse k-mer profiles. A commonly used software is [GenomeScope](http://qb.cshl.edu/genomescope/) website that uses the k-mer histogram from `jellyfish` (and other k-mer counting programs) and statistical approaches to estimate the genome size, the repeat content, and the level of heterozygocity.
+We now estimated the genome size by hand. However, there is also dedicated bioinformatic software that can be used to analyse k-mer profiles. A commonly used software is [GenomeScope](http://genomescope.org) website that uses the k-mer histogram from `jellyfish` (and other k-mer counting programs) and statistical approaches to estimate the genome size, the repeat content, and the level of heterozygocity.
 
 > ## Excercise
 >
