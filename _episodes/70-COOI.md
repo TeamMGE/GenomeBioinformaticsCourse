@@ -95,12 +95,14 @@ We can now generate a graphical representation of the k-mer profile, similar to 
 > 
 >> ## Solution
 >>
->> ~~~import seaborn as sns #imports seaborn
+>> ~~~
+>> import seaborn as sns #imports seaborn
 >> import pandas as pd #imports pandas
 >> import matplotlib.pyplot as plt #imports matplotlib
 >> kmers = pd.read_csv("ScereCBS7837.count.txt",sep=" ",header=None) #read the kmer-count files
 >> kmers.columns = ['Coverage','Frequency'] #name the columns
->> sns.scatterplot(data=kmers, x='Coverage', y='Frequency') #plot the data as a scatterplot~~~
+>> sns.scatterplot(data=kmers, x='Coverage', y='Frequency') #plot the data as a scatterplot
+>> ~~~
 >> 
 > {: .solution}
 {: .challenge}
