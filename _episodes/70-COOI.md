@@ -95,12 +95,12 @@ We can now generate a graphical representation of the k-mer profile, similar to 
 > 
 >> ## Solution
 >>
->> `import seaborn as sns #imports seaborn`
->> `import pandas as pd #imports pandas`
->> `import matplotlib.pyplot as plt #imports matplotlib`
->> `kmers = pd.read_csv("ScereCBS7837.count.txt",sep=" ",header=None) #read the kmer-count files`
->> `kmers.columns = ['Coverage','Frequency'] #name the columns`
->> `sns.scatterplot(data=kmers, x='Coverage', y='Frequency') #plot the data as a scatterplot`
+>> ~~~import seaborn as sns #imports seaborn
+>> import pandas as pd #imports pandas
+>> import matplotlib.pyplot as plt #imports matplotlib
+>> kmers = pd.read_csv("ScereCBS7837.count.txt",sep=" ",header=None) #read the kmer-count files
+>> kmers.columns = ['Coverage','Frequency'] #name the columns
+>> sns.scatterplot(data=kmers, x='Coverage', y='Frequency') #plot the data as a scatterplot~~~
 >> 
 > {: .solution}
 {: .challenge}
@@ -138,7 +138,11 @@ Based on your updated visualisation, you can now determine the number of height 
 > How many peaks can you observe in the k-mer distribution plit? What does this suggest with respect to the ploidy of the isolate you analyzed? What is the average k-mer coverage for each of the peaks? Based on this observations, do you conclude that the isolate very heterozygous?
 >
 >> # Solution
-> You can clearly observe two peaks, suggesting that this isolate is diploid. We can see a small heterozygous peak (at around 40x) and larger homozygous peak (at around 80x). Based on the height and size of the first peak, the level of heterozygosity is likely small (you can compare this plot to slides from the lecture).
+>> 
+>> You can clearly observe two peaks, suggesting that this isolate is diploid. We can see a small heterozygous peak (at around 40x) and larger homozygous peak (at around 80x). Based on the height and size of the first peak, the level of heterozygosity is likely small (you can compare this plot to slides from the lecture).
+>>
+> {: .solution}
+{: .challenge}
 
 We can use the information to estimate the overall genome size under the assumption that the total number of k-mers and the k-mer coverage are related to the genome size (see lecture slides for a detailed introduction on this topic). Specifically, we can assume that the genome size can be derived based on the area under the curve and the mean coverage at the homozygous peak. Furthermore, we assume that the k-mers that occur in low coverage but in high frequency are likely sequencing errors that can be safely ignored.
 
