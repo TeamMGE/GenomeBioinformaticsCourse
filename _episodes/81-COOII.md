@@ -85,5 +85,26 @@ We can also generate a zoom-in of the alignments of chromosome III of the two S2
 >>
 >> `mummerplot --color --png S288CvS288Cpb.delta -r "chrIII" -q "chrIII"`
 >> On chromosome 3, there seem to to be insertions in the long-read assembly that are absent in the reference genome assembly. The paper by Yue and colleagues report on the absence of *Ty* elements in the reference assembly. *Ty* elements are retrotransposons, a type of transposons, that occur in high abnudance in the yeast genomes (~2% of the genome are formed by *Ty* elements). Repetetive elements such as transposons are very challanging to assemble due to their length and repetetive nature. Thus, these were likely not assembled in the inital genome assembly that was based on shorter sequencing reads, but can now be assembled using long-read sequencing data.
+>>
+> {: .solution}
+{: .challenge}
+
+Next to the visual inspection using `mummerplot`, whole-genome alignments from `nucmer` can also be systematically analysed to identify regions that are present or absent in the query or reference. To obtain the genomic coordinates of the alignments, we can use the `show-coords` command. First, take a look at the command line options and identify what input `show-coords` expects. The output of `show-coords` is a tiny bit more complex but the individual columns inform on the start and end positions, the length, sequence identify, and chromosome names of each aligned segments between the query and the reference genome. `show-coords` also allows the user to sort alingmnets by query/reference positions or filter them by length and/or identity. This can be useful to only only obtain highly similar regions, for instance in the case of the alignment between two divergent genomes, or to only keep alignments that have a minimum length, thereby removing multiple repetetive matches that might be present due to `nucmer`'s `--maxmatch` option.
+
+To be able to efficentily use the alignment coordinates, we need to convert the coordinates into a bed file. [Bed files](https://en.wikipedia.org/wiki/BED_(file_format)) are often used in bioinformatics to represent genomic features relative to their genomic regions, e.g. location of genes but also the localization of the genome alignment. In contrast to many other genome-based representations, bed files are in a 0-based coordinate system while most others are in a 1-based coordinate system. The 1-based format is similar to our normal counting (1-based fully closed), e.g., counting the number of characters in a string directly. The bed format is 0-based (half open), and thus counts between the characters. Thus, the first element in a 0-based sequence has the start position 0 and the end position 1. This allows to more easily calculate the length of objects (0-based: end - start) rather than (1-based: end - start + 1). 
+
+We now need to prepare and execute a command that uses `show-coords` to retrieve a list or query sorted alignments (query chromosome, query start, and query end), and subsequently use a combination of command line commands (`cut`, `awk`, etc.) to generate a bed file that contains the information of the alignment positions in the query sequence. Moreover, the start position of a feature in a bed file needs to be always smaller than the end position. Specifically, we remove the header from the coordinate file and seperate it via tabs, we then obtain the 3rd, 4th, and 9th column to get the query start, end, and chromosome name and the use `awk` to reformat these information into the correct order (query chromosome, query start, and query end), enrure that the start coordinate is always smaller than the end coordinate and substract 1 to change from a 1-based to a 0-based coordinate system. 
+
+~~~
+$ show-coords -q S288CvS288Cp.delta -T -H | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" > Yue2017_S288C.bed
+~~~
+{: .bash}
+
+The resulting bed files of the alignment coordinates can be used to rapidly identify regions that are present or absent in the alignment. Since we obtained a query-sorted bed file containing the coordinates in the query sequence, we can thus determine if the entire query sequence was covered with an alignment to the reference genome sequence, i.e., were these regions also present in the reference or are there regions in the query that are absent from the reference. 
+
+We will make use of [`bedtools`](https://bedtools.readthedocs.io/en/latest/), which is a suite of popular tools to analyse bedfiles. We will use bedtools coverage approach to determine which regions are not covered by the alignment and consequently are absent in the reference and present in the long-read genome assembly.
+
+What type of input does bedtools genomecov need next to the bed-file?
+
 
 
