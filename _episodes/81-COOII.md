@@ -1,5 +1,5 @@
 ---
-title: "Block 3 - COOII: Large-scale chromosomal variation in *Saccharomyces cerevisiae* (part 1)"
+title: "Block 3 - COOII: Large-scale chromosomal variation in Saccharomyces cerevisiae (part 1)"
 start: false
 teaching: 0
 exercises: 90
@@ -102,9 +102,46 @@ $ show-coords -q S288CvS288Cp.delta -T -H | cut -f3,4,9 | awk '{if($1 < $2){prin
 
 The resulting bed files of the alignment coordinates can be used to rapidly identify regions that are present or absent in the alignment. Since we obtained a query-sorted bed file containing the coordinates in the query sequence, we can thus determine if the entire query sequence was covered with an alignment to the reference genome sequence, i.e., were these regions also present in the reference or are there regions in the query that are absent from the reference. 
 
-We will make use of [`bedtools`](https://bedtools.readthedocs.io/en/latest/), which is a suite of popular tools to analyse bedfiles. We will use bedtools coverage approach to determine which regions are not covered by the alignment and consequently are absent in the reference and present in the long-read genome assembly.
+We will make use of [`bedtools`](https://bedtools.readthedocs.io/en/latest/), which is a suite of popular tools to analyse bedfiles. We will use `bedtools coverage` to determine which regions are not covered by the alignment and consequently are absent in the reference and present in the long-read genome assembly. `bedtools genomecov` does need the bed file as well as information about the chromosome length. We can generate such afile based on the genome assembly of the query using `faSize -detailed`, which will report the length of every single chromosome/contig in the fasta file.
 
-What type of input does bedtools genomecov need next to the bed-file?
+~~~
+$ faSize -detailed Yue2017_S288C.genome.fa > Yue2017_S288C.genome.size
+~~~
+{: .bash}
 
+We can now finally prepare and execute an `bedtools genomecov` command to determine the coverage in the query genome; note: redirect the output into a new file to ease subsequent analyses.
 
+> ## Exercise
+>
+> - Take a look at the output file. How many bases in the query genome assembly are (not) covered?
+> - What could be the biological or technical reason that some regions absent in the genome?
+> - What could be the biological reason that some regions in the genome are covered more than once?
+>
+>> ## Solution
+>>
+>> - In total, ~17kb of the query genome assembly are not covered. This can be easily seen by looking at the amount bases that are covered 0 times.
+>> - The reasons can be both technical and biological: Lineage-specific genes or regions could be absent from this assembly version, even thought the same strain was sequenced. Prolonged cultivation or independent cultivation in different labs can lead to divergence between strains that 'should' be identical. Moreover, transposons or other repeats are challanging to assemble and thus might be absent from the assembly
+>> - Multiple alignments indicate regions in the genone that occur several times. That could be duplications or repetetive regions such as transposons.
+>>
+> {: .solution}
+{: .challenge}
 
+Using `bedtools genomecov`, we can also easily identify for each individual base in the query genome if it was covered by an alignment to the reference. Conversely, we can also identify if a base in the query genome was not covered and turn these information into a bed file that contains coordinates for uncovered regions.
+
+~~~
+$ bedtools genomecov -g Yue2017_S288C.genome.size -i Yue2017_S288C.bed -d | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools merge -i - > Yue2017_S288C.uncovered.bed
+~~~
+{: .bash}
+
+The command above uses `bedtools genomecov -d` to report the depth for each position in the genome rather than the default option that summarizes how much of the genome/chromosome is covered x times. This informatioed is then piped (`|`) into `awk` to only keep lines where the coverage is 0, i.e., these regions are present in the query genome but are not covered by an alignment to a region in the reference genome and thus are absent. We then print the chromosome name, the start, and the end. We then need to substitute spaces with tabs to generate a valid bed output. This output is directed to bedtools merge which merges overlapping and successive regions into bigger regions. The -i - indicates that the data is read directly from the pipe rather than from an input file.
+
+> ## Excercise
+>
+> Do you find the regions in chromosome III (see above) that are absent? Can you provide a possible explanation for this observation?
+>
+>> ## Solution
+>>
+>> The regions on chromosome III are actually covered. Repetetive elements overlapping these regions are localized at different regions in the genome. Since we used `--maxmatch` to compute the alignments, also matches other than those between chrIII and chrIII are reported. This can also nicely be visualized using mummerplot and zooming into chrIII of the query while showing all alignments of the reference genome assembly.
+>>
+> {: .solution}
+{: .challenge}
