@@ -145,3 +145,21 @@ The command above uses `bedtools genomecov -d` to report the depth for each posi
 >>
 > {: .solution}
 {: .challenge}
+
+We now specifically obtain the coordinates of regions on chromosome III of the query genome that are not covered by alignments anchored on chromosome III of the reference genome. We will use a modification of the previous code (see above) but adding a grep command that will specifically take out alignments between chrIII of the query and the reference. This then allows us to determine how many regions are specific on chromosome III, and to see their sizes?
+
+~~~
+$ show-coords -q S288CvS288Cp.delta -T -H | grep -P "chrIII\tchrIII" | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" >  Yue2017_S288C.chrIII.bed
+$ bedtools genomecov -g Yue2017_S288C.genome.size -i Yue2017_S288C.chrIII.bed -d | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools merge -i - | grep "chrIII"
+~~~
+{: .bash}
+
+The genome annotation of S288C from Yue and colleagues (long-read) is available as a [gff file](https://en.wikipedia.org/wiki/General_feature_format), which is a common file format typically used to store genome annoation. A gff file contains much information that is currently not useful for us. However, a simple command line approach allows us to convert the gff file (1-based starts) to a (0-based) bedfile that only contains the information that is essential to inform us on the localization and the type of feature.
+
+
+~~~
+$ cut -f1,4,5,9 Yue2017_S288C.features.gff3  | awk '{print $1,$2-1,$3,$4}' | tr " " "\t" > Yue2017_S288C.features.bed
+~~~
+{: .bash}
+
+We can then use `bedtools intersect` to identify which features are localized in the regions on chromosome III that are present in the long-read assemby but absent in the S288C reference genome. Note the different parameters of bedtools intersect command and prepare and execute a command.
