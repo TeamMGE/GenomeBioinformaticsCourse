@@ -46,7 +46,7 @@ Use commands including ls and pwd to localize the two S288C genome assemblies (S
 > {: .solution}
 {: .challenge}
 
-We can now execute a `nucmerz command to calculate a whole-genome alignment using the S288C original reference genome (S288C.genome.fa) as the reference and the S288C long-read assembly (Yue2017_S288C.genome.fa) as a query. We retained all possible matches (`--maxmatch`) between the query and the reference and provided a prefix to give your results a clear name `-p`.
+We can now execute a `nucmer` command to calculate a whole-genome alignment using the S288C original reference genome (S288C.genome.fa) as the reference and the S288C long-read assembly (Yue2017_S288C.genome.fa) as a query. We retained all possible matches (`--maxmatch`) between the query and the reference and provided a prefix to give your results a clear name `-p`.
 
 ~~~
 $ nucmer --maxmatch -p S288CvS288Cpb S288C.genome.fa Yue2017_S288C.genome.fa
