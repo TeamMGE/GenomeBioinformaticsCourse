@@ -124,7 +124,7 @@ To be able to better analyse the k-mer distribution to determine the peak in k-m
 >
 > Modify the scatterplot to limit the x- and y-axis to focus on the data between 0 and 200 on the x-axis and 0 and 350000 on the y-axis.
 >
->> # Solution
+>> ## Solution
 >>
 >> ~~~
 >> sns.scatterplot(data=kmers, x='Coverage', y='Frequency')
@@ -141,7 +141,7 @@ Based on your updated visualisation, you can now determine the number of height 
 >
 > How many peaks can you observe in the k-mer distribution plit? What does this suggest with respect to the ploidy of the isolate you analyzed? What is the average k-mer coverage for each of the peaks? Based on this observations, do you conclude that the isolate very heterozygous?
 >
->> # Solution
+>> ## Solution
 >> 
 >> You can clearly observe two peaks, suggesting that this isolate is diploid. We can see a small heterozygous peak (at around 40x) and larger homozygous peak (at around 80x). Based on the height and size of the first peak, the level of heterozygosity is likely small (you can compare this plot to slides from the lecture).
 >>
@@ -160,7 +160,7 @@ We can use the information to estimate the overall genome size under the assumpt
 >> ## Solution
 >>
 >> ~~~
->>  kmers_sub = kmers.iloc[20:,] #we assume kmers < 20x coverage are errors
+>> kmers_sub = kmers.iloc[20:,] #we assume kmers < 20x coverage are errors
 >> kmers_cov_hom = kmers_sub.loc[kmers_sub['Frequency'].idxmax(),"Coverage"] #the peak (maximum of data) is at 82. An approximate peak could have also been  determined by inspecting the figure
 >> print(kmers_cov_hom)
 >> ~~~
