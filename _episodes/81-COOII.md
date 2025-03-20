@@ -34,7 +34,6 @@ To test this hypothesis, we will align the two independent genome assemblies usi
 
 Use commands including ls and pwd to localize the two S288C genome assemblies (S288C.genome.fa and Yue2017_S288C.genome.fa) in the data storage folder. Then create a symbolic link to your own folder with the ln -s command.
 
-
 > ## Exercise
 >
 > Take a look the parameters nucmer and take a consult the manual to find the explanation of the prarameters `nucmer -h`.
@@ -73,4 +72,18 @@ $ mummerplot --color S288CvS288Cpb.delta --png
 >> 
 > {: .solution}
 {: .challenge}
+
+We can also generate a zoom-in of the alignments of chromosome III of the two S288C assemblies by running mummerplot with the option `-r` and `-q` to only display the alignment chromosome III of the reference and query, respectively. First, think how can you can easily find out how the chromosomes are named?
+
+> ## Exercise
+>
+> -  What type of structural variation can you you observe on chromosome III?
+> -  How does this relate to the observation in the paper by [Yue and colleagues](https://www.nature.com/articles/ng.3847)?
+> -  What are *Ty* elements, and what could be an reason for their absence in the S288C reference genome assembly?
+>
+>> ## Solution
+>>
+>> `mummerplot --color --png S288CvS288Cpb.delta -r "chrIII" -q "chrIII"`
+>> On chromosome 3, there seem to to be insertions in the long-read assembly that are absent in the reference genome assembly. The paper by Yue and colleagues report on the absence of *Ty* elements in the reference assembly. *Ty* elements are retrotransposons, a type of transposons, that occur in high abnudance in the yeast genomes (~2% of the genome are formed by *Ty* elements). Repetetive elements such as transposons are very challanging to assemble due to their length and repetetive nature. Thus, these were likely not assembled in the inital genome assembly that was based on shorter sequencing reads, but can now be assembled using long-read sequencing data.
+
 
