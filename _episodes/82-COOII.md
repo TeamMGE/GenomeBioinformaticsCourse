@@ -45,5 +45,3 @@ We will study the structural similarity of these two strains by using MUMMER (`n
 >> The genome alignment is overall still largely co-linear with most chromosomes being conserved. This would be expected from strain of the same species. Few chromosomes (e.g chromosome VII) display clear signs of translocations and way more deletions/insertions. Dfferences in karyotypes (chromosomes) can lead to reproductive isolation and slowly into formation of new species (e.g., https://onlinelibrary-wiley-com.proxy.library.uu.nl/doi/full/10.1111/j.1365-294X.2011.05005.x). However, large-scale translocations are commonly observed in fungi.
 > {: .solution}
 {: .challenge}
-
-
