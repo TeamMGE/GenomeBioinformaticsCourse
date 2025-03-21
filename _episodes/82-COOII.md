@@ -23,7 +23,7 @@ Bakers’ yeast has been traditionally used as a model to study how genotypic va
 
 ## Comparision between two *S. cerevisiae* strains
 
-Thus far, we compared two genome assembly versions of the same *S. cerevisiae*. In this excercise, we will focus on the comparision between genome sequences of two different *S. cerevisiae* strains, the reference strain S288C that we have analyzed before and the strain UWOPS03-461.4, which has been isolated in the rain forest in Bertram palm in Malaysia.
+Thus far, we compared two genome assembly versions of the same *S. cerevisiae*. In this excercise, we will focus on the comparision between genome sequences of two different *S. cerevisiae* strains, the reference strain S288C (Yue2017_S288C.genome.fa) that we have analyzed before and the strain UWOPS03-461.4, which has been isolated in the rain forest in Bertram palm in Malaysia.
 
 Localize the long-read genome assemblies of *S. cerevisiae* strain UWOPS03-461.4 (Yue2017_UWOPS034614.genome.fa) at the data folder and create a symbolic link to your working folder.
 
