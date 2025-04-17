@@ -43,19 +43,19 @@ $ pwd
 
 And check what files are available to you by doing:
 ~~~
-ls -l
+$ ls -l
 ~~~
 {: .bash}
 
 You will see the folder "data_bb3bcg20". Light blue means that it is a 'soft link' to a different location, but you can treat this as a regular folder. Check the contents of this folder by doing:
 ~~~
-ls -l data_bb3bcg20/
+$ ls -l data_bb3bcg20/
 ~~~
 {: .bash}
 
 Lastly, generate your own work environment in your home directory:
 ~~~
-mkdir GenomeBioinformatics/
+$ mkdir GenomeBioinformatics/
 ~~~
 {: .bash}
 
