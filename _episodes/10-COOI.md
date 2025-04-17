@@ -14,7 +14,7 @@ keypoints:
 
 #  A CURIOUS BIOFILM
 
-TEST
+TEST2
 
 You are biking on your way to the Utrecht Science Park, and your bike’s chain comes out. You stop, and atart to fix it. Your hands get greasy, it’s raining and you feel miserable. Once you are done, you look up. You had just stopped by a beautiful canal, and the falling of droplets on the water is mesmerising. Between the grass and the water, sheltered below a rock formation, you notice an odd slime. It is of a brownish, orange-y color, and you recognise it is a biofilm. You have learnt that microorganisms can form their own environments, where they interact, compete and thrive. You wonder what could be in there…
 
