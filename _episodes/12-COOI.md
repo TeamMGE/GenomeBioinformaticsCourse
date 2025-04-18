@@ -81,8 +81,10 @@ types of sequence filtering options. Here, let's remove all reads with lengths b
 
 ~~~
 $ cd ~/GenomeBioinformatics/Block1/COO-I/Results
-$ seqkit stats ../Data/Course_sample_metagenome.fastq.gz
-$ seqkit seq -m 1000 ../Data/Course_sample_metagenome.fastq.gz -o filtered_reads.fastq.gz
+$ mkdir 02_readFiltering
+$ cd 02_readFiltering
+$ seqkit stats ../../Data/Course_sample_metagenome.fastq.gz
+$ seqkit seq -m 1000 ../Data/../Course_sample_metagenome.fastq.gz -o filtered_reads.fastq.gz
 $ seqkit stats filtered_reads.fastq.gz
 ~~~
 {: .bash}
