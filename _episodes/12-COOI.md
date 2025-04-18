@@ -27,6 +27,7 @@ $ fastqc -h
 >> ## Solution
 >>
 >> `$ fastqc -o 01_fastqc -f fastq ../Data/Course_sample_metagenome.fastq.gz`
+>>
 >> This will generate an output folder called "01_fastqc". We can enumerate results folders this way, which will help keeping our files tidy.
 > {: .solution}
 {: .challenge}
