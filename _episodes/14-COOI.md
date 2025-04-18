@@ -2,7 +2,7 @@
 title: "COO-I-4. Binning"
 start: false
 teaching: 0
-exercises: 20
+exercises: 60
 questions:
 - How to cluster contigs into bins in a metagenomic assembly?
 objectives:
