@@ -33,7 +33,7 @@ $ fastqc -h
 
 ### Examine results
 
-Now, in order to read the results you will need to download the file to your laptop. 
+In order to read the results you will need to download the file to your laptop. 
 MobaXTerm may allow you to do this easily by navigating the filesystem. Other terminal users can copy the file into their local folders
 by using the secure copy protocol. But first, let's unzip our results and then make sure we have the full path to these files:
 ~~~
