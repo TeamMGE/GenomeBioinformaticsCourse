@@ -1,3 +1,18 @@
+---
+title: "Block 1 - COOI: Recovering a microbial community"
+start: true
+teaching: 0
+exercises: 20
+questions:
+- What interesting microbes can we find around us?
+objectives:
+- Practice the usage of command line to handle and analyse sequence files 
+- Perform a metagenome assembly, and interpret metagenomic data
+keypoints:
+- You can obtain genome sequences from environmental sequencing
+---
+
+
 # Sequencing
 
 To start the analysis, you first need to understand your data. The platform used to sequence these samples was of the PacBio Continuous Long Read (CLR) chemistry. 
