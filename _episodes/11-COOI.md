@@ -1,8 +1,8 @@
 ---
-title: "Block 1 - COOI: Recovering a microbial community"
+title: "COO-I-1. Sequencing"
 start: true
-teaching: 0
-exercises: 20
+teaching: 20
+exercises: 5
 questions:
 - What interesting microbes can we find around us?
 objectives:
