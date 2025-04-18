@@ -4,12 +4,9 @@ start: true
 teaching: 20
 exercises: 5
 questions:
-- What interesting microbes can we find around us?
+- How to obtain metagenomic sequencing data?
 objectives:
-- Practice the usage of command line to handle and analyse sequence files 
-- Perform a metagenome assembly, and interpret metagenomic data
-keypoints:
-- You can obtain genome sequences from environmental sequencing
+- Become familiar with sequencing technology and sequencing reads format
 ---
 
 
