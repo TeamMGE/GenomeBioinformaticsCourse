@@ -27,7 +27,7 @@ You decide to take action. You sample the biofilm, and take it to your Bioinform
 
 
 # Steps for this analysis
-- [Sequencing](https://github.com/TeamMGE/GenomeBioinformaticsCourse/blob/main/_episodes/11-COOI.md)
+- [Sequencing](https://teammge.github.io/GenomeBioinformaticsCourse/11-COOI/index.html)
 - Read processing
 - Assembly
 - Binning
