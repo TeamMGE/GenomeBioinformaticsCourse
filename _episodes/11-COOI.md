@@ -1,6 +1,6 @@
 ---
 title: "COO-I-1. Sequencing"
-start: true
+start: false
 teaching: 20
 exercises: 5
 questions:
