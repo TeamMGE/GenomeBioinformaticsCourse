@@ -35,8 +35,11 @@ Take a look at the resulting Fasta file.
 >> ## Solution
 >>
 >> `grep -c ">" ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/assembly_miniasm.fasta`
+>> 
 >> 181 contigs.
+>> 
 >> `seqkit stats ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/assembly_miniasm.fasta`
+>> 
 >> From ca. 13 kbp to ca. 3.6 Mbp
 > {: .solution}
 {: .challenge}
