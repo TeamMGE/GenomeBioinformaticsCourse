@@ -72,19 +72,35 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 >> ## Solution
 >>
 >> `$ python ~/data_bb3bcg20/bin/scripts/fasta_length.py assembly_miniasm.fasta | cut -f2 > assembly_miniasm.contigLengths`
+>> 
 >> `$ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_miniasm.contigLengths`
+>> 
 >> N = 181
+>> 
 >> Sum: 16216279
+>> 
 >> Mean: 89592.701657
+>> 
 >> Var: 139285829786.486
+>> 
 >> SD: 373210.168386
->> SE: 27740.493348>> MAD: 12274
+>> 
+>> SE: 27740.493348
+>>
+>> MAD: 12274
+>> 
 >> Min: 12926
+>> 
 >> p10: 18795
+>> 
 >> p25: 23405
+>> 
 >> Median: 34524
+>> 
 >> p75: 48697
+>> 
 >> p90: 98795
+>> 
 >> Max: 3611276
 > {: .solution}
 {: .challenge}
@@ -105,21 +121,37 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/flye/ .
 > How many contigs did flye identify? How does the distribution of contig sizes compare to the results by miniasm?
 >> ## Solution
 >> `$ conda activate python3.11`
+>> 
 >> `$ python ~/data_bb3bcg20/bin/scripts/fasta_length.py flye/assembly.fasta | cut -f2 > assembly_flye.contigLengths`
+>> 
 >> `$ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_flye.contigLengths`
+>> 
 >> N = 267
+>> 
 >> Sum: 18428211
+>> 
 >> Mean: 69019.516854
+>> 
 >> Var: 75039714194.2722
+>> 
 >> SD: 273933.777023
+>> 
 >> SE: 16764.474901
+>> 
 >> MAD: 12884
+>> 
 >> Min: 6040
+>> 
 >> p10: 12091.5
+>> 
 >> p25: 18009.5
+>> 
 >> Median: 28323
+>> 
 >> p75: 51918
+>> 
 >> p90: 80768
+>> 
 >> Max: 3541958
 > {: .solution}
 {: .challenge}
