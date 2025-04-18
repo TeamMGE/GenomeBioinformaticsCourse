@@ -4,9 +4,9 @@ start: false
 teaching: 0
 exercises: 40
 questions:
-- How to assess the quality of the sequencing reads?
+- How to assemble metagenomes from sequencing reads?
 objectives:
-- Interpret sequencing read quality and filter read files with this information
+- Learn how to interpret basic assembly metrics, and compare the quality of different asseemblies
 ---
 
 ## Metagenome assembly
@@ -40,7 +40,6 @@ Take a look at the resulting Fasta file.
 >> From ca. 13 kbp to ca. 3.6 Mbp
 > {: .solution}
 {: .challenge}
->
 
 To get more information about the effect of the polishing steps, let’s take a better look at the contig length distribution. Let's
 First, let's get access to the correct files:
@@ -89,7 +88,6 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 >> Max: 3611276
 > {: .solution}
 {: .challenge}
->
 
 
 ### flye 
@@ -125,7 +123,8 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/flye/ .
 >> p75: 51918
 >> p90: 80768
 >> Max: 3541958
->> 
+> {: .solution}
+{: .challenge}
 
 To learn more about the assembly process, take a look at the assembly file within the folder “00-assembly”. 
 How many contigs were generated at that point? How does this compare with the number of final contigs produced by flye?
