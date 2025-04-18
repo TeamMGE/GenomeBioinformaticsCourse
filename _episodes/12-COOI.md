@@ -21,10 +21,7 @@ $ fastqc -h
 ~~~
 {: .bash}
 
-> ## Exercise
->
-> Now, we want to generate a quality report. Did you figure out how to do that?
-
+> ## Exercise: Generate a quality report
 >
 >> ## Solution
 >>
@@ -54,10 +51,9 @@ $ scp -r username@gemini.science.uu.nl:/path/to/file /path/to/local/folder
 
 Now, open the report by clicking on the HTML file and explore the statistics!
 
-> ## Exercise
+> ## Exercise: Interpret the results
 >
-> **Interpret the results. How variable is the read length? What do you think the compositional variation in your data may mean?**
-
+> **How variable is the read length? What do you think the compositional variation in your data may mean?**
 >
 >> ## Solution
 >> We can see that our fastq file contains 60099 sequences, and a total of almost 500 million bases. We also see that there is a
@@ -91,10 +87,9 @@ $ seqkit stats filtered_reads.fastq.gz
 ~~~
 {: .bash}
 
-> ## Exercise
+> ## Exercise: Interpret the results
 >
-> **Interpret the results. How many reads were filtered out? How can you be sure the filtering worked as expected?**
-
+> **How many reads were filtered out? How can you be sure the filtering worked as expected?**
 >
 >> ## Solution
 >> The minimum length moves from 50 bp to 1000 bp, as expected from removing all reads with lenghts below 1000 bp. We can also
