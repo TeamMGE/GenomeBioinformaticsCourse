@@ -14,7 +14,9 @@ objectives:
 
 Next, we need to classify these contigs into bins. To do this, multiple binning software are available. 
 MetaWRAP includes a complex binning pipeline that employs multiple binning software and evaluates the results jointly. 
-Unfortunately, again, most tools require long runtimes. To avoid this inconvenience, Metawrap was already ran,
+
+The runtime of MetaWrap depends strongly on the complexity of the input assemply. Here, again, you would need to wait for a large
+fraction of the COO to obtain these results. To avoid this inconvenience, Metawrap was already ran,
 employing the binning software Concoct, maxbin2 and metabat2. Again, fetch the results from the appropriate folder
 
 ~~~
@@ -69,3 +71,62 @@ similarity to reference sequences. Compare the results of the three binning soft
 >> 
 > {: .solution}
 {: .challenge}
+
+
+## Bin refinement
+
+Bin refinement in metagenomics is an advisable step aimed at improving the accuracy and completeness of genome bins generated during the initial binning process. Despite the advancements in binning algorithms, the resulting bins may still contain fragmented or misclassified sequences, leading to inaccuracies in downstream analysis. Bin refinement may involve several strategies, including manual curation, re-binning, and leveraging complementary data sources such as metatranscriptomic or single-cell sequencing data. Here, we take advantage of the bin refinement pipeline in MetaWRAP to improve our initial results.
+
+MetaWRAP takes the bins obtained by each one of the employed binning tools, as well as the joint sets formed by all possible combinations of these results (7 sets in total). By comparing groups of bins, it attempts to consolidate them to keep appropriate contigs obtained by some binning efforts but not all. Here, MetaWRAP will focus on the resulting bins with over 70% completeness and under 5% contamination/redundancy. 
+
+
+> ## Exercise: What bins, and from which binning tools, does MetaWRAP obtain as the best results?
+>
+> `cd ~/GenomeBioinformatics/Block1/COO-I/Results`
+>
+> `mkdir 06_binRefinement; cd 06_binRefinement`
+>
+> `ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Bin_refinement/metawrap_bin_refinement/ .`
+>> ## Solution
+>> `~/data_bb3bcg20/bin/scripts/coltab.sh metawrap_70_10_bins.stat`
+>>
+>> Metawrap chose a solution including 4 bins, 2 of which come from binner A (Concoct) and 2 of which come from binner C (Maxbin2).
+>> 
+> {: .solution}
+{: .challenge}
+
+Let’s get one final insight: how deeply was each one of the microbes sequenced? 
+For this analysis, pick the bins selected by MetaWRAP in the last step. 
+Minimap2, a quick read-mapping tool, was used to map the long reads to each bin, 
+and the result is stored in binary BAM files. Let’s analyse the result using samtools. 
+
+In your Results folder, reate a directory called “07_depthAnalysis” and move there. 
+Link the BAM files to your working directory, and analyse using samtools:
+
+~~~
+cd ~/GenomeBioinformatics/Block1/COO-I/Results
+mkdir 07_depthAnalysis; cd 07_depthAnalysis
+ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Bin_refinement/minimap2/ .
+cd minimap2
+ls -l
+
+for f in *.bam; do
+  echo $f;
+  samtools index $f; 
+  samtools depth $f > $f.depth;
+  perl ~/data_bb3bcg20/bin/scripts/stats.pl <(cut -f3 $f.depth);
+  echo;
+  echo;
+done
+~~~
+{: .bash}
+
+> ## How does mapping depth vary in these bins? What do you think this may mean?
+>
+>> ## Solution
+>> Median mapping depth is higher for bins 2 and 3 (29-30X), somewhat lower for bin 1 (16X) and low for bin 4 (4X). This may
+>> represent different abundances in the sampled microbial community.
+>> 
+> {: .solution}
+{: .challenge}
+
