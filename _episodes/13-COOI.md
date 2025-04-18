@@ -56,19 +56,16 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 >
 > Write a python script that can read sequences from a fasta file, and prints the length of each contig in a separate line.
 > Once you have done that, print that information to a file. For this, you will need to activate the python 3.11 environment
-> ~~~
-> $ conda activate python3.11
-> ~~~
+> `$ conda activate python3.11`
+> 
 > Once you are done with this environment, you can go back to the previous environment by running
-> ~~~
-> $ conda deactivate
-> ~~~
+> `$ conda deactivate`
 > 
 > Now run your script and generate a file with the contig lengths called "assembly_miniasm.fasta.contigLengths".
 > Then run the following script:
-> ~~~
-> $ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_miniasm.fasta.contigLengths
-> ~~~
+> `$ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_miniasm.fasta.contigLengths`
+> 
+> 
 >> ## Solution
 >>
 >> `$ python ~/data_bb3bcg20/bin/scripts/fasta_length.py assembly_miniasm.fasta | cut -f2 > assembly_miniasm.contigLengths`
@@ -104,11 +101,9 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/flye/ .
 > ## Exercise: Examine the flye assembly
 > How many contigs did flye identify? How does the distribution of contig sizes compare to the results by miniasm?
 >> ## Solution
->> ~~~
->> $ conda activate python3.11
->> $ python ~/data_bb3bcg20/bin/scripts/fasta_length.py flye/assembly.fasta | cut -f2 > assembly_flye.contigLengths
->> $ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_flye.contigLengths
->> ~~~
+>> `$ conda activate python3.11`
+>> `$ python ~/data_bb3bcg20/bin/scripts/fasta_length.py flye/assembly.fasta | cut -f2 > assembly_flye.contigLengths`
+>> `$ perl ~/data_bb3bcg20/bin/scripts/stats.pl assembly_flye.contigLengths`
 >> N = 267
 >> Sum: 18428211
 >> Mean: 69019.516854
