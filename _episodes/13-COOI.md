@@ -2,7 +2,7 @@
 title: "COO-I-3. Metagenome assembly"
 start: false
 teaching: 0
-exercises: 30
+exercises: 40
 questions:
 - How to assess the quality of the sequencing reads?
 objectives:
