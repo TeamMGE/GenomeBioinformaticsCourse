@@ -2,7 +2,7 @@
 title: "COO-I-3. Metagenome assembly"
 start: false
 teaching: 0
-exercises: 40
+exercises: 60
 questions:
 - How to assemble metagenomes from sequencing reads?
 objectives:
