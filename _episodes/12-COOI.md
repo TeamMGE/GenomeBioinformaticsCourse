@@ -12,6 +12,8 @@ objectives:
 
 # Data processing
 
+## Quality report using FastQC 
+
 Start by analysing these reads using FastQC. Run the software with the option “-h” to see how it needs to be run.
 This is a good step to perform before running any software, as getting acquainted with the main requisites and options may be essential.
 ~~~
@@ -32,6 +34,8 @@ $ fastqc -h
 > {: .solution}
 {: .challenge}
 
+### Examine results
+
 Now, in order to read the results you will need to download the file to your laptop. 
 MobaXTerm may allow you to do this easily by navigating the filesystem. Other terminal users can copy the file into their local folders
 by using the secure copy protocol. But first, let's unzip our results and then make sure we have the full path to these files:
@@ -41,7 +45,7 @@ $ pwd
 ~~~
 {: .bash}
 
-Now, from a new terminal in your laptop, run the following command. Note: replace "username" by your username, 
+From a new terminal in your laptop, run the following command. Note: replace "username" by your username, 
 the first path to your "01_fastqc" folder, and the second path to a place in your local system (e.g. "~/Downloads/").
 ~~~
 $ scp -r username@gemini.science.uu.nl:/path/to/file /path/to/local/folder
@@ -70,6 +74,8 @@ Now, open the report by clicking on the HTML file and explore the statistics!
 >> 
 > {: .solution}
 {: .challenge}
+
+## Filtering out short reads 
 
 One noteworthy aspect is that there is a wide distribution of read lengths in the data. 
 To avoid problems with assemblers focused on long reads, let’s remove short reads. We can do this using the software ‘seqkit’. 
