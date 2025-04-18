@@ -22,7 +22,7 @@ To bypass these long runtimes, two different assemblers have already been run, a
 ls -l ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly
 ~~~
 
-### miniasm 
+### First assembler: miniasm 
 
 One of these assemblers, miniasm, is a relatively simple Overlap-Layout-Consensus wrapper. 
 Take a look at the resulting Fasta file. 
@@ -87,7 +87,7 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 {: .challenge}
 
 
-### flye 
+### Second assembler: flye 
 
 A more sophisticated assembler has also been run: flye. 
 You can find the results of this assembly, as well as intermediate assembly files, in the corresponding folder.
