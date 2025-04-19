@@ -130,3 +130,10 @@ done
 > {: .solution}
 {: .challenge}
 
+
+## Preliminary assessment 
+
+Until now, you obtained a sample from the environment, enriched it, and sequenced it. Using bioinformatics, we have now assessed the quality of the sequencing reads, assembled them using two different tools, binned them and analysed the quality of the resulting Metagenome-Assembled Genomes. You will continue the analysis of this dataset in COO-II. 
+
+What is your current assessment of this sample you obtained and further enriched? How many different species do you expect coexist? How diverse is this group of organisms?
+
