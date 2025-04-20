@@ -162,12 +162,44 @@ How many contigs were generated at that point? How does this compare with the nu
 ## Assembly metrics using Quast
 
 To get better metrics for these assemblies, we can use Quast. This is a software that evaluates assembly quality 
-by measuring metrics such as contig length, Nx values, read mapping, and gene annotation. 
-Find the Quast reports for the two previous assemblies in the Intermediate files, and observe: 
--	What do the Nx distributions represent, and how do they differ between these two assemblies? 
--	What percentage of reads map back to the assemblies? What percentage of reads are properly paired, and why do you think that is the case?
--	How do the GC% distributions differ, and what do you think they imply about the microbial community under study?
-Inspect also the ‘icarus viewer’ report – it will help you visualise Nx values.
+by measuring metrics such as contig length, Nx values, read mapping, and gene annotation.
+
+Like usual, explore the options available at Quast by doing:
+~~~
+quast -h
+~~~
+{: .bash}
+
+> ## Exercise: Run Quast on the obtained assemblies
+> 
+>> ## Solution
+>>
+>> `cd ~/GenomeBioinformatics/Block1/COO-I/Results/03_assembly_miniasm`
+>>
+>> `quast -o quast_miniasm --pacbio ../../Data/Course_sample_metagenome.fastq.gz miniasm/assembly_miniasm.fasta`
+>>
+>> `cd ~/GenomeBioinformatics/Block1/COO-I/Results/04_assembly_flye`
+>> 
+>> `quast -o quast_flye --pacbio ../../Data/Course_sample_metagenome.fastq.gz flye/assembly.fasta`
+>>
+> {: .solution}
+{: .challenge}
+
+Copy the Quast reports to your laptop and interpret the results. Check both the report.pdf file and the icarus viewer report (the latter will open in your browser).
+
+> ## Exercise: Interpret the Quast reports
+>
+> -	What do the Nx distributions represent, and how do they differ between these two assemblies? 
+>
+> -	What percentage of reads map back to the assemblies? What percentage of reads are properly paired, and why do you think that is the case?
+>
+> -	How do the GC% distributions differ, and what do you think they imply about the microbial community under study?
+>> ## Solution
+>>
+>> Nx plots represent the size of the shortest contig such that X% of the total assembly length is made up of contigs of that length or longer.
+>>
+>> Properly paired: 0%. Because we do not have paired-end reads -- this is not a trait of PacBio sequencing.   
+
 
 
 ## Assembly graphs using Bandage
