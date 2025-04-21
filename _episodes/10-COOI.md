@@ -30,7 +30,5 @@ You decide to take action. You sample the biofilm, and take it to your Bioinform
 - [Sequencing](https://teammge.github.io/GenomeBioinformaticsCourse/11-COOI/index.html)
 - [Read processing](https://teammge.github.io/GenomeBioinformaticsCourse/12-COOI/index.html)
 - [Assembly](https://teammge.github.io/GenomeBioinformaticsCourse/13-COOI/index.html)
-- Binning
-- Bin refinement
-- Assessment
+- [Binning](https://teammge.github.io/GenomeBioinformaticsCourse/14-COOI/index.html)
 
