@@ -60,13 +60,16 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 > Write a python script that can read sequences from a fasta file, and prints the length of each contig in a separate line.
 > Once you have done that, print that information to a file.
 >
-> You can also simply use the python script in 'data_bb3bcg20/bin/scripts/fasta_length.py'
+> You can also simply use the python script in `~/data_bb3bcg20/bin/scripts/fasta_length.py`
 >
 > However, in order to use Python 3, you will need to generate a conda environment that can run python 3. Do it by running:
 > `conda create --name python3.11 python=3.11`
 >
 > Once the environment is created, you can activate it by doing:
 > `$ conda activate python3.11`
+>
+> And you can run the python script by doing (replace "<fasta_file>" with the name of the fasta file you want to analyse):
+> `python ~/data_bb3bcg20/bin/scripts/fasta_length.py <fasta_file>`
 > 
 > Once you are done with this environment, you can go back to the previous environment by running
 > `$ conda deactivate`
