@@ -31,7 +31,7 @@ Replace "username" by your UU username. After you do this, you will need to inpu
 
 In order to access the software you will need for this course, you need to run the following command:
 ~~~
-$ course b3-b3bcg20
+$ course b-b3bcg20
 ~~~
 {: .bash}
 
