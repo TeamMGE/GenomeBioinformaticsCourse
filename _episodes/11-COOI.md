@@ -29,7 +29,7 @@ Get to your work environment and get prepared for this COO. Repeat this process 
 $ cd GenomeBioinformatics/
 $ mkdir -p Block1/COO-I
 $ cd Block1/COO-I
-$ ln -s ~/data_bb3bcg20/data_bb3bcg20/Block1/COOI/Data .
+$ ln -s ~/data_bb3bcg20/Block1/COOI/Data .
 $ ls -l Data/
 $ mkdir Results
 $ cd Results
