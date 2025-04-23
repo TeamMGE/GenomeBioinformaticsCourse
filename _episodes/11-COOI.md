@@ -42,7 +42,7 @@ These commands have generated a basic folder structure for Block1 and COO-I, and
 
 The first thing you always have to do with your reads is check their overall quality. This is important because it can help you decide what kind of pre-treatment you have to do. For example, in case of long-read sequencing it sometimes happens that the sequence quality at the end of the reads gets a lot worse. In this case you could decide to trim these low-quality parts of your reads. Another option is that your sequencing provider did not remove the adapter sequences yet, in that case you still need to remove these.
 
-To save space, the file is compressed, but you can read it using the command ‘zless’. 
+To save space, the file is compressed, but you can read it using the command ‘zless’. To quit 'less', type 'q'.
 ~~~
 $ zless ../Data/Course_sample_metagenome.fastq.gz
 ~~~
