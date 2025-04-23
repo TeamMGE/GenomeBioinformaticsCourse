@@ -20,5 +20,5 @@ This lesson uses the [Software Carpentry]({{ site.swc_site }}) and [Data Carpent
 > 9.  Wednesday (May 21th), 11:00 - 15:00: COOIII (Michael)
 {: .checklist}
 
-> A [cheat sheet](files/cheatsheet.pdf) of the used Linux commands is available.
+> A [cheat sheet](fig/commands-cheat-sheet.pdf) of the used Linux commands is available.
 {: .prereq}
