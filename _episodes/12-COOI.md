@@ -14,7 +14,14 @@ objectives:
 
 ## Quality report using FastQC 
 
-Start by analysing these reads using FastQC. Run the software with the option “-h” to see how it needs to be run.
+Start by analysing these reads using FastQC. To provide FastQC with a folder where to store the results, first generate the following folder in your results directory:
+~~~
+$ cd ~/GenomeBioinformatics/Block1/COO-I/Results
+$ mkdir 01_fastqc
+~~~
+{: .bash}
+
+Run the software with the option “-h” to see how it needs to be run.
 This is a good step to perform before running any software, as getting acquainted with the main requisites and options may be essential.
 ~~~
 $ fastqc -h
