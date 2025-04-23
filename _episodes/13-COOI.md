@@ -68,8 +68,8 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/miniasm/ .
 > Once the environment is created, you can activate it by doing:
 > `$ conda activate python3.11`
 >
-> And you can run the python script by doing (replace "<fasta_file>" with the name of the fasta file you want to analyse):
-> `python ~/data_bb3bcg20/bin/scripts/fasta_length.py <fasta_file>`
+> And you can run the python script by doing (replace "fasta_file" with the name of the fasta file you want to analyse):
+> `python ~/data_bb3bcg20/bin/scripts/fasta_length.py fasta_file`
 > 
 > Once you are done with this environment, you can go back to the previous environment by running
 > `$ conda deactivate`
