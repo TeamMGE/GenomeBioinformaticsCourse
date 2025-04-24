@@ -4,9 +4,10 @@ start: false
 teaching: 0
 exercises: 30
 questions:
-- How to obtain metagenomic sequencing data?
+- How to annotate genomes?
 objectives:
-- Become familiar with sequencing technology and sequencing reads format
+- Perform genome annotation
+- Interpret common genome annotation file outputs and formats
 ---
 
 ## Genome annotation
