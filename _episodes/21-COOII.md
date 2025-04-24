@@ -9,6 +9,8 @@ objectives:
 - Become familiar with sequencing technology and sequencing reads format
 ---
 
+## Genome annotation
+
 Your genomes are, at the moment, simple Fasta nucleotide sequences. 
 A first step now is to infer the genes they encode. Let’s roll up our sleeves and get going.
 
@@ -22,6 +24,8 @@ cd 01_annotation
 ln -s ~/GenomeBioinformatics/Block1/COO-II/Data/Metawrap_BinRefinement_c50_x5 .
 ~~~
 {: .bash}
+
+### Detect genes using Prokka
 
 You need to annotate all your bins. We will start by running Prokka, a fast, all-purpose genome annotation tool 
 that identifies protein-coding genes, as well as genes for rRNA, tRNA and other interesting sequences such as CRISPR arrays. 
@@ -46,7 +50,6 @@ name=${filename%.fa};
 prokka_ed -o prokka_$name --prefix $name --locustag $name --kingdom Bacteria --metagenome --cpus 2 $f
 ~~~
 {: .bash}
-
 
 Run this on each one of the five bins (ca. 2-3 min each), and take a look at the log that is printed to screen. 
 It will show you the different features that are being annotated for each bin (tRNAs, rRNAs, CRISPR repeats, 
