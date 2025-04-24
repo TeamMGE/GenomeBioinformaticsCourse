@@ -275,7 +275,6 @@ tool iTOL (https://itol.embl.de/):
 -	With iTOL: upload your tree, and change font size, (“Label options”). Root using “Midpoint rooting” (bottom of the “Advanced” tab).
 
 > ## Exercise: Analyse the tree
->> 
 > - Does your tree make sense, in general?
 > - Are sequences from the same taxonomic group generally clustered?
 > - Is the root in the correct place? Can you identify which place is correct, and reroot the tree there?
@@ -283,7 +282,6 @@ tool iTOL (https://itol.embl.de/):
 > - What species do you think your 16S rRNA sequences represent?
 > - Can you classify both of your archaeal bins?
 >   
-> {: .solution}
 {: .challenge}
 
 
