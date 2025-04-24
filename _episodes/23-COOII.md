@@ -35,13 +35,13 @@ $ gtt-get-accessions-from-GTDB --GTDB-representatives-only -t Archaea
 {: .bash}
 
 > ## Exercise: Explore the available data
->>
->> - How many genomes were found?
->> - What kind of information was retrieved?
->> - What variation of assembly quality, environmental sources and taxonomy exists?
->>
->>   Note: use the script '~/data_bb3bcg20/bin/scripts/coltab.sh' to visualise the table
->>   
+>
+> - How many genomes were found?
+> - What kind of information was retrieved?
+> - What variation of assembly quality, environmental sources and taxonomy exists?
+>
+>   Note: use the script '~/data_bb3bcg20/bin/scripts/coltab.sh' to visualise the table
+>  
 >> ## Solution
 >>
 >> If GToTree takes too long to download the required data, obtain the file from the provided Intermediate files.
@@ -114,14 +114,14 @@ Finally, you can visualise the obtained tree as you did for the 16S rRNA tree ab
  
 
 > ## Exercise: Visualise the tree
->> - Does this tree look better than the 16S rRNA tree?
->> - Can you say something more about Bin3 compared to the 16S rRNA tree? This time, the tree contains branch support values. You can show 
+> - Does this tree look better than the 16S rRNA tree?
+> - Can you say something more about Bin3 compared to the 16S rRNA tree? This time, the tree contains branch support values. You can show 
 them in Figtree by clicking on “branch labels” and then displaying the value you imported when opening the tree. In iTOL, you can click 
 on “Advanced”, then “Display” next to “Bootstraps/metadata”, and finally in “Text”. Change font sizes if necessary.
->> - Are the positions of Bin 3 and Bin 5 well supported?
->> - Is the identity of Bin 5 consistent with the previous results?
->> - What can you say about the identity of Bin 3?
->>   
+> - Are the positions of Bin 3 and Bin 5 well supported?
+> - Is the identity of Bin 5 consistent with the previous results?
+> - What can you say about the identity of Bin 3?
+>   
 >> ## Solution
 >> 
 > {: .solution}
