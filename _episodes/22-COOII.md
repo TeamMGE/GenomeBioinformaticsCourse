@@ -205,26 +205,47 @@ Again, make sure to replace “alignment” and “reduced_alignment” with you
 >>
 >> `perl ~/data_bb3bcg20/bin/scripts/remove_gappy_seqs.pl 0.5  16S_rrna_bins_silva.frn.mafft.trimal05 > 16S_rrna_bins_silva.frn.mafft.trimal05.over50p`
 >>
+>>
 >>  Removing sequences under 0.5 of Alignment length: 1451 (0.5 = 725.5)
+>>
 >>   719 sites. >AOLX01000033.1079.1801_Archaea;Halobacterota;Halobacteria;Halobacterales;Halomicrobiaceae;Haloarcula;Haloarcula_argentinensis_DSM_12282
+>>
 >>   540 sites. >DAMT01000008.79347.79893_Archaea;Thermoplasmatota;Thermoplasmata;Marine_Group_II;Euryarchaeota_archaeon_UBA68
+>>
 >>   347 sites. >LCWM02000049.5124.6170_Archaea;Crenarchaeota;Thermoprotei;Thermoproteales;Thermoproteaceae;Thermoproteus;Thermoproteus_sp._CP80
+>>
 >>   363 sites. >LQMQ01000003.1.378_Archaea;Hadarchaeota;Hadarchaeia;Hadarchaeales;Hadesarchaea_archaeon_YNP_45
+>>
 >>   328 sites. >MDVS01000011.41821.42178_Archaea;Crenarchaeota;Bathyarchaeia;Candidatus_Heimdallarchaeota_archaeon_LC_3
+>>
 >>   316 sites. >MGWD01000040.73779.74105_Archaea;Thermoplasmatota;Thermoplasmata;Methanomassiliicoccales;uncultured;Euryarchaeota_archaeon_RBG_19FT_COMBO_69_17
+>>
 >>   274 sites. >MNDT01000004.15584.15890_Archaea;Crenarchaeota;Bathyarchaeia;archaeon_13_2_20CM_2_53_6
+>>
 >>   251 sites. >NJDP01000097.1.769_Archaea;Crenarchaeota;Thermoprotei;Desulfurococcales;Acidilobaceae;Thermodiscus;Desulfurococcales_archaeon_ex4484_58
+>>
 >>   653 sites. >NJEF01000015.11187.12008_Archaea;Crenarchaeota;Thermoprotei;Desulfurococcales;Ignisphaeraceae;uncultured;Desulfurococcales_archaeon_ex4484_204
+>>
 >>   503 sites. >NZCB01000001.1.514_Archaea;Thermoplasmatota;Thermoplasmata;uncultured;Candidatus_Pacearchaeota_archaeon
+>>
 >>   273 sites. >NZER01000159.1.333_Archaea;Nanoarchaeota;Nanoarchaeia;Woesearchaeales;Candidatus_Pacearchaeota_archaeon
+>>
 >>   465 sites. >NZER01000214.1.485_Archaea;Nanoarchaeota;Nanoarchaeia;Woesearchaeales;SCGC_AAA011-D5;Candidatus_Pacearchaeota_archaeon
+>>
 >>   620 sites. >PAWD01000005.37468.38108_Archaea;Crenarchaeota;Nitrososphaeria;Nitrosopumilales;Nitrosopumilaceae;Thaumarchaeota_archaeon
+>>
 >>   334 sites. >PBOE01000046.6371.6706_Archaea;Thermoplasmatota;Thermoplasmata;Marine_Group_II;Euryarchaeota_archaeon
+>>
 >>   374 sites. >PCCI01000037.1.385_Archaea;Thermoplasmatota;Thermoplasmata;Marine_Group_III;Euryarchaeota_archaeon
+>>
 >>   372 sites. >PXRK01000025.1.421_Archaea;Halobacterota;Halobacteria;Halobacterales;Haloferacaceae;Halovenus;Halobacteriales_archaeon_QS_4_66_20
+>>
 >>   266 sites. >PXRX01000041.1.319_Archaea;Halobacterota;Halobacteria;Halobacterales;uncultured;Halobacteriales_archaeon_QS_8_69_26
+>>
 >>   424 sites. >QEFD01000059.1.459_Archaea;Crenarchaeota;Thermoprotei;Sulfolobales;Sulfolobaceae;Acidianus;Acidianus_hospitalis
+>>
 >> Removed 18 sequences
+>>
 >>
 >> Based on the tool's output, 18 sequences were removed, which were all formed by less than 725 characters (half of the total alignment length).
 >> You visualise the difference with the previous alignment by using alan_dt.
