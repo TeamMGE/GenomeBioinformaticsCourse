@@ -75,10 +75,10 @@ $ cp ~/data_bb3bcg20/Block1/COOII/Intermediate_files/16S_phylogeny/silva.frn .
 {: .bash}
 
 > ## Exercise: Analyse the SILVA sequence data
->>
->> - How many sequences are included?
->> - Do they belong to a diverse group of Archaea?
->>  
+>
+> - How many sequences are included?
+> - Do they belong to a diverse group of Archaea?
+>
 >> ## Solution
 >>
 >> `$ grep -c ">" silva.frn`
@@ -148,10 +148,10 @@ Visualise the alignment by using the keyboard arrows (move right-left to see mor
 sequences).
 
 > ## Exercise: Interpret the alignment
->>
->> - Do the sequences look well aligned?
->> - Are there large sections “missing” for different sequences? Put another way: are there many gaps?
->> 
+>
+> - Do the sequences look well aligned?
+> - Are there large sections “missing” for different sequences? Put another way: are there many gaps?
+> 
 >> ## Solution
 >>
 >> `$ mafft 16S_rrna_bins_silva.frn > 16S_rrna_bins_silva.frn.mafft`
@@ -176,7 +176,7 @@ option “-h” to find out how to use it, and then run it with your alignment t
 option “-gt 0.5”). Visualise the result using alan_dt to make sure the alignment looks more complete.
 
 > ## Exercise: Trim sites containing over 50% gaps
->>
+>
 >> ## Solution
 >>
 >> `trimal -in 16S_rrna_bins_silva.frn.mafft -out 16S_rrna_bins_silva.frn.mafft.trimal05 -gt 0.5`
@@ -197,10 +197,10 @@ perl ~/data_bb3bcg20/bin/scripts/remove_gappy_seqs.pl 0.5 alignment > reduced_al
 Again, make sure to replace “alignment” and “reduced_alignment” with your own file names. 
 
 > ## Exercise: Remove sequences formed mostly by gaps
->>
->> - How many sequences were removed?
->> - Were they correctly removed?
->>
+>
+> - How many sequences were removed?
+> - Were they correctly removed?
+>
 >> ## Solution
 >>
 >> `perl ~/data_bb3bcg20/bin/scripts/remove_gappy_seqs.pl 0.5  16S_rrna_bins_silva.frn.mafft.trimal05 > 16S_rrna_bins_silva.frn.mafft.trimal05.over50p`
@@ -276,15 +276,13 @@ tool iTOL (https://itol.embl.de/):
 
 > ## Exercise: Analyse the tree
 >> 
->> - Does your tree make sense, in general?
->> - Are sequences from the same taxonomic group generally clustered?
->> - Is the root in the correct place? Can you identify which place is correct, and reroot the tree there?
->> - Do all sequences from the same genome cluster together?
->> - What species do you think your 16S rRNA sequences represent?
->> - Can you classify both of your archaeal bins?
->>   
->> ## Solution
->>
+> - Does your tree make sense, in general?
+> - Are sequences from the same taxonomic group generally clustered?
+> - Is the root in the correct place? Can you identify which place is correct, and reroot the tree there?
+> - Do all sequences from the same genome cluster together?
+> - What species do you think your 16S rRNA sequences represent?
+> - Can you classify both of your archaeal bins?
+>   
 > {: .solution}
 {: .challenge}
 
