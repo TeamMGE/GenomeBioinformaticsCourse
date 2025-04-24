@@ -103,10 +103,6 @@ list surprising?
 > Find more information about this result by looking at the “SCG_hit_counts.tsv” file. How many genomes are flagged 
 as having relatively high redundancy values? What may that mean, in the context of metagenomics?
 > 
->> ## Solution
->>
->> 
-> {: .solution}
 {: .challenge}
 
 
@@ -122,9 +118,6 @@ on “Advanced”, then “Display” next to “Bootstraps/metadata”, and fin
 > - Is the identity of Bin 5 consistent with the previous results?
 > - What can you say about the identity of Bin 3?
 >   
->> ## Solution
->> 
-> {: .solution}
 {: .challenge}
 
 ## Conclusions
