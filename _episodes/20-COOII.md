@@ -6,9 +6,10 @@ exercises: 0
 questions:
 - How can we establish the identity of novel Metagenome-Assembled Genomes?
 objectives:
-- 
-keypoints:
-- 
+- Learning how to use phylogenetics to taxonomically classify organisms
+- Learning how to annotate genomes, and extract key genes
+- Interpreting species trees in the context of genome-wide gene marker selection
+
 ---
 
 #  Making sense out of the recovered genomes
