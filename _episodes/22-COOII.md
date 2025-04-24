@@ -190,7 +190,7 @@ i.e. mostly represented by gaps. In such cases, phylogenetic inference software 
 the relatedness between sequences that do not have many homologous sites. To remove sequences (rows) formed by 50% gaps or more, 
 use another provided script:
 ~~~
-perl ~/scripts/remove_gappy_seqs.pl 0.5 alignment > reduced_alignment
+perl ~/data_bb3bcg20/bin/scripts/remove_gappy_seqs.pl 0.5 alignment > reduced_alignment
 ~~~
 {: .bash}
 
