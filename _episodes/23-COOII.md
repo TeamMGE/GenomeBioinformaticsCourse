@@ -62,21 +62,21 @@ score higher than 90% and a contamination score lower than 5%. These values are 
 ~~~
 $ awk -F '\t' '$10>90 && $11<5' GTDB-Archaea-domain-GTDB-rep-metadata.tsv > GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5
 ~~~
-{. bash}
+{: .bash}
 
 How many genomes are left? To use only about a hundred for phylogenomic analyses, we can just select one genome per taxonomic order (column 5):
 ~~~
 $ cut -f5 GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5 | sort -u > orders.list
 $ cat orders.list | while read order; do grep $order GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5 | head -n 1 ; done > GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5.1perorder
 ~~~
-{. bash}
+{: .bash}
 
 Now we only need to extract the accession numbers and we will be able to run the pipeline:
 ~~~
 $ cut -f1 GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5.1perorder | sed 's/^[A-Z][A-Z]_//' | sort -u > GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5.1perorder.accessions
 $ ln -s GTDB-Archaea-domain-GTDB-rep-metadata.tsv.comp90_cont5.1perorder.accessions GTDB_genomes.list
 ~~~
-{. bash}
+{: .bash}
 
 
 ## Reconstruct a phylogenomic tree
@@ -93,20 +93,39 @@ The second will run the entire pipeline. GToTree will download the GTDB genomes,
 Coding DNA sequences. Next, it will use all the inferred amino acid sequences (from the published genomes and your own bins) 
 to find a curated set of 122 vertically-evolving archaeal genes, filter out genomes with too few marker genes, align and trim 
 each gene, concatenate the resulting alignments, and use the obtained concatenated alignment (or supermatrix) to reconstruct 
-a phylogenomic tree. The whole thing!
+a phylogenomic tree. The whole thing! After about 10 minutes, your run will be ready. Check out the results! 
 
-After about 10 minutes, your run will be ready. Check out the results! 
 
-Use the “coltab” script to look at the genomes that were removed because they contained too few SCG (“single-copy genes”): is this 
-list surprising? Find more information about this result by looking at the “SCG_hit_counts.tsv” file. How many genomes are flagged 
+> ## Exercise: Analyse the run
+> Use the “coltab” script to look at the genomes that were removed because they contained too few SCG (“single-copy genes”): is this 
+list surprising?
+>
+> Find more information about this result by looking at the “SCG_hit_counts.tsv” file. How many genomes are flagged 
 as having relatively high redundancy values? What may that mean, in the context of metagenomics?
+> 
+>> ## Solution
+>>
+>> 
+> {: .solution}
+{: .challenge}
 
-Finally, you can visualise the obtained tree as you did for the 16S rRNA tree above. Does this tree look better than the 16S rRNA tree? 
-Can you say something more about Bin3 compared to the 16S rRNA tree? This time, the tree contains branch support values. You can show 
+
+Finally, you can visualise the obtained tree as you did for the 16S rRNA tree above. 
+ 
+
+> ## Exercise: Visualise the tree
+>> - Does this tree look better than the 16S rRNA tree?
+>> - Can you say something more about Bin3 compared to the 16S rRNA tree? This time, the tree contains branch support values. You can show 
 them in Figtree by clicking on “branch labels” and then displaying the value you imported when opening the tree. In iTOL, you can click 
-on “Advanced”, then “Display” next to “Bootstraps/metadata”, and finally in “Text”. Change font sizes if necessary. Are the positions of 
-Bin 3 and Bin 5 well supported? Is the identity of Bin 5 consistent with the previous results? What can you say about the identity of Bin 3?
-
+on “Advanced”, then “Display” next to “Bootstraps/metadata”, and finally in “Text”. Change font sizes if necessary.
+>> - Are the positions of Bin 3 and Bin 5 well supported?
+>> - Is the identity of Bin 5 consistent with the previous results?
+>> - What can you say about the identity of Bin 3?
+>>   
+>> ## Solution
+>> 
+> {: .solution}
+{: .challenge}
 
 ## Conclusions
 
