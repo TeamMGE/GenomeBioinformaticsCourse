@@ -4,10 +4,11 @@ start: false
 teaching: 0
 exercises: 75
 questions:
-- How to annotate genomes?
+- How to identify the taxonomy of an organism based on a common phylogenetic marker?
 objectives:
-- Perform genome annotation
-- Interpret common genome annotation file outputs and formats
+- Extract genes based on annotation
+- Perform a single-gene phylogeny
+- Interpret results at every step
 ---
 
 ## Extracting 16S rRNA sequences
