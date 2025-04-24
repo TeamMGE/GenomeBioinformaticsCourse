@@ -244,7 +244,7 @@ iqtree2 -s $f -m GTR+G4 -pre $f.GTRG4
 ~~~
 {. bash}
 
-Note that this step can again take a few minutes. Finally, we need to visualise this tree (file with suffix “.treefile”). 
+Note that this step can again take a few (ca. 5-10) minutes. Finally, we need to visualise this tree (file with suffix “.treefile”). 
 To do this, use Figtree, a common phylogeny visualisation software. Download it from https://github.com/rambaut/figtree/releases. 
 Download the ”.zip” file for Windows, or the ”.dmg” file for Mac. Decompress and open it. If it does not work, you can use the online 
 tool iTOL (https://itol.embl.de/):
@@ -255,11 +255,13 @@ tool iTOL (https://itol.embl.de/):
 
 > ## Exercise: Analyse the tree
 >> 
->> Does your tree make sense, in general?
->> Are sequences from the same taxonomic group generally clustered?
->> Is the root in the correct place? Do all sequences from the same genome cluster together?
->> What species do you think your 16S rRNA sequences represent?
->> Can you classify both of your archaeal bins? 
+>> - Does your tree make sense, in general?
+>> - Are sequences from the same taxonomic group generally clustered?
+>> - Is the root in the correct place? Can you identify which place is correct, and reroot the tree there?
+>> - Do all sequences from the same genome cluster together?
+>> - What species do you think your 16S rRNA sequences represent?
+>> - Can you classify both of your archaeal bins?
+>>   
 >> ## Solution
 >>
 > {: .solution}
