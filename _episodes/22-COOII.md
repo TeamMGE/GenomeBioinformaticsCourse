@@ -248,7 +248,7 @@ Again, make sure to replace “alignment” and “reduced_alignment” with you
 >>
 >>
 >> Based on the tool's output, 18 sequences were removed, which were all formed by less than 725 characters (half of the total alignment length).
->> You visualise the difference with the previous alignment by using alan_dt.
+>> You can visualise the difference with the previous alignment by using alan_dt.
 > {: .solution}
 {: .challenge}
 
@@ -263,7 +263,7 @@ regions that are heavily conserved, and others that evolve faster:
 f=final_alignment
 iqtree2 -s $f -m GTR+G4 -pre $f.GTRG4
 ~~~
-{. bash}
+{: .bash}
 
 Note that this step can again take a few (ca. 5-10) minutes. Finally, we need to visualise this tree (file with suffix “.treefile”). 
 To do this, use Figtree, a common phylogeny visualisation software. Download it from https://github.com/rambaut/figtree/releases. 
