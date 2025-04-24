@@ -95,6 +95,10 @@ Take a peek at each one of these files, noticing their formats.
 >> included in the given file, and 'grep -v' provides the negative result: the lines not matching those strings); and finally
 >> (4) finding the full names of those genes again. The obtained results should all correspond to non-protein-coding genes.
 >> 
+>> To look for CRISPR arrays, read the 'gbk' files with 'less', and search within them by typing `/` followed by whatever pattern
+>> you are interested in. For example: `/CRISPR` will look for the string 'CRISPR'. If there are multiple occurrances, you can
+>> move to the next one by typing `n`. Once you are done, as always, quit with `q`. 
+>> 
 > {: .solution}
 {: .challenge}
 
