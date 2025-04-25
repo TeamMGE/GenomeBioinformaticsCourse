@@ -22,7 +22,7 @@ mkdir COO-II
 cd COO-II
 mkdir 01_annotation
 cd 01_annotation
-ln -s ~/GenomeBioinformatics/Block1/COO-II/Data/Metawrap_BinRefinement_c50_x5 .
+ln -s ~/GenomeBioinformatics/Block1/COO-II/01_annotation/Metawrap_BinRefinement_c50_x5 .
 ~~~
 {: .bash}
 
