@@ -1,5 +1,5 @@
 ---
-title: "COO-III-4. Gene content associated with niche adaptation"
+title: "COO-III-3. Gene content associated with niche adaptation"
 start: false
 teaching: 0
 exercises: 70
