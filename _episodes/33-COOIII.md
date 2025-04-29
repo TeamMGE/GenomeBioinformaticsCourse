@@ -6,7 +6,8 @@ exercises: 70
 questions:
 - How do genomes evolve under different environmental adaptations?
 objectives:
-- Search for genes that are associated with life under different temperatures 
+- Search for genes associated with life under different temperatures
+- Search for additional features such as CRISPR elements
 ---
 
 
