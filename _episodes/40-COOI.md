@@ -2,6 +2,11 @@
 title: "Block 2 - COOI"
 start: true
 teaching: 0
+
+
+
+
+
 exercises: 20
 questions:
 - How can you obtain and interpret genome assembly information from NCBI?
