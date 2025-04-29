@@ -48,7 +48,7 @@ Look at the output, using (for example e.g. more tmp.out or less tmp.out or via 
 >>      SPOM003505                                                          253     5e-77 
 >>      SCER000727                                                          202     1e-58 
 >>      SPOM001690                                                          166     2e-45
->>So, HSAP 4, DMEL, 1, CELE 2, ATHA 1
+>>\So, HSAP 4, DMEL, 1, CELE 2, ATHA 1
 > {: .solution}
 {: .challenge}
 
