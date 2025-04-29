@@ -71,7 +71,9 @@ We want to create a fasta file in order to make a tree of the hits in plants, in
 
 
     8.  Okay now we get to the interpretation. Look at the tree and reroot it to make some kind of biological sense. You can reroot trees by clicking on a branch -> Tree structure -> re-root the tree here. Sketch the resulting tree on paper or copy a picture of the resulting tree into a program which allows to draw on top of it (e.g. powerpoint, paint). Annotate the tree in terms of duplications and speciations. How many duplications does this tree imply? 
+
 Rooted on plants because officially fungi and animals are closer to eachother than either is to plants: So I get this
+[!answerX](../fig/answer_pfkfp.jpg)
 
     9. Check the function of the different human genes, and the reconstruction according to literature from the following article https://bmcbiol.biomedcentral.com/articles/10.1186/1741-7007-4-16 (our proteins are in the left most panel of figure 2). What type of functional differentiation have the genes undergone.
 Functional differentiation is change in tissue where these paralogous enzymes are predominantly expressed i.e. platelet, liver , muscle, brain. So no change in enzymatic/molecular function. Common with inparalogs. 
