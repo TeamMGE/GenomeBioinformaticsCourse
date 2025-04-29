@@ -12,7 +12,7 @@ objectives:
 
 ---
 
-#  Scaling up
+#  Studying adaptation
 
 In your last working day, you performed a series of phylogenetic analyses that allowed you to classify the genomes you found. 
 One of them had a somewhat unclear affiliation based on the 16S rRNA gene, but a phylogenomic analysis indicated this was a
