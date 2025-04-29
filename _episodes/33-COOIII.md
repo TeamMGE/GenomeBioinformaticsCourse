@@ -1,8 +1,8 @@
 ---
-title: "COO-III-3. Explore genome architectural features related to niche adaptation"
+title: "COO-III-3. Genome architectural features related to niche adaptation"
 start: false
 teaching: 0
-exercises: 90
+exercises: 30
 questions:
 - How do genomes evolve under different environemntal adaptations?
 objectives:
@@ -104,13 +104,4 @@ ln -s col_prokka/prokka_Col_02*/*gff .
 > {: .solution}
 {: .challenge}
 
-## Gene families related to heat shock, DNA repair and stress
 
-Thermophiles need to survive harsh conditions that can deteriorate their DNA and proteins, or affect the activity of key biological
-processes. Therefore, they often acquire key genes via horizontal gene transfer.
-
-
-## CRISPRs
-
-
-## Composition
