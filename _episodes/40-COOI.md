@@ -20,7 +20,7 @@ In this exercise, our goal is to infer the evolutionary history of a human prote
     
     
     
-Go to  [http://www.uniprot.org/uniprot/Q16877](/guides/content/editing-an-existing-page#modifying-front-matter) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
+Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
 
 At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see https://en.wikipedia.org/wiki/FASTA_format if you want to know what fasta header is / means)
 
