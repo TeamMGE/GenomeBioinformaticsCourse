@@ -22,13 +22,13 @@ In this exercise, our goal is to infer the evolutionary history of a human prote
     
 Go to  [http://www.uniprot.org/uniprot/Q16877](/guides/content/editing-an-existing-page#modifying-front-matter) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
 
-    2. At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see https://en.wikipedia.org/wiki/FASTA_format if you want to know what fasta header is / means)
+At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see https://en.wikipedia.org/wiki/FASTA_format if you want to know what fasta header is / means)
 
-    3. Open a text editor on your local PC (e.g. textedit, notepad++) and copy and paste the protein sequence of Q16877 in your text file. Save the protein sequence as a text file named “query.txt”. Upload the text file to your cocalc folder where we are doing these exercises.
+    3. Open a text editor on your local PC (e.g. textedit, notepad++) and copy and paste the protein sequence of Q16877 in your text file. Save the protein sequence as a text file named “query.txt”. scp the text file to your cocalc folder where we are doing these exercises.
 
-    4. Check how your file looks on cocalc by typing e.g. more query.txt, or less query.txt.
+Check how your file looks on cocalc by typing e.g. `more query.txt`, or `less query.txt`.
 
-    5. Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via “blastp -query query.txt -db ~/Data/ToData/Block2/COOI/proteomes1.fa > tmp.out”
+Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How much hits E-value < 1e-10 do you see in human, plant, worm and fly?
 
 
