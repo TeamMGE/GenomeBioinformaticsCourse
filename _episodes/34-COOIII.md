@@ -18,8 +18,8 @@ analyse the inferred proteome composition of these genomes and characterise thei
 
 ~~~
 cd ~/GenomeBioinformatics/Block1/COO-III
-mkdir 08_composition
-cd 08_composition
+mkdir 09_composition
+cd 09_composition
 ln -s ../../01_genomeData/bin.3/*faa .
 ln -s ../../01_genomeData/heim/prokka*/*faa .
 rename GCA heim_GCA GCA*
