@@ -31,28 +31,29 @@ Check how your file looks on cocalc by typing e.g. `more query.txt`, or `less qu
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How much hits E-value < 1e-10 do you see in human, plant, worm and fly?
 
+>> ## Solution
+>>      HSAP037297                                                          979     0.0   
+>>      HSAP082045                                                          743     0.0   
+>>      HSAP043809                                                          671     0.0   
+>>      HSAP095035                                                          667     0.0   
+>>      DMEL018546                                                          529     0.0   
+>>      CELE028867                                                          477     3e-166
+>>      CELE024628                                                          437     2e-150
+>>      SCER003727                                                          406     2e-138
+>>      ATHA005880                                                          345     1e-110
+>>      SPOM004734                                                          304     4e-99 
+>>      SCER001206                                                          298     3e-92 
+>>      SPOM002399                                                          287     3e-89 
+>>      SPOM003505                                                          253     5e-77 
+>>      SCER000727                                                          202     1e-58 
+>>      SPOM001690                                                          166     2e-45
+>>So, HSAP 4, DMEL, 1, CELE 2, ATHA 1
 
-      HSAP037297                                                          979     0.0   
-      HSAP082045                                                          743     0.0   
-      HSAP043809                                                          671     0.0   
-      HSAP095035                                                          667     0.0   
-      DMEL018546                                                          529     0.0   
-      CELE028867                                                          477     3e-166
-      CELE024628                                                          437     2e-150
-      SCER003727                                                          406     2e-138
-      ATHA005880                                                          345     1e-110
-      SPOM004734                                                          304     4e-99 
-      SCER001206                                                          298     3e-92 
-      SPOM002399                                                          287     3e-89 
-      SPOM003505                                                          253     5e-77 
-      SCER000727                                                          202     1e-58 
-      SPOM001690                                                          166     2e-45
-So, HSAP 4, DMEL, 1, CELE 2, ATHA 1
-  
-    7. Still looking at the file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
+Still looking at the file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
 
-> DMEL018546
-Length=716
+>> ## solution
+>>`> DMEL018546`
+>> `Length=716`
 
  Score = 529 bits (1363),  Expect = 0.0, Method: Compositional matrix adjust.
  Identities = 258/456 (57%), Positives = 329/456 (72%), Gaps = 5/456 (1%)
