@@ -1,7 +1,7 @@
 ---
 title: "Block 2 - COOI: Gene tree intepretation: a metabolic enzyme"
 start: true
-teaching: 11:00
+teaching: 0:00
 exercises: 30
 questions:
 - How is my human gene related to genes in other organisms and what does this tell me about gene duplication 
@@ -11,3 +11,6 @@ objectives:
 keypoints:
 - Orthology can be a many to many relation 
 ---
+
+
+
