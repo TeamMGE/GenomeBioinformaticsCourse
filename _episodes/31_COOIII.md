@@ -130,6 +130,7 @@ for f in pangui/prokka_*/*fna; do
 grep "temperature_optimum" heim_genomespot/*tsv | cut -f2 > heim_genomespot/OGT.list
 grep "temperature_optimum" pangui_genomespot/*tsv | cut -f2 > pangui_genomespot/OGT.list
 
+python2.7
 ~~~
 {: .bash}
 
