@@ -25,4 +25,6 @@ In order to better understand how this group may have adapted to both mesophilic
 to partner up and work on this together. 
 
 
+
+
 ![Intro1](../fig/Block1_COO-III_Intro.png)
