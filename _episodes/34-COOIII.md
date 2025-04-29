@@ -6,7 +6,7 @@ exercises: 30
 questions:
 - How do genomes evolve under different environmental adaptations?
 objectives:
-- Evaluate adaptation to high temperatures by evaluating protein composition 
+- Explore protein composition adaptation to high temperatures 
 ---
 
 
