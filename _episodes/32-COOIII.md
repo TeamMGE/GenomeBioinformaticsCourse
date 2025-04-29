@@ -1,8 +1,8 @@
 ---
-title: "COO-III-3. Genome architectural features related to niche adaptation"
+title: "COO-III-2. Genome architectural features related to niche adaptation"
 start: false
 teaching: 0
-exercises: 30
+exercises: 45
 questions:
 - How do genomes evolve under different environemntal adaptations?
 objectives:
@@ -61,6 +61,7 @@ calculate gneome density in our genome set:
 ~~~
 cd ~/GenomeBioinformatics/Block1/COO-III/
 mkdir 04_genomeDensity
+cd 04_genomeDensity
 ln -s ../01_genomeData/heim/prokka_GCA_0*/*gff .
 rename GCA_ heim_GCA_ GCA*
 ln -s ../01_genomeData/pangui/prokka_GCA_0*/*gff .
@@ -100,6 +101,37 @@ ln -s col_prokka/prokka_Col_02*/*gff .
 >> 
 >> Here, the values are much less distinct than in our previous genome size analysis, but we can still observe a trend by which
 >> organisms with higher optimal growth temperatures have slightly higher genome densities.
+>> 
+> {: .solution}
+{: .challenge}
+
+
+## GC content
+
+GC content also tends to increase with optimal growth temperature. Is this the case for our genomes?
+
+~~~
+cd ~/GenomeBioinformatics/Block1/COO-III/
+mkdir 05_GCcontent
+cd 05_GCcontent
+ln -s ../03_genomeSize/*fna .
+~~~
+{: .bash}
+
+
+> ## Exercise: How has GC content evolved?
+>
+> Use the quick tool '~/data_bb3bcg20/bin/scripts/gc_content.sh' to obtain the values we want.
+>
+>> ## Solution
+>>
+>>
+>> `for group in bin.3 Col heim pangui; do for f in $group*fna; do ~/data_bb3bcg20/bin/scripts/gc_content.sh $f; done > $group.gc; done`
+>>
+>> Now we can summarise these values:
+>>
+>> `for f in *.gc; do echo $f; perl ~/data_bb3bcg20/bin/scripts/stats.pl $f ; echo; done`
+>> 
 >> 
 > {: .solution}
 {: .challenge}
