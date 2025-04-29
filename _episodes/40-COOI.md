@@ -30,7 +30,8 @@ Check how your file looks on cocalc by typing e.g. `more query.txt`, or `less qu
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How much hits E-value < 1e-10 do you see in human, plant, worm and fly?
-
+> ## Exercise: inspecting the blast output 
+>
 >> ## Solution
 >>      HSAP037297                                                          979     0.0   
 >>      HSAP082045                                                          743     0.0   
@@ -48,6 +49,8 @@ Look at the output, using (for example e.g. more tmp.out or less tmp.out or via 
 >>      SCER000727                                                          202     1e-58 
 >>      SPOM001690                                                          166     2e-45
 >>So, HSAP 4, DMEL, 1, CELE 2, ATHA 1
+> {: .solution}
+{: .challenge}
 
 Still looking at the file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
 
