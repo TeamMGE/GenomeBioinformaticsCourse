@@ -1,5 +1,5 @@
 ---
-title: "COO-III-5. Genome composition and optimal growth temperature"
+title: "COO-III-4. Genome composition and optimal growth temperature"
 start: false
 teaching: 0
 exercises: 30
