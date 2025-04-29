@@ -20,8 +20,8 @@ As usually, let's first get our files ready:
 
 ~~~
 cd ~/GenomeBioinformatics/Block1/COO-III/
-mkdir 05_geneContent
-cd 05_geneContent
+mkdir 06_geneContent
+cd 06_geneContent
 ln -s ../01_genomeData/bin.3/bin.3.gbk bin.3.gbk
 ln -s ../04_genomeDensity/col_prokka/prokka_Col_02*/*gbk .
 ln -s ../01_genomeData/heim/prokka_GCA_0*/*gbk .
@@ -75,9 +75,9 @@ And reconstruct a phylogenetic tree using these, and a reference set of archaeal
 
 ~~~
 cd ~/GenomeBioinformatics/Block1/COO-III/
-mkdir 06_reverseGyrase
-cd 06_reverseGyrase
-ln -s ../05_geneContent/revGyr.faa .
+mkdir 07_reverseGyrase
+cd 07_reverseGyrase
+ln -s ../06_geneContent/revGyr.faa .
 ln -s ~/data_bb3bcg20/Block1/COOIII/Data/revGyr_refs.faa .
 
 cat revGyr.faa revGyr_refs.faa > revGyr_OursAndRefs.faa
@@ -125,8 +125,8 @@ number of CRISPR repeats+spacers included in the genome. Let's analyse the prese
 
 ~~~
 cd ~/GenomeBioinformatics/Block1/COO-III/
-mkdir 07_CRISPR
-cd 07_CRISPR
+mkdir 08_CRISPR
+cd 08_CRISPR
 ln -s ../01_genomeData/*/*fna .
 ~~~
 {: .bash}
