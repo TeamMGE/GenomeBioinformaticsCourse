@@ -49,7 +49,7 @@ We annotated the gene tree using the uncresolved species tree, but if we would h
 > ## Exercise:  Circle/indicate in the gene tree where strict reconciliation would have given “spurious” duplications and losses. 
 >
 >> ## Solution
->> ![answer12(../fig/answers_rasgef_spuriousduplications.jpg)
+>> ![answer12](../fig/answers_rasgef_spuriousduplications.jpg)
 >> 
 > {: .solution}
 {: .challenge}
