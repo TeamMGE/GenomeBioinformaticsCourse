@@ -66,35 +66,43 @@ A tree is easier to look at I think. So we want to visualize the output on a tre
     
     Then under advanced -> bootstrap/meta data, set to Display. And then select as Data source “D”, select text (if it is not already selected) and increase the font size to something readable.
     
-    Compare this output to your own answer to question 1.
-
-fig/answer_notung_unresolves.png
-
-
-±Same
-
-Why is the root node not a duplication?
-
-    8. Again look at the file RasGefGeneTree.nwk.reconciled.events.txt, can you see how this file summarizes the entire dynamics of this gene family for you?
-Yes but you need to know what the node id’s are. NB perhaps you make it more human readable by adding node-id’s yourself to the species tree … 
-Cd
-
-    9. We want to do the automatic reconciliation also strict for the fully resolved tree. However NOTUNG then does not run because it does not want to overwrite the output files. Move your output files to another name, so you keep them but they are not in the way for NOTUNG. You can do that in the cocalc file manager or you can do it on the command line via e.g. “mv RasGefGeneTree.nwk.reconciled RasGefGeneTree.nwk.reconciled.bkp”. 
-±done, and anyway if you do not do it, the below does not work
-
-    10. Now run NOTUNG as above but use a different fully resolved species tree: “speciestree_rasgef.nwk”. Also look at these results and compare them to the result from using an unresolved species tree.
-
-
-To compare trees: http://phylo.io/ try it, except 
-
-fig/answer_notung_strict.png
-
-Many more losses and some more duplications; see below; and especially losses and duplications created by spurious duplications where the species tree is not exactly followed  …  
+> ## Exercise:   Compare this output to your own answer when manually re
+>
+>> ## Solution
+>> ![X](../fig/answer_notung_unresolves.png)
+>>
+>>
+>>±Same
+>>
+>>Exception is the root node, which is not a duplication?
+> {: .solution}
+{: .challenge}
+    
+    
+Als inspect the file `RasGefGeneTree.nwk.reconciled.events.txt`, 
+> ## Exercise:  How can you see how this file summarizes the entire dynamics of this gene family for you? What limits the intepretability? 
+>
+>> ## Solution
+>>Yes it contains per branch all the events, but you need to know what the node id’s are. NB perhaps you make it more human readable by adding node-id’s yourself to the species tree … 
+> {: .solution}
+{: .challenge}
+    
+We want to do the automatic reconciliation also strict for the fully resolved tree. However NOTUNG then does not run because it does not want to overwrite the output files. Move your output files to another name, so you keep them but they are not in the way for NOTUNG. You can do that in using the `mv` command  e.g. `mv RasGefGeneTree.nwk.reconciled RasGefGeneTree.nwk.reconciled.bkp`. 
 
 
+Now run NOTUNG as above but use a different fully resolved species tree: `speciestree_rasgef.nwk`. Also look at these results and compare them to the result from using an unresolved species tree.
 
+> ## Exercise:  what is the difference between notung with a fully resolved species tree and with an unresolved species tree? 
+>
+>> ![Y](../fig/answer_notung_strict.png)
+>>
+>> Many more losses and some more duplications; see below; and especially losses and duplications created by spurious duplications where the species tree is not exactly followed  …  
+> {: .solution}
+{: .challenge}
 
-    11. In the lectures we also discussed that the another strength of NOTUNG is to use support values to inform its decision on which parts of the tree to believe and which not. So let us also run this on our tree and see what NOTUNG makes of it. Use it as follows: “notung RasGefGeneTree2.nwk -s speciestree_rasgef.nwk --rearrange --threshold 70 --edgeweights name”
+## (To compare trees: http://phylo.io/ try it, except ) 
+
+In the lectures we also discussed that the another strength of NOTUNG is to use support values to inform its decision on which parts of the tree to believe and which not. So let us also run this on our tree and see what NOTUNG makes of it. Use it as follows: “notung RasGefGeneTree2.nwk -s speciestree_rasgef.nwk --rearrange --threshold 70 --edgeweights name”
 
 Where NB we use a gene tree 2 because that one contains support values are present. 
 
