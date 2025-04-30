@@ -2,21 +2,21 @@
 title: "Block 2 - COOI: Gene tree intepretation & orthology of an important metabolic enzyme"
 start: true
 teaching: 0:00
-exercises: 30
+exercises: 45
 questions:
 - How is my human gene related to genes in other model organisms and what does this tell me about orthologs 
 objectives:
-- Practice the usage of common command line tools to find homologs and build trees.
-- Practice with interepting gene trees. 
+- Practice the usage of common command line tools to find homologs and build gene trees.
+- Practice with intrepeting gene trees. 
 keypoints:
 - Orthology can be a many-to-many relation 
 ---
 
 Exercises from a human gene to a simple gene tree
 
-In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point
+In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
-Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
+Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases uniprot cross references. 
 
 At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format) if you want to know what a fasta header is / means)
 
@@ -25,7 +25,7 @@ Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy th
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ~/data_bb3bcg20/Block2/COOI/proteomes1.fa > tmp.out`
-Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. 
+Look at the output, using (for example e.g. `more tmp.out` or `less tmp.out`). Proteins starting with HSAP are human. ATHA is a plant, CELE is a nematode worm, DMEL is the fruitfly, SCER is baker’s yeast, SPOM is fission yeast. 
 > ## Exercise: How many hits with E-value < 1e-10 do you see in human, plant, worm and fly?
 >
 >> ## Solution
