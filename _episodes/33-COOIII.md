@@ -68,7 +68,7 @@ Now, let's extract the reverse gyrase protein sequences:
 ~~~
 grep -h "Reverse gyrase" *faa | sed 's/ .*//' | sed 's/>//' > revGyr.list
 cat *faa > all_genomes.faa
-seqtk subseq all_genomes revGyr.list > revGyr.faa
+seqtk subseq all_genomes.faa revGyr.list > revGyr.faa
 ~~~
 {: .bash}
 
