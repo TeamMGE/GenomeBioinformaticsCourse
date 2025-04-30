@@ -23,11 +23,11 @@ As usually, let's first get our files ready:
 cd ~/GenomeBioinformatics/Block1/COO-III/
 mkdir 06_geneContent
 cd 06_geneContent
-ln -s ../01_genomeData/bin.3/bin.3.gbk bin.3.gbk
-ln -s ../04_genomeDensity/col_prokka/prokka_Col_02*/*gbk .
-ln -s ../01_genomeData/heim/prokka_GCA_0*/*gbk .
+ln -s ../01_genomeData/bin.3/bin.3.faa .
+ln -s ../04_genomeDensity/col_prokka/prokka_Col_02*/*faa .
+ln -s ../01_genomeData/heim/prokka_GCA_0*/*faa .
 rename GCA_ heim_GCA_ GCA_*
-ln -s ../01_genomeData/pangui/prokka_GCA_0*/*gbk .
+ln -s ../01_genomeData/pangui/prokka_GCA_0*/*faa .
 rename GCA_ pangui_GCA_ GCA_*
 ~~~
 {: .bash}
