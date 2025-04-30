@@ -77,7 +77,7 @@ Okay now we get to the interpretation. Look at the tree and reroot it to make so
 > ## Exercise: How many duplications does this tree imply? 
 >> ## solution
 >> Rooted the tree on plants because officially fungi and animals are closer to eachother than either is to plants: So I get this
->> ![answerX](../fig/answer_pfkfp.jpg)
+>> ![answerX](../fig/answer_pfkfp.jpg)\
 >> We have 4 duplications 
 >>
 > {: .solution}
@@ -87,7 +87,7 @@ Check the function of the different human genes, and the reconstruction accordin
 
 > ## Exercise:  What type of functional differentiation have the genes undergone.
 >> ## solution
->>Functional differentiation is change in tissue where these paralogous enzymes are predominantly expressed i.e. platelet, liver , muscle, brain. So no change in enzymatic/molecular function. This type of functional differentiation is common with inparalogs. 
+>>Functional differentiation is change in tissue where these paralogous enzymes are predominantly expressed i.e. platelet, liver , muscle, brain. So no change in enzymatic/molecular function. This type of functional differentiation is common with inparalogs. \
 >>![answer2](../fig/answer_funcparalogs.png)
 > {: .solution}
 {: .challenge}
