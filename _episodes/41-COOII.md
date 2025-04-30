@@ -14,9 +14,32 @@ keypoints:
 
 RasGEFs are important signalling proteins that diversified predominantly in amoebozoa and opisthokonta (a.k.a. fungimals/funimals, i.e.  fungi & animals; see https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(19)30257-5 for a review on the relationship among eukaryotes). We want to reconstruct the gene duplications and losses of this dynamic gene family within amoebozoa and opisthokonta. However, this subtree of the RasGEF’s is a real life tree and real life is not so easy. Look at the following tree of RasGEF(CDC25) containing proteins .
 
+![atree1](../fig/)
+The six letter abbreviations are as follows HOMSAP; human, DROMEL: fruitfly; CAEELE: nematode worm; DYCDIS: slime mold; USTMAY: basidomycete corn smut fungus; NEUCRA ascomycete red bread mould fungus; SACCER ascomycete baker's yeast.
+
+The fully resolved species tree for these species is as follows
+![atree2](../fig/)
+
+
+Assume I have correctly rooted this gene tree. We are going to annotate the RasGEF tree. However reconciling the RasGEF protein tree in terms of duplications and speciations, strictly using the fully resolved species tree would yield (too) many ancient duplications and differential gene losses. So instead, annotate internal nodes of the RasGEF protein tree in terms of gene duplications, gene losses and speciations where this designation is not contradictory to the unresolved (consensus) tree. (i.e. perform tree reconciliation using an unresolved species tree An useful “partially unresolved” species tree for these species could be the one below. Another way to say what you need to do, is to use your common sense and avoid spurious “ghost” duplications and losses. As a consequence, this strategy does not really specific exactly where you draw gene losses in the gene tree; so that is up to you)
+
+![atree3](../fig/)
+
+Consider the orthology relations. Which genes in human are orthologous to which genes in fruitfly? And which genes in human are orthologous to which genes in S. cerevisiae?
+
+
+We annotated the gene tree using the uncresolved species tree, but if we would have used the fully resolved species tree, and applied strict tree reconliation we would have infered duplications that are very unlikely, have a duplication concistency score of 0 and create also inlikley losses. We refer to these as spurious duplications. 
+
+> ## Exercise:  Circle/indicate in the gene tree where strict reconciliation would have given “spurious” duplications and losses. 
+>
+>> ## Solution
+>>
+> {: .solution}
+{: .challenge}
+
 Exercises from a human gene to a simple gene tree
 
-In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
+In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional (hence the long name)  enzyme is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
 Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases uniprot cross references. 
 
