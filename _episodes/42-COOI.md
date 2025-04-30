@@ -54,17 +54,17 @@ Get the following to run: `java -jar ~/data_bb3bcg20/bin/Notung-2.9.1.5.jar   Ra
 > {: .solution}
 {: .challenge}
 
-## (Are ?? cD species nodes that exist in the gene tree but not in  the unresolved tree? ??? )
+[//]: ## (Are ?? cD species nodes that exist in the gene tree but not in  the unresolved tree? ??? )
 
 A tree is easier to look at I think. So we want to visualize the output on a tree. This is unfortunately not completely trivial, so we provide a cookbook to visualize the reconciled tree. 
         
-    In a browser go to the website iToL at “https://itol.embl.de/”
-   
-    Upload your reconciled RasGEF gene tree file to iToL (afeter copying the `RasGefGeneTree.nwk.reconciled` to your local machine) either as file or by pasting the text into box. 
+In a browser go to the website iToL at [https://itol.embl.de/](https://itol.embl.de/)
+ 
+Upload your reconciled RasGEF gene tree file to iToL (afeter copying the `RasGefGeneTree.nwk.reconciled` to your local machine) either as file or by pasting the text into box. 
     
-    Ok. Now we need to do some things to make all the reconciled stuff human readable. First select in the panel to the upper right under basic -> mode options -> branchlengths, set to ignore 
+Ok. Now we need to do some things to make all the reconciled stuff human readable. First select in the panel to the upper right under basic -> mode options -> branchlengths, set to ignore 
     
-    Then under advanced -> bootstrap/meta data, set to Display. And then select as Data source “D”, select text (if it is not already selected) and increase the font size to something readable.
+Then under advanced -> bootstrap/meta data, set to Display. And then select as Data source “D”, select text (if it is not already selected) and increase the font size to something readable.
     
 > ## Exercise:   Compare this output to your own answer when manually re
 >
@@ -101,11 +101,11 @@ Now run NOTUNG as above but use a different fully resolved species tree: `specie
 > {: .solution}
 {: .challenge}
 
-## (To compare trees: http://phylo.io/ try it, except ) 
+[//]: ## (To compare trees: http://phylo.io/ try it, except ) 
 
 In the lectures we also discussed that the another strength of NOTUNG is to use support values to inform its decision on which parts of the tree to believe and which not. So let us also run this on our tree and see what NOTUNG makes of it. Use it as follows: `java -jar ~/data_bb3bcg20/bin/Notung-2.9.1.5.jar RasGefGeneTree2.nwk -s speciestree_rasgef.nwk --rearrange --threshold 70 --edgeweights name`
 
-Where NB we use a gene tree 2 because that gene tree contains support values are present. 
+Where NB we use a gene tree 2 because that gene tree contains support values. 
 > ## Exercise: Is the output same/different from using the unresolved species tree in terms of total number of events?  Is the output the same/different in terms of the exact location of these events and in terms of the topology of the gene tree?
 >
 >> ## Solution
