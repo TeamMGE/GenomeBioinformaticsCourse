@@ -4,7 +4,7 @@ start: false
 teaching: 0
 exercises: 30
 questions:
-- How do genomes evolve under different environmental adaptations?
+- How do genomes evolve under different environmental constraints?
 objectives:
 - Explore protein composition adaptation to high temperatures 
 ---
