@@ -75,7 +75,7 @@ prokka to annotate them first
 ~~~
 mkdir col_prokka
 cd col_prokka
-ln -s ../../01_genomeData/fromCollaborator/Col_02*fna .
+cp ../../01_genomeData/fromCollaborator/Col_02*fna .
 for f in *fna; do prokka_ed --kingdom Archaea --metagenome --outdir prokka_${f%.fna} --locustag ${f%.fna} --prefix ${f%.fna} --cpus 4 --quiet  $f; done
 cd ..
 ln -s col_prokka/prokka_Col_02*/*gff .
