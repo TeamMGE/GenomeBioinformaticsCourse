@@ -25,8 +25,8 @@ Open a text editor on your local laptop (e.g. textedit, notepad++) and copy and 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
-Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How many hits with E-value < 1e-10 do you see in human, plant, worm and fly?
-> ## Exercise: inspecting the blast output 1
+Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. 
+> ## Exercise: How many hits with E-value < 1e-10 do you see in human, plant, worm and fly?
 >
 >> ## Solution
 >>      HSAP037297                                                          979     0.0   
@@ -49,24 +49,23 @@ Look at the output, using (for example e.g. more tmp.out or less tmp.out or via 
 > {: .solution}
 {: .challenge}
 
-Still looking at the blastoutput file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
+Still looking at the blastoutput file, look at the pairwise alignment between your query and its best hit in DMEL.
 
-> ## Exercise: inspecting the blast output 1
->
+> ## Exercise:  What is the percent identity with the best hit in fly?
 >> ## solution
->>`> DMEL018546`/
->> `Length=716`/
+>>`> DMEL018546`\
+>> `Length=716`\
 >>
->>  `Score = 529 bits (1363),  Expect = 0.0, Method: Compositional matrix adjust.`/
->>  `Identities = 258/456 (57%), Positives = 329/456 (72%), Gaps = 5/456 (1%)`/
+>>  `Score = 529 bits (1363),  Expect = 0.0, Method: Compositional matrix adjust.`\
+>>  `Identities = 258/456 (57%), Positives = 329/456 (72%), Gaps = 5/456 (1%)`\
 >> so precent identity 57%
 > {: .solution}
 {: .challenge}
 
 We want to create a fasta file in order to make a tree of the hits in plants, in animals (fly, worm, human) with E-value < 1e-10; and of the best hit in fission yeast (SPOM) and the best hit in baker’s yeast SCER. To do so:
 
-    1. Copy the identifiers of the sequences you want to a text file on your laptop or download the blast output file (e.g. tmp.out) to your laptop.
-    2. For each of these sequences grep them from the proteomes files (i.e. grep -A10 “sequence identifier” ~/Data/ToData/Block2/COOI/proteomes1.fa ). Copy and paste the sequence of each protein that you need to include into a new local file on your laptop. Note that this is some work. If you can (python/awk/bash) script and if you need to do this for more than 10 sequences, you should really write a small script for tasks such as this that obtains all sequences for a list of identifiers.
+Copy the identifiers of the sequences you want to a text file on your laptop or download the blast output file (e.g. tmp.out) to your laptop.
+For each of these sequences grep them from the proteomes files (i.e. grep -A10 “sequence identifier” ~/Data/ToData/Block2/COOI/proteomes1.fa ). Copy and paste the sequence of each protein that you need to include into a new local file on your laptop. Note that this is some work. If you can (python/awk/bash) script and if you need to do this for more than 10 sequences, you should really write a small script for tasks such as this that obtains all sequences for a list of identifiers.
     3. Upload this file to the cocalc server using the upload button on cocalc. 
     4. Run mafft on your fasta file. i.e. mafft [yourfile] > [name of alignment file, e.g. homs.msa]
     5. Then run iq tree e.g. iqtree2 -s  homs.msa – m LG+G4
@@ -84,6 +83,7 @@ Functional differentiation is change in tissue where these paralogous enzymes ar
 
 
     10. According to your tree, which human gene(s) are orthologs of which genes in D. melanogaster and to which genes in C. elegans? 
+    
 HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to DMEL018546 . 1-to-many.
 HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to CELE028867, CELE024628 Many-to-many
 
