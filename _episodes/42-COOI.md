@@ -94,7 +94,8 @@ Now run NOTUNG as above but use a different fully resolved species tree: `specie
 
 > ## Exercise:  what is the difference between notung with a fully resolved species tree and with an unresolved species tree? 
 >
->> ![Y](../fig/answer_notung_strict.png)
+>> ## Solution
+>>![Y](../fig/answer_notung_strict.png)
 >>
 >> Many more losses and some more duplications; see below; and especially losses and duplications created by spurious duplications where the species tree is not exactly followed  …  
 > {: .solution}
@@ -102,18 +103,14 @@ Now run NOTUNG as above but use a different fully resolved species tree: `specie
 
 ## (To compare trees: http://phylo.io/ try it, except ) 
 
-In the lectures we also discussed that the another strength of NOTUNG is to use support values to inform its decision on which parts of the tree to believe and which not. So let us also run this on our tree and see what NOTUNG makes of it. Use it as follows: “notung RasGefGeneTree2.nwk -s speciestree_rasgef.nwk --rearrange --threshold 70 --edgeweights name”
+In the lectures we also discussed that the another strength of NOTUNG is to use support values to inform its decision on which parts of the tree to believe and which not. So let us also run this on our tree and see what NOTUNG makes of it. Use it as follows: `java -jar ~/data_bb3bcg20/bin/Notung-2.9.1.5.jar RasGefGeneTree2.nwk -s speciestree_rasgef.nwk --rearrange --threshold 70 --edgeweights name`
 
-Where NB we use a gene tree 2 because that one contains support values are present. 
-
-fig/answer_notung_strict.png
-
-        a. Is the output different from using the unresolved species tree in terms of total number of events?
-        b. Is the output the same in terms of the exact location of these events and in terms of the topology of the gene tree?
-
-
-      
-(old A on the green numbers support values)
-B output same in terms of number of events
-C output different in terms of exact location of these events
-
+Where NB we use a gene tree 2 because that gene tree contains support values are present. 
+> ## Exercise: Is the output same/different from using the unresolved species tree in terms of total number of events?  Is the output the same/different in terms of the exact location of these events and in terms of the topology of the gene tree?
+>
+>> ## Solution
+>>![Z](../fig/answer_notung_strict.png)
+>>  output same in terms of number of events \
+>> output different in terms of exact location of these events
+> {: .solution}
+{: .challenge}
