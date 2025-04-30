@@ -1,5 +1,5 @@
 ---
-title: "Block 2 - COOI: Gene tree intepretation & orthology: a metabolic enzyme"
+title: "Block 2 - COOI: Gene tree intepretation & orthology of an important metabolic enzyme"
 start: true
 teaching: 0:00
 exercises: 30
@@ -18,13 +18,13 @@ In this exercise, our goal is to infer the evolutionary history of a human prote
           
 Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
 
-At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see https://en.wikipedia.org/wiki/FASTA_format if you want to know what fasta header is / means)
+At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format) if you want to know what a fasta header is / means)
 
-Open a text editor on your local laptop (e.g. textedit, notepad++) and copy and paste the protein sequence of Q16877 in your text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
+Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 
-Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
+Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ~/data_bb3bcg20/Block2/COOI/proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. 
 > ## Exercise: How many hits with E-value < 1e-10 do you see in human, plant, worm and fly?
 >
@@ -64,29 +64,42 @@ Still looking at the blastoutput file, look at the pairwise alignment between yo
 
 We want to create a fasta file in order to make a tree of the hits in plants, in animals (fly, worm, human) with E-value < 1e-10; and of the best hit in fission yeast (SPOM) and the best hit in baker’s yeast SCER. To do so:
 
-Copy the identifiers of the sequences you want to a text file on your laptop or download the blast output file (e.g. tmp.out) to your laptop.
-For each of these sequences grep them from the proteomes files (i.e. grep -A10 “sequence identifier” ~/Data/ToData/Block2/COOI/proteomes1.fa ). Copy and paste the sequence of each protein that you need to include into a new local file on your laptop. Note that this is some work. If you can (python/awk/bash) script and if you need to do this for more than 10 sequences, you should really write a small script for tasks such as this that obtains all sequences for a list of identifiers.
-    3. Upload this file to the cocalc server using the upload button on cocalc. 
-    4. Run mafft on your fasta file. i.e. mafft [yourfile] > [name of alignment file, e.g. homs.msa]
-    5. Then run iq tree e.g. iqtree2 -s  homs.msa – m LG+G4
-    6. Download the output tree (i.e. homs.msa.treefile) or open it and copy past to view the tree in iToL https://itol.embl.de/upload.cgi
+Copy the identifiers of the sequences you want for the tree into a text file on your laptop, each identifier should be followed by a newline. Copy this file to gemini using `scp`. Then use `seqtk subseq [fasta database] [name of your list of identifiers] > [your new file of homologous e.g. homs.fa]`   
+
+Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of alignment file, e.g. homs.msa]`
+
+Then run iq tree e.g. `iqtree -s  homs.msa – m LG+G4`
+
+Download the output tree (i.e. `homs.msa.treefile`) to your laptop but perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
+
+Okay now we get to the interpretation. Look at the tree and reroot it to make some kind of biological sense. You can reroot trees by clicking on a branch -> Tree structure -> re-root the tree here. Sketch the resulting tree on paper or copy a picture of the resulting tree into a program which allows to draw on top of it (e.g. powerpoint, paint, inkscape). Annotate the tree in terms of duplications and speciations. 
+
+> ## Exercise: How many duplications does this tree imply? 
+>> ## solution
+>> Rooted the tree on plants because officially fungi and animals are closer to eachother than either is to plants: So I get this
+>> ![answerX](../fig/answer_pfkfp.jpg)
+>> We have 4 duplications 
+>>
+> {: .solution}
+{: .challenge}
+
+Check the function of the different human genes, and the reconstruction according to literature from the following article [https://bmcbiol.biomedcentral.com/articles/10.1186/1741-7007-4-16](https://bmcbiol.biomedcentral.com/articles/10.1186/1741-7007-4-16) (our proteins are in the left most panel of figure 2). 
+
+> ## Exercise:  What type of functional differentiation have the genes undergone.
+>> ## solution
+>>Functional differentiation is change in tissue where these paralogous enzymes are predominantly expressed i.e. platelet, liver , muscle, brain. So no change in enzymatic/molecular function. This type of functional differentiation is common with inparalogs. 
+>>![answer2](../fig/answer_funcparalogs.png)
+> {: .solution}
+{: .challenge}
 
 
-
-    8.  Okay now we get to the interpretation. Look at the tree and reroot it to make some kind of biological sense. You can reroot trees by clicking on a branch -> Tree structure -> re-root the tree here. Sketch the resulting tree on paper or copy a picture of the resulting tree into a program which allows to draw on top of it (e.g. powerpoint, paint). Annotate the tree in terms of duplications and speciations. How many duplications does this tree imply? 
-
-Rooted on plants because officially fungi and animals are closer to eachother than either is to plants: So I get this
-![answerX](../fig/answer_pfkfp.jpg)
-
-    9. Check the function of the different human genes, and the reconstruction according to literature from the following article https://bmcbiol.biomedcentral.com/articles/10.1186/1741-7007-4-16 (our proteins are in the left most panel of figure 2). What type of functional differentiation have the genes undergone.
-Functional differentiation is change in tissue where these paralogous enzymes are predominantly expressed i.e. platelet, liver , muscle, brain. So no change in enzymatic/molecular function. Common with inparalogs. 
-
-
-    10. According to your tree, which human gene(s) are orthologs of which genes in D. melanogaster and to which genes in C. elegans? 
-    
-HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to DMEL018546 . 1-to-many.
-HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to CELE028867, CELE024628 Many-to-many
-
+Go back to your tree and based on speciations and duplications consider orthology. 
+> ## Exercise: According to your tree, which human gene(s) are orthologs of which gene(s) in D. melanogaster and to which gene(s) in C. elegans? 
+>> ## solution    
+>> HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to DMEL018546 . 1-to-many.\
+>> HSAP037297, HSAP082045, HSAP043809, HSAP095035 are orthologous to CELE028867, CELE024628 Many-to-many
+> {: .solution}
+{: .challenge}
 
 
 
