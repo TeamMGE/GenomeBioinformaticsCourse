@@ -19,6 +19,7 @@ cd ~/GenomeBioinformatics/Block1/
 mkdir COO-III
 cd COO-III
 mkdir 01_genomeData
+cd 01_genomeData
 ln -s ~/data_bb3bcg20/Block1/COOIII/Data/bin.3 .
 ln -s ~/data_bb3bcg20/Block1/COOIII/Data/fromCollaborator .
 ~~~
