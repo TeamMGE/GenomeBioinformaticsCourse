@@ -4,7 +4,7 @@ start: false
 teaching: 0
 exercises: 45
 questions:
-- How do genomes evolve under different environemntal adaptations?
+- How do genomes evolve under different environmental constraints?
 objectives:
 - Get familiar with some general genome characteristics related to ecological adaptation
 ---
