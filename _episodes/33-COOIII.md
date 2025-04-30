@@ -4,7 +4,7 @@ start: false
 teaching: 0
 exercises: 70
 questions:
-- How do genomes evolve under different environmental adaptations?
+- How do genomes evolve under different environmental constraints?
 objectives:
 - Search for genes associated with life under different temperatures
 - Search for additional features such as CRISPR elements
