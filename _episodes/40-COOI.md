@@ -15,22 +15,18 @@ keypoints:
 Exercises from a human gene to a simple gene tree
 
 In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point
-
-    1. 
-    
-    
-    
+          
 Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases it cross references.
 
 At the top of the page click on format and select “fasta (canonical)”. Copy all the text, i.e. the sequence and the fasta header. (see https://en.wikipedia.org/wiki/FASTA_format if you want to know what fasta header is / means)
 
-    3. Open a text editor on your local PC (e.g. textedit, notepad++) and copy and paste the protein sequence of Q16877 in your text file. Save the protein sequence as a text file named “query.txt”. scp the text file to your cocalc folder where we are doing these exercises.
+Open a text editor on your local laptop (e.g. textedit, notepad++) and copy and paste the protein sequence of Q16877 in your text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
 
-Check how your file looks on cocalc by typing e.g. `more query.txt`, or `less query.txt`.
+Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ./proteomes1.fa > tmp.out`
-Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How much hits E-value < 1e-10 do you see in human, plant, worm and fly?
-> ## Exercise: inspecting the blast output 
+Look at the output, using (for example e.g. more tmp.out or less tmp.out or via the cocalc explorer). Proteins starting with HSAP are human. ATHA is a plant, CELE is worm, DMEL is fly, SCER is baker’s yeast, SPOM is fission yeast. How many hits with E-value < 1e-10 do you see in human, plant, worm and fly?
+> ## Exercise: inspecting the blast output 1
 >
 >> ## Solution
 >>      HSAP037297                                                          979     0.0   
@@ -53,16 +49,19 @@ Look at the output, using (for example e.g. more tmp.out or less tmp.out or via 
 > {: .solution}
 {: .challenge}
 
-Still looking at the file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
+Still looking at the blastoutput file, look at the pairwise alignment between your query and its best hit in DMEL. What is the percent identity with the best hit in fly?
 
+> ## Exercise: inspecting the blast output 1
+>
 >> ## solution
->>`> DMEL018546`
->> `Length=716`
-
- Score = 529 bits (1363),  Expect = 0.0, Method: Compositional matrix adjust.
- Identities = 258/456 (57%), Positives = 329/456 (72%), Gaps = 5/456 (1%)
-57%
-
+>>`> DMEL018546`/
+>> `Length=716`/
+>>
+>>  `Score = 529 bits (1363),  Expect = 0.0, Method: Compositional matrix adjust.`/
+>>  `Identities = 258/456 (57%), Positives = 329/456 (72%), Gaps = 5/456 (1%)`/
+>> so precent identity 57%
+> {: .solution}
+{: .challenge}
 
 We want to create a fasta file in order to make a tree of the hits in plants, in animals (fly, worm, human) with E-value < 1e-10; and of the best hit in fission yeast (SPOM) and the best hit in baker’s yeast SCER. To do so:
 
