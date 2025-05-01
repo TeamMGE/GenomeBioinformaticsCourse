@@ -9,7 +9,7 @@ objectives:
 - Practice using NOTUNG 
 - Practice intepreting NOTUNG output
 keypoints:
-- strict tree reconciliation is not so smart and multiple other solutions exist 
+- strict tree reconciliation is very errorprone and other solutions exist with gene trees (that are generally imperfect)
 ---
 
 
@@ -110,6 +110,7 @@ Where NB we use a gene tree 2 because that gene tree contains support values.
 >
 >> ## Solution
 >>![Z](../fig/answer_notung_strict.png)
+>> 
 >>  output same in terms of number of events \
 >> output different in terms of exact location of these events
 > {: .solution}
