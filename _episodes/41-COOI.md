@@ -4,7 +4,7 @@ start: false
 teaching: 0:00
 exercises: 45
 questions:
-- What is the evolutionary history of the RasGEF gene family in animals, fungi and an amoebozoan
+- What is the evolutionary history of the RasGEF gene family in animals, fungi and the slime mold
 objectives:
 - Practice interpreting a gene tree that reflects a more complex set of events  
 - Practice interpreting a gene tree that contradicts the species tree
