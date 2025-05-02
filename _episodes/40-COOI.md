@@ -12,7 +12,7 @@ keypoints:
 - Orthology can be a many-to-many relation 
 ---
 
-Exercises from a human gene to a simple gene tree [//]: # ( remove this sentence)
+
 
 In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
