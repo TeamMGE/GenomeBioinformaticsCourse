@@ -34,7 +34,7 @@ Assume I have correctly rooted this gene tree. We are going to annotate the RasG
 > {: .solution}
 {: .challenge}
 
-
+[//]: # (unflip the answer, or flip the question, i.e. make it consistent)
 
 Your annotated tree in principle also contains the orthology relations between all species in the tree. Consider these orthology relations. 
 > ## Exercise:  Specifically, which genes in human are orthologous to which genes in fruitfly and to which genes  in yeast?. 
