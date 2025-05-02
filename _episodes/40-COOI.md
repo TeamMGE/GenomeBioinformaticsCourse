@@ -71,7 +71,8 @@ Copy the identifiers of the sequences you want for the tree into a text file on 
 
 Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of alignment file, e.g. homs.msa]`
 
-Then run iq tree e.g. `iqtree -s  homs.msa – m LG+G4`
+Then run iq tree e.g. `iqtree -s  homs.msa –m LG+G4`
+[//]: # (for some reason for some students, they get a weird error if they do this .... )
 
 Download the output tree (i.e. `homs.msa.treefile`) to your laptop but perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
 
