@@ -21,6 +21,7 @@ Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q1
 In the uniprot page, click on sequence & isoforms, and there click on download. Copy all the text, i.e. the sequence and the fasta header. (see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format) if you want to know what a fasta header is / means)
 
 Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
+[//]: # (maybe give syntax for doing the scp????)
 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 [//]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
