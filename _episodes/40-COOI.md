@@ -12,7 +12,7 @@ keypoints:
 - Orthology can be a many-to-many relation 
 ---
 
-Exercises from a human gene to a simple gene tree
+Exercises from a human gene to a simple gene tree [//]: # ( remove this sentence)
 
 In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
@@ -23,6 +23,7 @@ At the top of the page click on format and select “fasta (canonical)”. Copy 
 Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
+[//]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ~/data_bb3bcg20/Block2/COOI/proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. `more tmp.out` or `less tmp.out`). Proteins starting with HSAP are human. ATHA is a plant, CELE is a nematode worm, DMEL is the fruitfly, SCER is baker’s yeast, SPOM is fission yeast. 
