@@ -17,13 +17,13 @@ keypoints:
 
 # blast
 
-In this excercise we want to compute orthologs via the BBH method between human and mouse, and then plot the distribution of identities. For this we need the blast output between these two species. 
+In this excercise we want to compute orthologs via the BBH method between human and mouse, and then plot the distribution of identities, in order to find out how well (on average)  two orthologs between these two species areconserved? For this we need to write our own python script to parse the blast output between these two species and to plot it. 
 
 Instead of running these blast searches yourself, we have already performed for you an blast search of all human proteins to all mouse proteins. And we also did all homology searches of all mouse proteins versus all human proteins. (for a detailed motivation on why we did this for you, fell free to ask me; see e.g. https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs for more detail on BLAST).
 
 The files containing the output of these searches can be found at  `~/data_bb3bcg20/Block2/COOII`
 
-Can you find these files. Please look at them but please note that they are too big for coalc so either download them or use the terminal or vim. Relevant for you is that column1 is gene identifier species 1, column2 is gene identifier species 2, column 3 is the percentage identity of the hit, column 11 is
+Can you find these files. Please look at them. Relevant for you is that column1 is gene identifier species 1, column2 is gene identifier species 2, column 3 is the percentage identity of the hit, column 11 is
 the e\-value and column 12 the bitscore. For the human vs mouse file, species 1 is human and species 2 is mouse. For the mouse vs human file, species 1 is mouse and species 2 is human. 
 
 No need to code yet but this is the file that is going to serve as the basis for your very own orthology  between human and mouse, so I think your should look at it / browse it, before starting scripting.
