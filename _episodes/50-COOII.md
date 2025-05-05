@@ -33,12 +33,21 @@ No need to code yet but this is the file that is going to serve as the basis for
 
 So now we want to go from blast hits to orthologs between human and mouse. For this we will use the bidirectional best blast hit heuristic, as explained in the lectures. And we are going to brush up our python skills. Given that we are going to do human and mouse, the relevant blast files are: blast_out_human_vs_mouse.txt and blast_out_mouse_vs_human.txt.
 
-As explained we already did the blast. So we just need to parse it in such a way we get our candidate orthologs. However, this is relatively a big task, which we think should be done in one piece of code.
+As explained we already did the blast. So we just need to parse it in such a way we get our candidate orthologs. However, this is relatively a big task, which we think should be done in one piece of code. 
 
-To approach this relatively big task we want to do a couple of things.
-1. Write the task first as a pseudo code on a piece of paper or in word document or someting. (we might  also ask for some pseudo code in the exam). Also think about some intermediate points where you can summarize the progress of the script sofar.
+You can write your code whereever your like, we will be assuming you will be using anaconda jupyter notebook on your laptop. But you can also use another python editor on your laptop (or on gemini). So we now need to download the blast file from gemini to your laptop. 
+
+Okay, now how to write this bidirectional best hit script. To approach this relatively big task we want to do a couple of things.
+1. Write the task first as a pseudo code on a piece of paper or in word document or someting. Also think about some intermediate points where you can summarize the progress of the script sofar. (i.e. print!)
 2. Lets start coding: start again by reading in the blast file. The file contains 12 columns: 'qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore'. Try to figure out what these columns mean. A note: what consitutes a best hit? We want you to use bitscores rather than sequence identities or e-values. (Although of course we could also test to what extent that makes a difference). Use two distinct dictionaries to keep track of the hits with the best score per query protein: one dictionary for human and an other dictionary for mouse. Every dictionary should have the protein identifier of the query sequence as a key and as a value a list containing protein identifier of the hit/subjec, the bitscore and the sequence identity.
 3. Loop over all human proteins with a best hit in mouse and check if that mouse protein has the same human protein as a best hit. If they do, these are the biderectional best hits (BBH) and you can write the pair to a  data structure that you can use later (or perhaps to a file). Also, report the number of pairs to the screen.
+
+
+> ## Exercise:  How many bidirectionalo best blast hits do you find between human and mouse? 
+>> ## solution
+>> 17181
+>>{: .solution}
+{: .challenge}
 
 # distribution_of_identities_of_orthologs
 
