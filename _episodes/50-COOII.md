@@ -2,7 +2,7 @@
 title: "Block 2 - COOII: Making our own orthologs between animals and plotting their conservation"
 start: true
 teaching: 0:00
-exercises: 180
+exercises: 3:00
 questions: 
 - how well (on average) are two orthologs between two species conserved?  
 objectives: 
