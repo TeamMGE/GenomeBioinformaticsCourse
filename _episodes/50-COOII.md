@@ -1,3 +1,17 @@
+---
+title: "Block 2 - COOII: Making our own orthologs between animals and plotting their conservation"
+start: true
+teaching: 0:00
+exercises: 180
+questions: how well (on avrage) are two orthologs between two species conserved? 
+-  
+objectives: 
+- Practice with python.
+- Practice with turning the output of an often used bioinformatics tool into a "biological" result. 
+keypoints:
+- Orthologs between human and mouse, or between human and zebrafish, have very different levels of conservation 
+---
+
 ...
 
 
@@ -8,7 +22,7 @@ In this excercise we want to compute orthologs via the BBH method between human 
 
 Instead of running these blast searches yourself, we have already performed for you an blast search of all human proteins to all mouse proteins. And we also did all homology searches of all mouse proteins versus all human proteins. (for a detailed motivation on why we did this for you, fell free to ask me; see e.g. https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs for more detail on BLAST).
 
-The files containing the output of these searches can be found at ../../../Data/ToData/Block2/COOII/ 
+The files containing the output of these searches can be found at  `~/data_bb3bcg20/Block2/COOII`
 
 Can you find these files. Please look at them but please note that they are too big for coalc so either download them or use the terminal or vim. Relevant for you is that column1 is gene identifier species 1, column2 is gene identifier species 2, column 3 is the percentage identity of the hit, column 11 is
 the e\-value and column 12 the bitscore. For the human vs mouse file, species 1 is human and species 2 is mouse. For the mouse vs human file, species 1 is mouse and species 2 is human. 
