@@ -36,6 +36,7 @@ So now we want to go from blast hits to orthologs between human and mouse. For t
 As explained we already did the blast. So we just need to parse it in such a way we get our candidate orthologs. However, this is relatively a big task, which we think should be done in one piece of code. 
 
 You can write your code whereever your like, we will be assuming you will be using anaconda jupyter notebook on your laptop. But you can also use another python editor on your laptop (or on gemini). So we now need to download the blast file from gemini to your laptop. 
+You can get these files from gemino to your own lap for example by doing this from your laptop : `scp studentnumber@gemini.science.uu.nl:~/data_bb3bcg20/Block2/COOII/blast*txt .`
 
 Okay, now how to write this bidirectional best hit script. To approach this relatively big task we want to do a couple of things.
 1. Write the task first as a pseudo code on a piece of paper or in word document or someting. Also think about some intermediate points where you can summarize the progress of the script sofar. (i.e. print!)
