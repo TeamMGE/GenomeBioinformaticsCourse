@@ -62,7 +62,9 @@ Inspect the resulting distribution of protein sequence identities.
 >> ## solution
 >> The most likely identity is between 90 & 100 
 >>
->> There are orthologs with less than 60% sequence identity 
+>> There are orthologs with less than 60% sequence identity
+>>
+>> ![X](../fig/block2_hm_plot.png)
 >{: .solution}
 {: .challenge}
 
@@ -92,11 +94,17 @@ Inspect the distributions.
 >>
 >> The highest sequence identity between human and zebrafish is 100%
 >>
->> Why there are such large differences amongst the orthologs, is something we will discuss in somoe more depth tomorrow. But very shortly we cannot yet fully explain/model the varying divergence rates between proteins know. "Apparently" purifying selection keeps a few proteins perfectly conserved; While the others to lesser or bigger extend are either allowed to diverge neutrally OR maybe some of them are adaptively selected to diverge 
+>> Why there are such large differences amongst the orthologs, is something we will discuss in somoe more depth tomorrow. But very shortly we cannot yet fully explain/model the varying divergence rates between proteins know. "Apparently" purifying selection keeps a few proteins perfectly conserved; While the others to lesser or bigger extend are either allowed to diverge neutrally OR maybe some of them are adaptively selected to diverge
+>>
+>> ![Y](../fig/block2_hz_plot.png)
 >{: .solution}
 {: .challenge}
 
 
-<b>Optional</b>: can you also plot them in the same graph?
-
-
+> ## Exercise:  Optional: can you also plot both distributions in the same graph?
+>
+>> ## solution
+>> ![Z](../fig/block2_two_plots.png)
+>>
+>{: .solution}
+{: .challenge}
