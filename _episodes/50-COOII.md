@@ -45,7 +45,7 @@ Okay, now how to write this bidirectional best hit script. To approach this rela
 
 > ## Exercise:  How many bidirectional best blast hits do you find between human and mouse? 
 >
-> >> ## solution
+>> ## solution
 >> 17181
 >{: .solution}
 {: .challenge}
