@@ -1,10 +1,13 @@
+
+
+
 ---
 title: "Block 2 - COOII: Making our own orthologs between animals and plotting their conservation"
 start: true
 teaching: 0:00
 exercises: 180
-questions: how well (on avrage) are two orthologs between two species conserved? 
--  
+questions: 
+- how well (on average) are two orthologs between two species conserved?  
 objectives: 
 - Practice with python.
 - Practice with turning the output of an often used bioinformatics tool into a "biological" result. 
@@ -12,7 +15,6 @@ keypoints:
 - Orthologs between human and mouse, or between human and zebrafish, have very different levels of conservation 
 ---
 
-...
 
 
 
