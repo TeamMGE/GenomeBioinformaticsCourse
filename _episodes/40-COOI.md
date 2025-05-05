@@ -7,7 +7,7 @@ questions:
 - How is my human gene related to genes in other model organisms and what does this tell me about orthologs 
 objectives:
 - Practice the usage of common command line tools to find homologs and build gene trees.
-- Practice with intrepeting gene trees. 
+- Practice with interpreting gene trees. 
 keypoints:
 - Orthology can be a many-to-many relation 
 ---
