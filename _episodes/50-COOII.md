@@ -2,7 +2,7 @@
 title: "Block 2 - COOII: Making our own orthologs between animals and plotting their conservation"
 start: true
 teaching: 0:00
-exercises: 3:00
+exercises: 180
 questions: 
 - how well (on average) are two orthologs between two species conserved?  
 objectives: 
@@ -21,7 +21,7 @@ In this excercise we want to compute orthologs via the BBH method between human 
 
 Instead of running these blast searches yourself, we have already performed for you an blast search of all human proteins to all mouse proteins. And we also did all homology searches of all mouse proteins versus all human proteins. (for a detailed motivation on why we did this for you, fell free to ask me; see e.g. https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs for more detail on BLAST).
 
-The files containing the output of these searches can be found at  `~/data_bb3bcg20/Block2/COOII`
+The files containing the output of these searches can be found at  `~/data_bb3bcg20/Block2/COOII/`
 
 Can you find these files. Please look at them. Relevant for you is that column1 is gene identifier species 1, column2 is gene identifier species 2, column 3 is the percentage identity of the hit, column 11 is
 the e\-value and column 12 the bitscore. For the human vs mouse file, species 1 is human and species 2 is mouse. For the mouse vs human file, species 1 is mouse and species 2 is human. 
@@ -43,7 +43,7 @@ Okay, now how to write this bidirectional best hit script. To approach this rela
 3. Loop over all human proteins with a best hit in mouse and check if that mouse protein has the same human protein as a best hit. If they do, these are the biderectional best hits (BBH) and you can write the pair to a  data structure that you can use later (or perhaps to a file). Also, report the number of pairs to the screen.
 
 
-> ## Exercise:  How many bidirectionalo best blast hits do you find between human and mouse? 
+> ## Exercise:  How many bidirectional best blast hits do you find between human and mouse? 
 >> ## solution
 >> 17181
 >>{: .solution}
@@ -55,12 +55,21 @@ We want to see how similar the orthologs between human and mouse are. Specially 
 
 After you have finished this script, if you would rather have made a histogram of e\-values, how would you have done that? i.e. to where would you have to go back and change something?
 
-Inspect the resulting distribution of protein sequence identities. What identify is most likely for a human\-mouse orthologous pair? Are there orthologous proteins between human and mouse at less than 60% sequence identity?  
+Inspect the resulting distribution of protein sequence identities. 
+> ## Exercise:  What identify is most likely for a human\-mouse orthologous pair? Are there orthologous proteins between human and mouse at less than 60% sequence identity?  
+>> ## solution
+>> The most likely identity is between 90 & 100 
+>>
+>> There are orthologs with less than 60% sequence identity 
+>>{: .solution}
+{: .challenge}
+
+
 
 
 # also_make_bbh_orthologs_and_identity_distribution_for_human_zebrafish 
 
-Use the code above to do the same for human and zebrafish (i.e. <b>identify</b> bbh orthologs and <b>plot</b> their identity). We provide two blast files to do this at ../../../Data/ToData/Block3/COOII, i.e. blast_out_human_vs_zebrafish.txt and blast_out_zebrafish_vs_human.txt
+Use the code above to do the same for human and zebrafish (i.e. <b>identify</b> bbh orthologs and <b>plot</b> their identity). We provide two blast files to do this at   `~/data_bb3bcg20/Block2/COOII/`, i.e. `blast_out_human_vs_zebrafish.txt` and `blast_out_zebrafish_vs_human.txt`
 
 You can do the same analysis for human and zebrafish as you did for human and mouse, in multiple ways, for example you can
 
@@ -70,8 +79,20 @@ You can do the same analysis for human and zebrafish as you did for human and mo
 
 NB for option 1 and 3 there is a danger because in python notebooks your global variables exist in all cells. As a consequence the dictionaries you have used to make bbh_orthologs from human and mouse will also exist/still be filled when doing zebrafish. As a solution: either clear the variables (e.g. restart the kernel), or rename the variables, or perhaps best: use a function.
 
-How do the two distributions compare? What is the sequence identity of the most diverged orthologs between human and zebrafish, and what is the highest sequence identity between human and zebrafish? Why are there such large differences between these proteins?  
- 
+Inspect the distributions. 
+> ## Exercise:  How do the two distributions compare? What is the sequence identity of the most diverged orthologs between human and zebrafish, and what is the highest sequence identity between human and zebrafish? Why are there such large differences between these proteins?  
+>> ## solution
+>>
+>> The distributions are very different, the zebrafish-human orthologs have a much lower average, and a much wider distribution 
+>> 
+>> The sequence identity of the most diverged orthologs between human and zebrafish is 20%
+>>
+>> The highest sequence identity between human and zebrafish is 100%
+>>
+>> Why there are such large differences amongst the orthologs, is something we will discuss in somoe more depth tomorrow. But very shortly we cannot yet fully explain/model the varying divergence rates between proteins know. "Apparently" purifying selection keeps a few proteins perfectly conserved; While the others to lesser or bigger extend are either allowed to diverge neutrally OR maybe some of them are adaptively selected to diverge 
+>>{: .solution}
+{: .challenge}
+
 
 <b>Optional</b>: can you also plot them in the same graph?
 
