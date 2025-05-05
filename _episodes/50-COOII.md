@@ -1,6 +1,3 @@
-
-
-
 ---
 title: "Block 2 - COOII: Making our own orthologs between animals and plotting their conservation"
 start: true
