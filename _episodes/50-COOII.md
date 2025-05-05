@@ -44,9 +44,10 @@ Okay, now how to write this bidirectional best hit script. To approach this rela
 
 
 > ## Exercise:  How many bidirectional best blast hits do you find between human and mouse? 
->> ## solution
+>
+> >> ## solution
 >> 17181
->>{: .solution}
+>{: .solution}
 {: .challenge}
 
 # distribution_of_identities_of_orthologs
@@ -57,11 +58,12 @@ After you have finished this script, if you would rather have made a histogram o
 
 Inspect the resulting distribution of protein sequence identities. 
 > ## Exercise:  What identify is most likely for a human\-mouse orthologous pair? Are there orthologous proteins between human and mouse at less than 60% sequence identity?  
+>
 >> ## solution
 >> The most likely identity is between 90 & 100 
 >>
 >> There are orthologs with less than 60% sequence identity 
->>{: .solution}
+>{: .solution}
 {: .challenge}
 
 
@@ -81,6 +83,7 @@ NB for option 1 and 3 there is a danger because in python notebooks your global 
 
 Inspect the distributions. 
 > ## Exercise:  How do the two distributions compare? What is the sequence identity of the most diverged orthologs between human and zebrafish, and what is the highest sequence identity between human and zebrafish? Why are there such large differences between these proteins?  
+>
 >> ## solution
 >>
 >> The distributions are very different, the zebrafish-human orthologs have a much lower average, and a much wider distribution 
@@ -90,7 +93,7 @@ Inspect the distributions.
 >> The highest sequence identity between human and zebrafish is 100%
 >>
 >> Why there are such large differences amongst the orthologs, is something we will discuss in somoe more depth tomorrow. But very shortly we cannot yet fully explain/model the varying divergence rates between proteins know. "Apparently" purifying selection keeps a few proteins perfectly conserved; While the others to lesser or bigger extend are either allowed to diverge neutrally OR maybe some of them are adaptively selected to diverge 
->>{: .solution}
+>{: .solution}
 {: .challenge}
 
 
