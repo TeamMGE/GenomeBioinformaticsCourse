@@ -25,7 +25,7 @@ Next to analyzing k-mer profiles to infer ploidy variation, we can also assess p
 
 To determine the allele frequencies for the the three strains, we need to make use of a .bam file that contains the mapping the next-generation sequenincg reads to the *S. cerevisiae* S288C reference genome assembly; note: you will show you in COOIII how to map sequencing reads to a reference genome assembly.
 
-Use commands including ls and pwd to localize the mapped next-generation sequencing data from *S. cerevisiae* in the data storage folder (**~/data/**). Then create a symbolic link to your own folder with the ln -s command. 
+Use commands including `cd`, `ls` and `pwd` to localize the mapped next-generation sequencing data from *S. cerevisiae* in the data storage folder (**~/data_bb3bcg20/**). Then create a symbolic link to your own folder with the ln -s command. 
 
 To analyze the allele frequencies based on the bam files, we will use `nQuire`. `nQuire` will extract the necessary information about the allele frequencies as biallelic SNP sites directly the bam file stores this information in a binary output file.
 
