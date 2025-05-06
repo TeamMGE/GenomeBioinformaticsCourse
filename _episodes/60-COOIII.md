@@ -80,7 +80,7 @@ To make sense of the tree it is relevant to know Ta, TVN, PH, PAB, PAE, SSO, APE
 > ## exercises:  In this tree, can you annoate the speciations in this tree that more or less correspond to  LUCA and potentially to LECA's (iffy bc the only eukaryotes are a few fungi)  in this tree?
 >
 >> ## Solution
->> ![fig]()
+>> ![fig](../fig/block2_lucalecaleca.png)
 >> 
 >> See above, blue ball LUCA, red ball LECA
 > {: .solution}
@@ -94,7 +94,7 @@ Try to find the inter domain HGT branch(es) in the tree. Also consider which gen
 > ## exercises: indicate in the tree where the HGT took place and who the acceptors and donors were 
 >
 >> ## Solution
->> ![fig]()
+>> ![fig2](../fig/block2_transfer.png)
 >>
 >> TP0015, BB0514, lineage donor is archaea, transfer branch green … 
 >> A colored tree , and with branches rotates to better isolate the transfer receivers, makes it easier to see perhaps …  red, archaea, blue bacteria
