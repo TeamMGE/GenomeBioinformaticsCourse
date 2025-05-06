@@ -25,9 +25,9 @@ Bakers’ yeast has been traditionally used as a model to study how genotypic va
 ## Determine structural variants using sequence-read mapping (~120 min)
 So far, we made use of genome assemblies and whole-genome alignments to identify large-scale chromosomal rearrangemnents. However, high-quality genome assemblies that allow whole-genome alignments to an sufficient level are very often not available for multiple individuals or strains of the same species. Genomic re-sequencing of a large number of different individuals (e.g. humans), cultivars (e.g. crops), or strains (e.g. fungi or bacteria) has become an important approach to study the genetic diversity between individual within a population. These approaches typically sequence genomes with short-read sequencing technologies (e.g. Illumina). Short-read data is then not assembled into a genome sequence but is mapped onto a single reference genome to identify genetic variation. The mapping of the short-read data provides information about the nucleotide diversity in the population, e.g. the number of single-nucleotide polymorphisms. Furthermore, short-read sequencing data allows to analyze the mapping patterns to identify structural variations in the re-sequenced indidviduals/isolates compared with the reference genome assembly.
 
-We will be using sequencing data from *S. cerevisia*e strain UWOPS03-461.4 to identify structural variations compared to the *S. cerevisiae* S288C long-read genome assembly. To identify structual variant we will **i)** map the reads to the genome assembly, and **ii)** use bioinformatics programms that exploit mapping information to identify structural variants (see Mahmoud and colleagues, [Fig. 1](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1828-7).
+We will be using sequencing data from *S. cerevisiae* strain UWOPS03-461.4 to identify structural variations compared to the *S. cerevisiae* S288C long-read genome assembly. To identify structual variant we will **i)** map the reads to the genome assembly, and **ii)** use bioinformatics programms that exploit mapping information to identify structural variants (see Mahmoud and colleagues, [Fig. 1](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1828-7).
 
-Use commands including ls and pwd to localize llumina short-read sequencing data of strain UWOPS03-461.4 in the data storage folder. Then create a symbolic link to your own folder with the ln -s command.
+Use commands including ls and pwd to localize llumina short-read sequencing data of strain UWOPS03-461.4 in the data storage folder (**~/data_bb3bcg20**). Then create a symbolic link to your own folder with the `ln -s` command.
 
 To be able to identify structural variants, we first need to map the sequencing data (the reads) to the referene genome. A commonly used tool to map sequencing reads to a reference genome assembly is `bwa`. 
 
@@ -144,12 +144,11 @@ We have previously seen that *S. cerevisiae* strain UWOPS03-461.4 has a large nu
 
 > ## Exercise
 >
->
 > Can you identify some of these translocations in the read mappinh? Why could it be challanging to identify translocations using short-read data? How could this potential challenges be addresed?
 > 
 >> ## Solution
 >>
->>  Structural rearrangements are often linked to repeats and transposons and to losses of genetic material. Consequently, mapping of short sequencing reads at these locations is very challenging, and thus translocations are often not found. In this particular case, we know from the whole-genome alignment that breakpoints and deletions are often associated with *Ty* transposonse, and thus we expect that SV detection with short read data is very challenging. An alternative would be to use whole-genome alignments to systematically describe these type of structural variations (how could this be conceptually done?) or using reads that are sufficiently long to span repeat or other complex regions. This is one of the reasons why third generation long-read sequencing is superior in identifying structural variation.
+>>  Structural rearrangements are often linked to repeats and transposons and to losses of genetic material. Consequently, mapping of short sequencing reads at these locations is very challenging, and thus translocations are often not found. In this particular case, we know from the whole-genome alignment that breakpoints and deletions are often associated with *Ty* transposonse, and thus we expect that SV detection with short-read data is very challenging. An alternative would be to use whole-genome alignments to systematically describe these type of structural variations (how could this be conceptually done?) or using reads that are sufficiently long to span repeat or other complex regions. This is one of the reasons why third generation long-read sequencing is superior in identifying structural variation.
 >> 
 > {: .solution}
 {: .challenge}
