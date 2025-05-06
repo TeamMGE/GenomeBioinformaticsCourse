@@ -36,10 +36,10 @@ Some of these characteristics can be directly derived from unprocessed short rea
 
 We will use this approach to first estimate the haploid genome size of a single yeast strain.
 
-Use commands including ls and pwd to localize the short-read sequencing data from *S. cerevisiae* strain CBS7837 in the data storage folder (**~/data/**). Then create a symbolic link to your own folder with the ln -s command. 
+Use commands including `cd`, `ls` and `pwd` to localize the short-read sequencing data from *S. cerevisiae* strain CBS7837 in the data storage folder (**~/data_bb3bcg20/**). Then create a symbolic link to your own folder with the ln -s command. 
 
 ~~~
-$ ln -s ~/data/Block3/genomes/XXXX .
+$ ln -s ~/data_bb3bcg20/Block3/COOI/raw/reads/ScereCBS7837_* .
 ~~~
 {: .bash}
 
