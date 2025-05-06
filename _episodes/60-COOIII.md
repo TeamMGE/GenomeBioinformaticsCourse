@@ -19,6 +19,10 @@ Horizontal gene transfer
 
 
 make a directory
+`cd ~/GenomeBioinformatics/Block2/`
+
+`mkdir COO-III`
+
 
 We are going to reproduce a (classic) finding on horizontal gene transfer from the literature. We will use the COG database which is a collection of (inclusive) clusters orthologous genes that have also been annotated with a function common to all genes in a COG as well as solving common (and ancient) gene fusions and fissions. 
 
