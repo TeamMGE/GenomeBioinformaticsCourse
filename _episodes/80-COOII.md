@@ -32,7 +32,7 @@ We will compare the S288C reference genome assembly with a second assembly of th
 
 To test this hypothesis, we will align the two independent genome assemblies using nucmer to identify and study the differences between this two genome assemblies.
 
-Use commands including ls and pwd to localize the two S288C genome assemblies (S288C.genome.fa and Yue2017_S288C.genome.fa) in the data storage folder. Then create a symbolic link to your own folder with the ln -s command.
+Use commands including `cd`, `ls` and `pwd` to localize the two S288C genome assemblies (S288C.genome.fa and Yue2017_S288C.genome.fa) in the data storage folder (**~/data_bb3bcg20**). Then create a symbolic link to your own folder with the ln -s command.
 
 > ## Exercise
 >
