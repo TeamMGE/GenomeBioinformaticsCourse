@@ -51,29 +51,23 @@ Look at the outputfile.
 > 
 >> ## solution
 >> e.g. 
->>@@ New targets included:   19
->>@@ New alignment includes: 20 subseqs (was 1), including original query
->>@@ Continuing to next round.
+>>   @@ New targets included:   19
+>>   @@ New alignment includes: 20 subseqs (was 1), including original query
+>>   @@ Continuing to next round.
 >>
->>@@
->>@@ Round:                  2
->>@@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
->>@@ Model size:             117 positions
+>>   @@
+>>   @@ Round:                  2
+>>   @@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
+>>   @@ Model size:             117 positions
 
->>
+>>   @@ New targets included:   19
+>>   @@ New alignment includes: 20 subseqs (was 1), including original query
+>>   @@ Continuing to next round.
 >> i.e. you get a list of hits that keeps growing and with changing grey-zone
 >{: .solution}
 {: .challenge}
 
 e.g. 
-@@ New targets included:   19
-@@ New alignment includes: 20 subseqs (was 1), including original query
-@@ Continuing to next round.
-
-@@
-@@ Round:                  2
-@@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
-@@ Model size:             117 positions
 
 
 In which iteration does the SPOM med11 appear and with what e-value? And (how) does this e-value improve over the iterations?
