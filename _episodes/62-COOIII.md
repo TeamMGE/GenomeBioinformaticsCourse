@@ -17,7 +17,15 @@ In the “genoombiologie” course that some of you followed, we discussed that 
 
 An easy way to get the size of a gene family is to take a profile of a gene family and search against all predicted proteins of the genome/species of interest and count the hits. This is also a common strategy to collect sequences for an informative gene tree. In this short exercise we are going to use the P53 profile to look at how many members this gene family has in a few mammals.
 
--	A profile for The p53 gene family is available at EBI INTERPRO resource here: https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/curation/ . Download the raw HMM file from this web page. Upload the file to cocalc. Use “gunzip” on the command line to unzip the file  and look at its contents. How many sequences were used to make this profile?
+-	A profile for The p53 gene family is available at EBI INTERPRO resource here:
+-
+-	https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/curation/
+use wget to get
+https://www.ebi.ac.uk/interpro/wwwapi//entry/pfam/PF00870?annotation=hmm
+or download to your laptip and scp to gemini
+
+
+-	. Download the raw HMM file from this web page. Upload the file to cocalc. Use “gunzip” on the command line to unzip the file  and look at its contents. How many sequences were used to make this profile?
 NSEQ  38
 So 38
 
