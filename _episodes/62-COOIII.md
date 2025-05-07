@@ -20,8 +20,12 @@ An easy way to get the size of a gene family is to take a profile of a gene fami
 -	A profile for The p53 gene family is available at EBI INTERPRO resource here:
 -
 -	https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/curation/
-use wget to get
+https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/logo/
+and press on download to download 
+I could not get it to work using wget but feel free to try
 https://www.ebi.ac.uk/interpro/wwwapi//entry/pfam/PF00870?annotation=hmm
+having downloaded it yor laptop, scp it to gemini
+
 or download to your laptip and scp to gemini
 
 
