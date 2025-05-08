@@ -12,22 +12,27 @@ keypoints:
 - The acceptor taxon is clustered within the donor taxon 
 ---
 
+## Horizontal gene transfer and the COG database
+We are going to reproduce a (classic) finding on horizontal gene transfer from the literature. We will use the COG database which is a collection of (inclusive) Clusters of Orthologous Genes (hence COG) that have also been annotated with a function common to all genes in a COG, as well as solving common (and ancient) gene fusions and fissions. The COGs are frequently used for genome annoations in prokaryotes they represent decent orthogroups and have function attached to them. For teaching and looking at trees they are also convenient because the original COG annoation was based on a limited number of species, allowing us to make trees and look at these trees.
 
+## setting up your environment and getting some data from the COG database 
 
+Get to gemini and get prepared for this COO (used from dr. D. Tamarit)
 
-Horizontal gene transfer
+~~~
+$ cd ~/GenomeBioinformatics/Block2/
+$ mkdir COOIII
+$ cd COOIII
+~~~
 
+We are going download from the the COG database the file that contains a list of all the COGs, their functions and the proteins assigned to each COG. In the public ftp folder [https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/), it is the file labeled `whog`. You have multiple options to do this. For example you can use wget to directly get this file into your COOIII folder in the following way
+~~~
+$wget https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog
+~~~
 
-make a directory
-`cd ~/GenomeBioinformatics/Block2/`
+Alternatively, you could falso go the ftp site ([https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/)), download the `whog` file to your laptop, and from your laptop use `scp` to copy the `whog` file  to gemini. 
 
-`mkdir COO-III`
-
-
-We are going to reproduce a (classic) finding on horizontal gene transfer from the literature. We will use the COG database which is a collection of (inclusive) clusters orthologous genes that have also been annotated with a function common to all genes in a COG as well as solving common (and ancient) gene fusions and fissions. 
-
-We are going download from the the COG database the file that contains a list of all the COGs, their functions and the proteins assigned to each COG. In the public ftp folder [https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/), it is the file labeled `whog`. You have multiple options to do this. For example you can go to your folder for Block2 COOIII and use  wget to directly get this file intyour folder using e.g. `wget https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog`. You could for example also go the ftp site ([https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/)), download it, and from your laptop `scp` it to  from there to gemini your laptop. No matter how you got the file, inspect the file. 
-
+No matter how you got the file, inspect the file and use e.g. `grep` or some other trick to count the number of COGs in the file. 
 
 > ## Exercise: How many COGs does the whog file contain?
 >
@@ -41,7 +46,7 @@ We are going download from the the COG database the file that contains a list of
 {: .challenge}
 
 
-
+## Getting all the sequences belonging to COG0072 into a fasta file
 
 Search for COG0072 in this “whog” file and inspect it.
 
@@ -72,10 +77,11 @@ The sequences that correspond to the identifiers from the whog file are present 
 > {: .solution}
 {: .challenge}
 
+## Making and interpreting the gene tree of COG0072
+
 Align your sequences using MAFFT (see previous COO’s for instructions)
 
 Make a tree of these sequences using IQTREE. However, note that this is already a fairly large collection of sequences. So, I would advise to run IQTREE using the fast option using e.g. `iqtree -s [your alignment file] -fast -m LG+G4`. In this particular case for the bits of tree that we are interested in, running IQTREE with this fast option should not matter, but generally trees reconstructed using the fast option are much poorer. Feel free to run the tree with and without the fast option to compare.
-
 
 Open your tree in iToL (see previous computer exercises for specific instructions on how to upload treefiles to iToL and visualize them there). Put the tree in a layout that you find most easy to browse. 
 
