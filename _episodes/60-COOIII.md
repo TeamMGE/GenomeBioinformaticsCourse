@@ -1,5 +1,5 @@
 ---
-title: "Block 2 - COOIII: Horizontal gene transfer in a gene tree of an aminiacyl-tRNA synthetase"
+title: "Block 2 - COOIII: Horizontal gene transfer in a gene tree of an aminoacyl-tRNA synthetase"
 start: true
 teaching: 0:00
 exercises: 60
@@ -120,7 +120,7 @@ Try to find the inter domain HGT branch(es) in the tree. Also consider which gen
 > ## exercises:  Can you find the paper that inspired us to make this exercise? 
 >
 >> ## Solution
->>We utilized this ancient paper: https://genome.cshlp.org/content/9/8/689.long as a source, because then we could use a limited species set, i.e. a rather old version of the COGs to see the transfer. In addition the author of the COGs is also the author of this paper making it likely that the inference and the data match.
+>>We utilized this ancient paper: [https://genome.cshlp.org/content/9/8/689.long](https://genome.cshlp.org/content/9/8/689.long) as a source, because then we could use a limited species set, i.e. a rather old version of the COGs to see the transfer. In addition the author of the COGs is also the author of this paper making it likely that the inference and the data match.
 >>
 >> This is a more recent paper that documents the tRNA synthetases:
 >> [https://link.springer.com/article/10.1007/s00239-016-9768-2](https://link.springer.com/article/10.1007/s00239-016-9768-2)
