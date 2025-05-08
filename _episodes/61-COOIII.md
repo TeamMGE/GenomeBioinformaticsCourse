@@ -12,7 +12,7 @@ keypoints:
 - Profile searches are better able to distinguish homologs from non-homologs than pairwise sequence searches 
 ---
 
-## bakckground Divergent homologs 
+## Background divergent homologs 
 
 We are going to do some profile searches to get a feeling for what a profile search achieves and how it achieves it. What this means is that by looking not just at the outcome of a profile search, but doing the search iteratively we should sequences that first were not here appear; and also see searches that have a borderline e-value disappear again, as the profile sharpens and it should become apparent that these similarities are superflous. 
 
@@ -45,6 +45,8 @@ Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Bloc
 >> No, the search could just be not sensitive enough especially given that many things turn out to be older than we thought (null model/zig-zag), I mention in the introduction that most eukaryotes should have med11, and also given the shortness of med11 
 >{: .solution}
 {: .challenge}
+
+
 
 ## iterative profile sarches of human med11 
 
@@ -97,13 +99,14 @@ There are also other SPOM hits than the med11 hit. Find them and describe what h
 >> present in the first iteration/search, but they disappears from subsequent searches because they are not true and the better profile throws them out
 >{: .solution}
 {: .challenge}
->> 
+
+
 
 ## Limits of iterative profile searches and how the reverse -being hit by a profile- solves this
 
 Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Use wget to get it to gemini as described above, or download this sequence from UNIPROT to your laptop and then scp it to gemini. 
 
-Then do a jackhammer search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
+Then do a JACKHMMER search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
 
 > ## Exercise:	What do you notice in the output? 
 > 
@@ -159,6 +162,8 @@ So we have now searched for difficult to find homologs. Take a step back and con
 > ## Exercise: If we would have run orthofinder. Would orthofinder have made a correct orthogroup?
 > 
 >> ## solution
->> Likely not. As the blast output cannot connect all orthologs. You need profile searches network to start from. 
+>> Likely orthofinder would fail, because the blast output cannot connect all orthologs. Consequently you get disconnected clusters or singleton sequences in your blast BBH network/graph.
+>>
+>> If you would want a network that connects these sequences you need profile searches network to start from. Although even then, how would Trichomonas ever make a bidirectional/reciporcal best hit? 
 >{: .solution}
 {: .challenge}
