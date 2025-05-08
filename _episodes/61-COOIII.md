@@ -14,11 +14,13 @@ keypoints:
 
 ## bakckground Divergent homologs 
 
-We are going to do some profile searches to get a feeling for what a profile search achieves and it achieves it. For this we will be looking at the med11 protein, which is a subunit of the Mediator complex that serves as a coactivator for DNA-binding factors in activating transcription via RNA polymerase II (according to Wikipedia). 
+We are going to do some profile searches to get a feeling for what a profile search achieves and how it achieves it. What this means is that by looking not just at the outcome of a profile search, but doing the search iteratively we should sequences that first were not here appear; and also see searches that have a borderline e-value disappear again, as the profile sharpens and it should become apparent that these similarities are superflous. 
+
+For this we will be looking at the med11 protein, which is a subunit of the Mediator complex that serves as a coactivator for DNA-binding factors in activating transcription via RNA polymerase II (according to Wikipedia). In principle most eukaryotes contain at least part of the mediator complex. However for a bunch of reasons the sequences of the this complex sometimes evade easy homology detection. 
 
 
 
-## searching with cerev med11
+## normal blast searching with cerev med11
 
 OR use wget to get it 
 i.e. wget the url of the sequence 
@@ -53,7 +55,8 @@ Run blast, via
 >{: .solution}
 {: .challenge}
 
- 
+## iterative profile sarches of cerev med11 
+
 Now we are going to do profile searches. For this we will be using JACKHMMER. Do a JACKHMMER search with 3 iterations as follows: `jackhmmer --noali -N3 name_of_your_query_fasta_file ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Note that we use the –noali option to keep the output somewhat readable. 
 
 
@@ -99,7 +102,9 @@ They appear and disappear and do not become significant
 e.g.         1.1   15.8   0.0        1.5   15.4   0.0    1.2  1  SPOM002124_ptf2              SPBC16G5.13.1:pep SPBC16G5.13 12
 in the first iteration/search disappears from subsequent searches 
 
-Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Download this sequence from UNIPROT. scp it to gemini or use wget it get it from the web to gemini (e.g. ``). Then do a jackhammer search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
+## Limits of iterative profile searches and how the reverse -being hit by a profile- solves this
+
+Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Download this sequence from UNIPROT. scp it to gemini or use wget it get it from the web to gemini (e.g. `wget https://rest.uniprot.org/uniprotkb/A2E1L7.fasta`). Then do a jackhammer search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
 
 > ## Exercise:	
 What do you notice in the output? 
