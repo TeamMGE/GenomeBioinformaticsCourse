@@ -12,10 +12,18 @@ keypoints:
 - Profile searches are better able to distinguish homologs from non-homologs than pairwise sequence searches 
 ---
 
-Divergent homologs
+## bakckground Divergent homologs
 
 We are going to do some profile searches to get a feeling for what a profile search achieves and it achieves it. For this we will be looking at the med11 protein, which is a subunit of the Mediator complex that serves as a coactivator for DNA-binding factors in activating transcription via RNA polymerase II (according to Wikipedia). 
--	Obtain human med11 protein sequence from UNIPROT. i.e. go to UNIPROT, search for med11_human and go to this entry. At the top of the page click on download, then in format select “fasta (canonical)”. Upload this sequence to your cocalc terminal. 
+
+
+
+OR use wget to get it 
+i.e. wget the url of the sequence 
+https://rest.uniprot.org/uniprotkb/Q9P086.fasta
+
+OR use wget to get it 
+Obtain human med11 protein sequence from UNIPROT. i.e. go to UNIPROT, search for med11_human and go to this entry. At the top of the page click on download, then in format select “fasta (canonical)”. Upload this sequence to your cocalc terminal. 
 
 
 > ## Exercise:   Look at the sequence, is there anything that stands out to you?
@@ -25,7 +33,8 @@ We are going to do some profile searches to get a feeling for what a profile sea
 >{: .solution}
 {: .challenge}
 
--	Run blast, via ` blastp -query name of your query file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > [name of your output file] “. Can you see a sequence whose identifier starts with SPOM in the output? ( also look at the insignificant hits)? 
+Run blast, via 
+` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > [name of your output file] “. Can you see a sequence whose identifier starts with SPOM in the output? ( also look at the insignificant hits)? 
 
 > ## Exercise:   Can you see a sequence whose identifier starts with SPOM in the output? ( also look at the insignificant hits)?
 > 
