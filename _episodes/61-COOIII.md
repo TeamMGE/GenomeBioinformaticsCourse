@@ -29,7 +29,7 @@ To get the sequence of of med11 go to uniprot, search for it and downlod it from
 >{: .solution}
 {: .challenge}
 
-Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Inspect the output for the presence of a homolog in S. pombe. You can do this with `less name_of_your_output_file` and then once in `less` typing `/` and tyipng SPOM to search. You can also use e.g. `grep SPOM name_of_your_output_file`. In searching also look at the e-value of the hit and also consider insignificant hits. 
+Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Inspect the output for the presence of a homolog in S. pombe. You can do this with `less name_of_your_output_file` and then once in `less` typing / followed by typng SPOM to search. You can also use e.g. `grep SPOM name_of_your_output_file`. In searching also look at the e-value of the hit and also consider insignificant hits. 
 
 > ## Exercise:   Can you find a sequence whose identifier starts with SPOM in the output? ( including in the insignificant hits)?
 > 
@@ -64,7 +64,7 @@ Inspect the outputfile using `more` or `less` or `cat`.
 >>        @@ New alignment includes: 20 subseqs (was 1), including original query
 >>        @@ Continuing to next round.
 >> 
->> You shoudl see that you get a list of hits that keeps growing together with a changing grey-zone
+>> You should see that you get a list of hits that keeps growing together with a changing grey-zone
 >{: .solution}
 {: .challenge}
 
@@ -94,10 +94,11 @@ There are also other SPOM hits than the med11 hit. Find them and describe what h
 >> we for example we have lines like
 >>          1.1   15.8   0.0        1.5   15.4   0.0    1.2  1  SPOM002124_ptf2              SPBC16G5.13.1:pep SPBC16G5.13 12
 >>
->> present in the first iteration/search, but they disappears from subsequent searches because they are not true and the better profile thros them out
+>> present in the first iteration/search, but they disappears from subsequent searches because they are not true and the better profile throws them out
 >{: .solution}
 {: .challenge}
 >> 
+
 ## Limits of iterative profile searches and how the reverse -being hit by a profile- solves this
 
 Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Use wget to get it to gemini as described above, or download this sequence from UNIPROT to your laptop and then scp it to gemini. 
