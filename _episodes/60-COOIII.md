@@ -87,7 +87,7 @@ Open your tree in iToL (see previous computer exercises for specific instruction
 
 To make sense of the tree it is relevant to know Ta, TVN, PH, PAB, PAE, SSO, APE, VNG, MJ, MTH, MK, MA, AF are all archaea; YLR060w, YPR047w_2, SPAC23A1.12c, SPCC736.03c_2, ECU04g0900 are eukaryotic sequences; and all other sequences are bacteria. 
 
-> ## exercises:  In this tree, can you annoate the speciations in this tree that more or less correspond to  LUCA and potentially to LECA's (iffy bc the only eukaryotes are a few fungi)  in this tree?
+> ## exercises:  In this tree, can you annoate the speciations in this tree that more or less correspond to LUCA and potentially to LECA's (potentially because the inference is uncertain given that the only eukaryotes are a few fungi) ? 
 >
 >> ## Solution
 >> ![fig](../fig/block2_lucalecaleca.png)
@@ -106,11 +106,13 @@ Try to find the inter domain HGT branch(es) in the tree. Also consider which gen
 >> ## Solution
 >> ![fig2](../fig/block2_HGT.jpg)
 >>
->> TP0015, BB0514, lineage donor is archaea, transfer branch green … 
 >> A colored tree , and with branches rotates to better isolate the transfer receivers, makes it easier to see perhaps …  red, archaea, blue bacteria
+>>
+>> transfer branch green
 >> 
-Use https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/org.txt and https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog to piece together the name of the lineage that was the recipient of transfer? 
-spirochaetes (or in the file org.txt Chlam-Spir)
+>> transfered genes: TP0015, BB0514, lineage donor is archaea
+>> 
+>> Use https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/org.txt and https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog to piece together the name of the lineage that was the recipient of transfer? spirochaetes (or in the file org.txt Chlam-Spir)
 )
 > {: .solution}
 {: .challenge}
@@ -120,10 +122,11 @@ spirochaetes (or in the file org.txt Chlam-Spir)
 >> ## Solution
 >>We utilized this ancient paper: https://genome.cshlp.org/content/9/8/689.long as a source, because then we could use a limited species set, i.e. a rather old version of the COGs to see the transfer. In addition the author of the COGs is also the author of this paper making it likely that the inference and the data match.
 >>
->>This is a more recent paper that documents the tRNA synthetases
->> (https://link.springer.com/article/10.1007/s00239-016-9768-2)
+>> This is a more recent paper that documents the tRNA synthetases:
+>> [https://link.springer.com/article/10.1007/s00239-016-9768-2](https://link.springer.com/article/10.1007/s00239-016-9768-2)
 >> 
->> in that more recent study besides asgardarchaeal origin, endosymbiotic origins you also see some incidental interdomain transfers
+>> In this more recent study, quite some interkingdom transfers can be seen in addition the "expect" (asgard)archaeal origin and endosymbiotic origins:
+>> 
 > {: .solution}
 {: .challenge}
 
