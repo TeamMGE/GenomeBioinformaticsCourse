@@ -76,12 +76,11 @@ So given that this is a "profiles work" exercises SPOM shoud appear. Try to loca
 >> ## solution 
 >>        grep SPOM your_jackhmmer_output_file | grep med11
 >>        	
->>        0.54   16.5   0.3       0.67   16.2   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
->>        SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
->>        +   9.9e-05   28.7   0.3    0.00013   28.4   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
->>        SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
+>>        0.54   16.5   0.3       0.67   16.2   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116  SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
 >>
->>First iteration no SPOM med11, second iteration not significant, third iteration significant 
+>>        9.9e-05   28.7   0.3    0.00013   28.4   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
+>>
+>>First iteration no SPOM med11, second iteration not significant (0.54), third iteration significant (9.9e-05)
 >{: .solution}
 {: .challenge}
 
