@@ -18,17 +18,9 @@ We are going to do some profile searches to get a feeling for what a profile sea
 
 For this we will be looking at the med11 protein, which is a subunit of the Mediator complex that serves as a coactivator for DNA-binding factors in activating transcription via RNA polymerase II (according to Wikipedia). In principle most eukaryotes contain at least part of the mediator complex. However for a bunch of reasons the sequences of the this complex sometimes evade easy homology detection. 
 
+## normal pairwise sequence (in this case BLAST) searching with the human med11
 
-
-## normal blast searching with cerev med11
-
-OR use wget to get it 
-i.e. wget the url of the sequence 
-https://rest.uniprot.org/uniprotkb/Q9P086.fasta
-
-OR use wget to get it 
-Obtain human med11 protein sequence from UNIPROT. i.e. go to UNIPROT, search for med11_human and go to this entry. At the top of the page click on download, then in format select “fasta (canonical)”. Upload this sequence to your cocalc terminal. 
-
+To get the sequence of of med11 go to uniprot, search for it and downlod it from uniprot and then scp it to gemini, or perhaps easier use wget to get it: i.e. `wget https://rest.uniprot.org/uniprotkb/Q9P086.fasta`
 
 > ## Exercise:   Look at the sequence, is there anything that stands out to you?
 >
@@ -37,10 +29,9 @@ Obtain human med11 protein sequence from UNIPROT. i.e. go to UNIPROT, search for
 >{: .solution}
 {: .challenge}
 
-Run blast, via 
-` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > [name of your output file] “. Can you see a sequence whose identifier starts with SPOM in the output? ( also look at the insignificant hits)? 
+Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Inspect the output for the presence of a homolog in S. pombe. You can do this with `less name_of_your_output_file` and then once in `less` typing `/` and tyipng SPOM to search. You can also use e.g. `grep SPOM name_of_your_output_file`. In searching also look at the e-value of the hit and also consider insignificant hits. 
 
-> ## Exercise:   Can you see a sequence whose identifier starts with SPOM in the output? ( also look at the insignificant hits)?
+> ## Exercise:   Can you find a sequence whose identifier starts with SPOM in the output? ( including in the insignificant hits)?
 > 
 >> ## solution
 >> No sequence whose identifier starts with SPOM (you can check using e.g. grep)
@@ -51,33 +42,34 @@ Run blast, via
 > ## Exercise:	Does this lack of hits mean that the fungus SPOM (Schizosaccharomyces pombe, fission yeast ) lacks the med11 gene?
 > 
 >> ## solution
->> No, the search could just be not sensitive enough especially given that many things turn out to be older than we thought (null model/zig-zag) and the shortness of med11
+>> No, the search could just be not sensitive enough especially given that many things turn out to be older than we thought (null model/zig-zag), I mention in the introduction that most eukaryotes should have med11, and also given the shortness of med11 
 >{: .solution}
 {: .challenge}
 
-## iterative profile sarches of cerev med11 
+## iterative profile sarches of human med11 
 
 Now we are going to do profile searches. For this we will be using JACKHMMER. Do a JACKHMMER search with 3 iterations as follows: `jackhmmer --noali -N3 name_of_your_query_fasta_file ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Note that we use the –noali option to keep the output somewhat readable. 
 
 
-Look at the outputfile. 
+Inspect the outputfile using `more` or `less` or `cat`. 
 > ## Exercise:	How can you see in the output that there are iterations?
 > 
 >> ## solution
->> e.g. 
->>   @@ New targets included:   19
->>   @@ New alignment includes: 20 subseqs (was 1), including original query
->>   @@ Continuing to next round.
+>> there is round, and each round includes new targets (e.g. sequences that it hits) for example see this section of the file 
+>>        @@ New targets included:   19
+>>        @@ New alignment includes: 20 subseqs (was 1), including original query
+>>        @@ Continuing to next round.
 >>
->>   @@
->>   @@ Round:                  2
->>   @@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
->>   @@ Model size:             117 positions
+>>        @@
+>>        @@ Round:                  2
+>>        @@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
+>>        @@ Model size:             117 positions
 
->>   @@ New targets included:   19
->>   @@ New alignment includes: 20 subseqs (was 1), including original query
->>   @@ Continuing to next round.
->> i.e. you get a list of hits that keeps growing and with changing grey-zone
+>>        @@ New targets included:   19
+>>        @@ New alignment includes: 20 subseqs (was 1), including original query
+>>        @@ Continuing to next round.
+>> 
+>> You shoudl see that you get a list of hits that keeps growing accompingied with a changing grey-zone
 >{: .solution}
 {: .challenge}
 
