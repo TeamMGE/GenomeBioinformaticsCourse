@@ -49,14 +49,14 @@ Do the same for Heterocephalus_glaber_female.Naked_mole-rat_maternal.pep.all.lon
 > ## Exercise: Can you reproduce the result from the literature?
 >
 >> ## Solution
->> Yes elephant has more 
+>> Yes elephant has more than all. 
 > {: .solution}
 {: .challenge}
 
 > ## Exercise:Why have we included also the naked mole rat?
 >
 >> ## Solution
->> Because it is also sem-ifamously cancer resistant
+>> Because it is also semi-famously cancer resistant. But this is not apparently achieved via p53. 
 >> 
 > {: .solution}
 {: .challenge}
