@@ -27,7 +27,7 @@ $ cd COOIII
 
 We are going download from the the COG database the file that contains a list of all the COGs, their functions and the proteins assigned to each COG. In the public ftp folder [https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/), it is the file labeled `whog`. You have multiple options to do this. For example you can use wget to directly get this file into your COOIII folder in the following way
 ~~~
-$wget https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog
+$ wget https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/whog
 ~~~
 
 Alternatively, you could falso go the ftp site ([https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/](https://ftp.ncbi.nlm.nih.gov/pub/COG/COG/)), download the `whog` file to your laptop, and from your laptop use `scp` to copy the `whog` file  to gemini. 
