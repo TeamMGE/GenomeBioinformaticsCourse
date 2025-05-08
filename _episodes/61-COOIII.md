@@ -73,50 +73,97 @@ Inspect the outputfile using `more` or `less` or `cat`.
 >{: .solution}
 {: .challenge}
 
-e.g. 
 
+So given that this is a "profiles work" exercises SPOM shoud appear. Try to locate in the output how/when this is happening. 
 
-In which iteration does the SPOM med11 appear and with what e-value? And (how) does this e-value improve over the iterations?
-  
--	E.g. grep SPOM med11_vs_euk3_jackhmmer | grep med11
--	
--	       0.54   16.5   0.3       0.67   16.2   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
--	>> SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
--	+   9.9e-05   28.7   0.3    0.00013   28.4   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
--	>> SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
-First iteration no SPOM med11, second iteration not significant, third iteration significant 
+> ## Exercise:	In which iteration does the SPOM med11 appear and with what e-value? And (how) does this e-value improve over the iterations?
+> 
+>> ## solution 
+>>        grep SPOM your_jackhmmer_output_file | grep med11
+>>        	
+>>        0.54   16.5   0.3       0.67   16.2   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
+>>        SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
+>>        +   9.9e-05   28.7   0.3    0.00013   28.4   0.3    1.1  1  SPOM002872_med11              SPAC644.10.1:pep SPAC644.10 116 
+>>        SPOM002872_med11  SPAC644.10.1:pep SPAC644.10 116 med11 mediator complex subunit Med11 (predicted) (original header:S
+>>
+>>First iteration no SPOM med11, second iteration not significant, third iteration significant 
+>{: .solution}
+{: .challenge}
 
+There are also other SPOM hits than the med11 hit. Find them and describe what happens to them in the iterations and what happens to their e-value and try to consider why this is happening to them. Relevant is for example to see if the the e-values ever become significant.
 
-
--	There are also other SPOM hits. Find them and describe what happens to them in the iterations and what happens to their e-value? For example are the e-values ever significant?
-
-They appear and disappear and do not become significant 
-e.g.         1.1   15.8   0.0        1.5   15.4   0.0    1.2  1  SPOM002124_ptf2              SPBC16G5.13.1:pep SPBC16G5.13 12
-in the first iteration/search disappears from subsequent searches 
-
+> ## Exercise:	what happens to the other SPOM hits
+> 
+>> ## solution
+>> They appear and disappear and do not become significant
+>> 
+>> we for example we have lines like
+>>          1.1   15.8   0.0        1.5   15.4   0.0    1.2  1  SPOM002124_ptf2              SPBC16G5.13.1:pep SPBC16G5.13 12
+>>
+>> present in the first iteration/search, but they disappears from subsequent searches because they are not true and the better profile thros them out
+>{: .solution}
+{: .challenge}
+>> 
 ## Limits of iterative profile searches and how the reverse -being hit by a profile- solves this
 
-Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Download this sequence from UNIPROT. scp it to gemini or use wget it get it from the web to gemini (e.g. `wget https://rest.uniprot.org/uniprotkb/A2E1L7.fasta`). Then do a jackhammer search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
+Next we will use a query the sequence from the med11 annotated protein from the protist Trichomonas available here: https://rest.uniprot.org/uniprotkb/A2E1L7.fasta. Use wget to get it to gemini as described above, or download this sequence from UNIPROT to your laptop and then scp it to gemini. 
 
-> ## Exercise:	
-What do you notice in the output? 
-Only a single iteration 
+Then do a jackhammer search as described above for this query. Store the output in a different file than the search from human med11. Look at the output.
 
--	Why is jackhammer not succeeding at making a profile/alignment to start the search?
-If you hit nothing, you cannot start iterating 
-
--	What does “CONVERGED” mean in the output? 
-That the search does not find anything new and so the profile does not change and so the search is converged 
-
--	What is the identifier of the Trichomonas med11 in eukarya.v3.renamed.prot.longest.fa.new.headers based on it being an identical hit to your downloaded Trichomonas med11 query? 
-TVAG035526
-
--	Go back to your jackhammer search from human. Can you find this Trichomonas sequence in the JACKHMMER output?
-Yes
-1.9e-06   34.2   1.1    2.1e-06   34.1   1.1    1.2  1  TVAG035526                    TVAG_206320 TVAG_206320 102  con
-
--	Argue, based on what you have seen in your output if all the “med11” homologs you have found are likely to be part of the same orthogroup or different orthogroups?
-Given that I see no duplicates in any species, I think all homologs are also orthologs
-i.e. if there are no ancient duplications everything is likely orthologous
+> ## Exercise:	What do you notice in the output? 
+> 
+>> ## solution
+>> There is only a single iteration, meaning the profile does not get going  
+>{: .solution}
+{: .challenge}
 
 
+> ## Exercise: Why is jackhammer not succeeding at making a profile/alignment to start the search?
+> 
+>> ## solution
+>> If you hit nothing, you cannot start iterating 
+>{: .solution}
+{: .challenge}
+
+
+> ## Exercise: What does “CONVERGED” mean in the output? 
+> 
+>> ## solution
+>> That the search does not find anything new and so the profile does not change and so the search is converged on a solution. Further iterations will not change anything about the outcome. 
+>{: .solution}
+{: .challenge}
+
+
+> ## Exercise: What is the identifier of the Trichomonas med11 in eukarya.v3.renamed.prot.longest.fa.new.headers based on it being an identical hit to your downloaded Trichomonas med11 query?
+>
+>> ## solution
+>> TVAG035526
+>{: .solution}
+{: .challenge}
+
+Go back to your jackhammer search with human med11 as the query and search for this this Trichomonas sequence in the JACKHMMER output? (using e.g. grep or less)
+
+> ## Exercise: is this trichomonas sequence there? 
+>
+>> ## solution
+>> Yes
+>>          1.9e-06   34.2   1.1    2.1e-06   34.1   1.1    1.2  1  TVAG035526                    TVAG_206320 TVAG_206320 102  con
+>{: .solution}
+{: .challenge}
+
+So we have now searched for difficult to find homologs. Take a step back and consider  based on what you have seen in your output if all the “med11” homologs you have found are likely to be part of the same orthogroup or different orthogroups?
+> ## Exercise: are all of your hits also orthologs?
+>
+>> ## solution
+>> We do not know. We have not made a tree. But given that I see no duplicates in any species, I think there is a higgh likelihood that all homologs are also orthologs
+>>
+>> i.e. if there are no ancient duplications everything is likely orthologous
+>{: .solution}
+{: .challenge}
+
+> ## Exercise: If we would have run orthofinder. Would orthofinder have made a correct orthogroup?
+> 
+>> ## solution
+>> Likely not. As the blast output cannot connect all orthologs. You need profile searches network to start from. 
+>{: .solution}
+{: .challenge}
