@@ -96,12 +96,16 @@ We can now generate a graphical representation of the k-mer profile, similar to 
 >> ## Solution
 >>
 >> ~~~
+>> import import matplotlib
+>> import matplotlib.use('Agg') # Non-GUI backend
 >> import seaborn as sns #imports seaborn
 >> import pandas as pd #imports pandas
 >> import matplotlib.pyplot as plt #imports matplotlib
 >> kmers = pd.read_csv("ScereCBS7837.count.txt",sep=" ",header=None) #read the kmer-count files
 >> kmers.columns = ['Coverage','Frequency'] #name the columns
 >> sns.scatterplot(data=kmers, x='Coverage', y='Frequency') #plot the data as a scatterplot
+>> plt.savefig('kmers.png')  # Save to file instead of displaying
+>> plt.close()  # Close to free memory
 >> ~~~
 >> 
 > {: .solution}
@@ -130,6 +134,9 @@ To be able to better analyse the k-mer distribution to determine the peak in k-m
 >> sns.scatterplot(data=kmers, x='Coverage', y='Frequency')
 >> plt.ylim(0,350000) #focusses the y-axis to maximum 350000
 >> plt.xlim(0,200) #focusses the x-axis to a maximum of 200
+>> plt.savefig('kmers.png')
+>> plt.close() 
+>> 
 >> ~~~
 >> 
 > {: .solution}
@@ -139,7 +146,7 @@ Based on your updated visualisation, you can now determine the number of height 
 
 > ## Excercise
 >
-> How many peaks can you observe in the k-mer distribution plit? What does this suggest with respect to the ploidy of the isolate you analyzed? What is the average k-mer coverage for each of the peaks? Based on this observations, do you conclude that the isolate very heterozygous?
+> How many peaks can you observe in the k-mer distribution plot? What does this suggest with respect to the ploidy of the isolate you analyzed? What is the average k-mer coverage for each of the peaks? Based on this observations, do you conclude that the isolate very heterozygous?
 >
 >> ## Solution
 >> 
