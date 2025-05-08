@@ -56,20 +56,15 @@ Inspect the outputfile using `more` or `less` or `cat`.
 > 
 >> ## solution
 >> there is round, and each round includes new targets (e.g. sequences that it hits) for example see this section of the file 
->>        @@ New targets included:   19
->>        @@ New alignment includes: 20 subseqs (was 1), including original query
->>        @@ Continuing to next round.
 >>
->>        @@
 >>        @@ Round:                  2
 >>        @@ Included in MSA:        20 subsequences (query + 19 subseqs from 19 targets)
 >>        @@ Model size:             117 positions
-
 >>        @@ New targets included:   19
 >>        @@ New alignment includes: 20 subseqs (was 1), including original query
 >>        @@ Continuing to next round.
 >> 
->> You shoudl see that you get a list of hits that keeps growing accompingied with a changing grey-zone
+>> You shoudl see that you get a list of hits that keeps growing together with a changing grey-zone
 >{: .solution}
 {: .challenge}
 
