@@ -104,7 +104,7 @@ Try to find the inter domain HGT branch(es) in the tree. Also consider which gen
 > ## exercises: indicate in the tree where the HGT took place and who the acceptors and donors were 
 >
 >> ## Solution
->> ![fig2](../fig/block2_transfer.png)
+>> ![fig2](../fig/block2_HGT.jpg)
 >>
 >> TP0015, BB0514, lineage donor is archaea, transfer branch green … 
 >> A colored tree , and with branches rotates to better isolate the transfer receivers, makes it easier to see perhaps …  red, archaea, blue bacteria
