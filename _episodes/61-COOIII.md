@@ -1,6 +1,6 @@
 ---
 title: "Block 2 - COOIII: Profile searches"
-start: true
+start: false
 teaching: 0:00
 exercises: 45
 questions: 
