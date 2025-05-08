@@ -12,11 +12,13 @@ keypoints:
 - Profile searches are better able to distinguish homologs from non-homologs than pairwise sequence searches 
 ---
 
-## bakckground Divergent homologs
+## bakckground Divergent homologs 
 
 We are going to do some profile searches to get a feeling for what a profile search achieves and it achieves it. For this we will be looking at the med11 protein, which is a subunit of the Mediator complex that serves as a coactivator for DNA-binding factors in activating transcription via RNA polymerase II (according to Wikipedia). 
 
 
+
+## searching with cerev med11
 
 OR use wget to get it 
 i.e. wget the url of the sequence 
