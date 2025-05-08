@@ -2,7 +2,7 @@
 title: "Block 2 - COOIII: size of a gene family"
 start: false
 teaching: 0:00
-exercises: 45
+exercises: 30
 questions: 
 - Can we quickly establish the size of a gene family in a predicted proteome?    
 objectives: 
@@ -12,34 +12,51 @@ keypoints:
 - Expanded gene families reflect taxon/species adaptation 
 ---
 
-Size of gene family
-In the “genoombiologie” course that some of you followed, we discussed that elephants have undergone duplications of their p53 gene and that this has been hypothesize to help these large animals that need many cell divisions to avoid cancer. See https://elifesciences.org/articles/11994
+## background on gene family sizes and adaptations 
 
-An easy way to get the size of a gene family is to take a profile of a gene family and search against all predicted proteins of the genome/species of interest and count the hits. This is also a common strategy to collect sequences for an informative gene tree. In this short exercise we are going to use the P53 profile to look at how many members this gene family has in a few mammals.
-
--	A profile for The p53 gene family is available at EBI INTERPRO resource here:
--
--	https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/curation/
-https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/logo/
-and press on download to download 
-I could not get it to work using wget but feel free to try
-https://www.ebi.ac.uk/interpro/wwwapi//entry/pfam/PF00870?annotation=hmm
-having downloaded it yor laptop, scp it to gemini
-
-or download to your laptip and scp to gemini
+In the “genoombiologie” course that some of you followed, we discussed that elephants have undergone duplications of their p53 gene and that this has been hypothesize to help these large animals that need many cell divisions to avoid cancer. See [https://elifesciences.org/articles/11994](https://elifesciences.org/articles/11994)
 
 
--	. Download the raw HMM file from this web page. Upload the file to cocalc. Use “gunzip” on the command line to unzip the file  and look at its contents. How many sequences were used to make this profile?
-NSEQ  38
-So 38
+An easy way to get the size of a gene family is to take a profile of a gene family and search against all predicted proteins of the genome/species of interest and count the hits. Note that this is also a common strategy to collect sequences for an informative gene tree and for example how we got the RasGEF sequences for our exercises on this gene family. In this exercise we are going to use the P53 profile to look at how many members this gene family has in a few mammals.
 
--	We are going to use HMMSEARCH to find all members of this families. First let us do human “hmmsearch [hmm profile name] ~/Data/ToData/Block2/COOIII/Homo_sapiens.GRCh38.pep.all.longest.fa > [output file]”. Look at the output, how many hits do you see?
+## getting the p53 profile and 
 
-3
 
--	Do the same for Heterocephalus_glaber_female.Naked_mole-rat_maternal.pep.all.longest.fa,  Loxodonta_africana.loxAfr3.pep.all.longest.fa (the elephant), and Mus_musculus.GRCm38.pep.all.longest.fa. Can you reproduce the result from the literature?
+A profile for The p53 gene family is in principle available at EBI INTERPRO. However it is a bit tricky to get the p53 gene family profile on gemini as I could not locate a ftp/http site that could be approached via wget. So we have to go the long way around. Go to [https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/logo/](https://www.ebi.ac.uk/interpro/entry/pfam/PF00870/logo/). Press download to download the fileto your laptop (notize it is compressed using the gzip protocol). Use scp to copy it to gemini. (see earlier exercises)
 
-Yes elephant has more 
 
--	Why have we included also the naked mole rat?
-Because it is also famously cancer resistant
+On gemini use `gunzip` on the command line to unzip the file  and look at its contents. 
+> ## Exercise: How many sequences were used to make this profile?
+>
+>> ## Solution
+>> NSEQ  38
+>>
+>> So 38
+> {: .solution}
+{: .challenge}
+
+
+We are going to use HMMSEARCH to find all members of this families. First let us do human. `hmmsearch your_hmm_profile_name ~/data_bb3bcg20/Block2/COOIII/Homo_sapiens.GRCh38.pep.all.longest.fa > your_output_file`. Look at the output.
+> ## Exercise: How many hits (and thus gene family members) do you see in human?
+>
+>> ## Solution
+>> 3
+> {: .solution}
+{: .challenge}
+
+Do the same for Heterocephalus_glaber_female.Naked_mole-rat_maternal.pep.all.longest.fa,  Loxodonta_africana.loxAfr3.pep.all.longest.fa (the elephant), and Mus_musculus.GRCm38.pep.all.longest.fa. 
+
+> ## Exercise: Can you reproduce the result from the literature?
+>
+>> ## Solution
+>> Yes elephant has more 
+> {: .solution}
+{: .challenge}
+
+> ## Exercise:Why have we included also the naked mole rat?
+>
+>> ## Solution
+>> Because it is also sem-ifamously cancer resistant
+>> 
+> {: .solution}
+{: .challenge}
