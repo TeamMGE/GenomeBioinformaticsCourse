@@ -23,11 +23,14 @@ keypoints:
 
 Signatures of recent ploidy change can be inferred from next-generation sequencing data by examining k-mer distributions. When interpreting k-mer profiles directly, one needs to have a intuition about the ploidy. For example, a third peak in a k-mer profile could point to repeats as well to a triploid species. Computational approaches such as [smudgeplot](https://pubmed.ncbi.nlm.nih.gov/32188846/) (see lecture) can estimate the ploidy and genome structure of a genome by analyzing heterozygous k-mer pairs that can be directly found in the sequencing data.
 
-We will first analyse the smudgeplot based on the k-mer data generared for S. cerevisiae strains CBS7837. To be able to analyze heterozygous k-mers, we first need to extract these heterozygous k-mers from the `jellyfish count` data we have generated in the previous episode.
+We will first analyse the smudgeplot based on the k-mer data generared for *S. cerevisiae* strains CBS7837. To be able to analyze heterozygous k-mers, we first need to extract these heterozygous k-mers from the `jellyfish count` data we have generated in the previous episode.
 
 We can extract k-mers using `jellyfish dump` and we need to provide both upper and lower count cutoff to excude low and high frequency kmers. The resulting k-mers can be directly provided to smudgeplot.py hetkmers to compute the set of heterozygous k-mer pairs.
 
+However, we first need to change to a smudgeplot environment since it runs in a different python version. This is done with the `smudgeplot` command. You can at any moment return to your default environment using `python2.7`
+
 ~~~
+$ smudgeplot
 $ jellyfish dump -c -L 10 -U 1000 ScereCBS7837.jf | smudgeplot.py hetkmers -o ScereCBS7837_kmer_pairs
 ~~~
 {: .bash}
@@ -39,7 +42,7 @@ $ jellyfish dump -c -L 10 -U 1000 ScereCBS7837.jf | smudgeplot.py hetkmers -o Sc
 > - What is the suggested ploidy based on the smudgeplot results?
 >
 >> ## Solution
->> `smudgeplot plot ScereCBS7837_kmer_pairs_coverages.tsv -o ScereCBS7837`
+>> `smudgeplot.py plot ScereCBS7837_kmer_pairs_coverages.tsv -o ScereCBS7837`
 >> 
 >> The x-axis shows the minor k-mer coverage (ratio of minor allele frequency over the total allele count; for diplaid one would expect 0.5 : 0.5). The y-axis is the k-mer coverage (based on 1n (monoploid) coverage, the coverage is estimated based on the data). The color gradient shows the number of k-mer pairs with this particular minor k-mer coverage (x-axis) and k-coverage (y-axis).
 >>
