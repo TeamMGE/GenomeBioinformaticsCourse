@@ -96,7 +96,7 @@ To be able to efficentily use the alignment coordinates, we need to convert the 
 We now need to prepare and execute a command that uses `show-coords` to retrieve a list or query sorted alignments (query chromosome, query start, and query end), and subsequently use a combination of command line commands (`cut`, `awk`, etc.) to generate a bed file that contains the information of the alignment positions in the query sequence. Moreover, the start position of a feature in a bed file needs to be always smaller than the end position. Specifically, we remove the header from the coordinate file and seperate it via tabs, we then obtain the 3rd, 4th, and 9th column to get the query start, end, and chromosome name and the use `awk` to reformat these information into the correct order (query chromosome, query start, and query end), enrure that the start coordinate is always smaller than the end coordinate and substract 1 to change from a 1-based to a 0-based coordinate system. 
 
 ~~~
-$ show-coords -q S288CvS288Cp.delta -T -H | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" > Yue2017_S288C.bed
+$ show-coords -q S288CvS288Cpb.delta -T -H | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" > Yue2017_S288C.bed
 ~~~
 {: .bash}
 
