@@ -149,7 +149,7 @@ The command above uses `bedtools genomecov -d` to report the depth for each posi
 We now specifically obtain the coordinates of regions on chromosome III of the query genome that are not covered by alignments anchored on chromosome III of the reference genome. We will use a modification of the previous code (see above) but adding a grep command that will specifically take out alignments between chrIII of the query and the reference. This then allows us to determine how many regions are specific on chromosome III, and to see their sizes?
 
 ~~~
-$ show-coords -q S288CvS288Cp.delta -T -H | grep -P "chrIII\tchrIII" | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" >  Yue2017_S288C.chrIII.bed
+$ show-coords -q S288CvS288Cpb.delta -T -H | grep -P "chrIII\tchrIII" | cut -f3,4,9 | awk '{if($1 < $2){print $3,$1-1,$2}else{print $3,$2-1,$1}}' | tr " " "\t" >  Yue2017_S288C.chrIII.bed
 
 $ bedtools genomecov -g Yue2017_S288C.genome.size -i Yue2017_S288C.chrIII.bed -d | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools merge -i - | grep "chrIII"
 ~~~
