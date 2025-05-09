@@ -61,6 +61,7 @@ Search for COG0072 in this “whog” file and inspect it.
 
 
 Make a list file that contains all members of COG0072 such that we can use seqtk. (i.e. a simple text file with fasta sequence identifiers without the “>” sign below each other).
+[comment]: <> ( give them a script or regular expression to do this, rather than having them do it in a text editor ) 
 
 > ## exercises: How many identifiers do you have in your list file? (i.e. how many proteins where assigned in the whog file to COG0072
 >
