@@ -73,7 +73,7 @@ $ mummerplot --color S288CvS288Cpb.delta --png
 > {: .solution}
 {: .challenge}
 
-We can also generate a zoom-in of the alignments of chromosome III of the two S288C assemblies by running mummerplot with the option `-r` and `-q` to only display the alignment chromosome III of the reference and query, respectively. First, think how can you can easily find out how the chromosomes are named?
+To get a cleaner picture, it may be useful to filter the alignment to only retain matches with a minimum lenght or percentage identity. We can do this using `delta-filter`, which takes a .delta file as an input and returns a filtered .delta file. We can also generate a zoom-in of the alignments of chromosome III of the two S288C assemblies by running mummerplot with the option `-r` and `-q` to only display the alignment chromosome III of the reference and query, respectively. First, think how can you can easily find out how the chromosomes are named?
 
 > ## Exercise
 >
