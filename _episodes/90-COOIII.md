@@ -73,7 +73,7 @@ Now that we have mapped the reads successfully to the reference genome, we can f
 >> ## Solution
 >>
 >> ~~~
->> bedtools genomecov -d -ibam  Yue2017_UWOPS034614vsS288C.sort.bam | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools sort -i - > Yue2017_UWOPS034614vsS288C
+>> bedtools genomecov -d -ibam  Yue2017_UWOPS034614.resequencing.sort.bam | awk '{if ($3 == 0){print $1,$2,$2}}' | tr " " "\t" | bedtools sort -i - > Yue2017_UWOPS034614.sort.bed
 >> ~~~
 >> {: .bash}
 >> 
@@ -83,7 +83,7 @@ Now that we have mapped the reads successfully to the reference genome, we can f
 We can further summarize regions that are not covered in close proximity by using `bedtools merge`. For example, to merge regions with <= 5000 bp distance between them, we can use:
 
 ~~~
-$ bedtools merge -d 5000 -i Yue2017_UWOPS034614vsS288C.sort.bed
+$ bedtools merge -d 5000 -i Yue2017_UWOPS034614.sort.bed
 ~~~
 {: .bash}
 
@@ -103,7 +103,7 @@ Lastly, we will use [Delly](https://academic-oup-com.utrechtuniversity.idm.oclc.
 
 Delly first calls variants based on the read mapping information provided by a bam file. 
 ~~~
-$ delly call -g Yue2017_UWOPS034614.genome.fa Yue2017_UWOPS034614.resequencing.bam -q 20 -o Yue2017_UWOPS034614.resequencing.sv.bcf
+$ delly call -g Yue2017_UWOPS034614.genome.fa Yue2017_UWOPS034614.resequencing.sort.bam -q 20 -o Yue2017_UWOPS034614.resequencing.sv.bcf
 ~~~
 {: .bash}
 
@@ -122,7 +122,7 @@ $ bcftools view Yue2017_UWOPS034614.resequencing.sv.bcf | grep -P "\tPASS" | cut
 > 
 >> ## Solution
 >>
->>  48 SVTYPE=BND, 212 SVTYPE=DEL, 11 SVTYPE=DUP, 6 SVTYPE=INV 
+>>  49 SVTYPE=BND, 212 SVTYPE=DEL, 11 SVTYPE=DUP, 6 SVTYPE=INV 
 >> 
 > {: .solution}
 {: .challenge}
@@ -144,7 +144,7 @@ We have previously seen that *S. cerevisiae* strain UWOPS03-461.4 has a large nu
 
 > ## Exercise
 >
-> Can you identify some of these translocations in the read mappinh? Why could it be challanging to identify translocations using short-read data? How could this potential challenges be addresed?
+> Can you identify some of these translocations in the read mapping? Why could it be challanging to identify translocations using short-read data? How could this potential challenges be addresed?
 > 
 >> ## Solution
 >>
