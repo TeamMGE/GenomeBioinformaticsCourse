@@ -59,7 +59,7 @@ $ samtools view -Sb Yue2017_UWOPS034614.resequencing.sam > Yue2017_UWOPS034614.r
 Lastly, we need to sort the bam file and Index the bam file, either produced by yourself or obtained from the intermediate results folder.
 
 ~~~
-$ samtools sort Yue2017_UWOPS034614.resequencing.bam -o Yue2017_UWOPS034614.resequencing.sort
+$ samtools sort Yue2017_UWOPS034614.resequencing.bam -o Yue2017_UWOPS034614.resequencing.sort.bam
 $ samtools index Yue2017_UWOPS034614.resequencing.sort.bam
 ~~~
 {: .bash}
