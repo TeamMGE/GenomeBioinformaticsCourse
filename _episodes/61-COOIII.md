@@ -29,7 +29,7 @@ To get the sequence of of med11 go to uniprot, search for it and downlod it from
 >{: .solution}
 {: .challenge}
 
-Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Inspect the output for the presence of a homolog in S. pombe. You can do this with `less name_of_your_output_file` and then once in `less` typing / followed by typng SPOM to search. You can also use e.g. `grep SPOM name_of_your_output_file`. In searching also look at the e-value of the hit and also consider insignificant hits. 
+Run blast, via ` blastp -query name_of_your_query_file  -db ~/data_bb3bcg20/Block2/COOIII/eukarya.v3.renamed.prot.longest.fa.new.headers > name_of_your_output_file`. Inspect the output for the presence of a homolog in S. pombe. You can do this with `less name_of_your_output_file` and then once in `less` typing / followed by SPOM to search. You can also use e.g. `grep SPOM name_of_your_output_file`. In searching also look at the e-value of the hit and also consider insignificant hits. 
 
 > ## Exercise:   Can you find a sequence whose identifier starts with SPOM in the output? ( including in the insignificant hits)?
 > 
