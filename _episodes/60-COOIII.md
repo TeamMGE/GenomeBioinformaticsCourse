@@ -88,6 +88,8 @@ Open your tree in iToL (see previous computer exercises for specific instruction
 
 To make sense of the tree it is relevant to know Ta, TVN, PH, PAB, PAE, SSO, APE, VNG, MJ, MTH, MK, MA, AF are all archaea; YLR060w, YPR047w_2, SPAC23A1.12c, SPCC736.03c_2, ECU04g0900 are eukaryotic sequences; and all other sequences are bacteria. 
 
+[comment]: <> (give them a seed, or do something so that we do not get weird / different trees) 
+
 > ## exercises:  In this tree, can you annoate the speciations in this tree that more or less correspond to LUCA and potentially to LECA's (potentially because the inference is uncertain given that the only eukaryotes are a few fungi) ? 
 >
 >> ## Solution
