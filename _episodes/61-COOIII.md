@@ -20,7 +20,7 @@ For this we will be looking at the med11 protein, which is a subunit of the Medi
 
 ## normal pairwise sequence (in this case BLAST) searching with the human med11
 
-To get the sequence of of med11 go to uniprot, search for it and downlod it from uniprot and then scp it to gemini, or perhaps easier use wget to get it: i.e. `wget https://rest.uniprot.org/uniprotkb/Q9P086.fasta`
+To get the sequence of of med11 go to uniprot, search for it and downlod it from uniprot and then scp it to gemini, or perhaps easier use wget to get it. i.e. `wget https://rest.uniprot.org/uniprotkb/Q9P086.fasta`.
 
 > ## Exercise:   Look at the sequence, is there anything that stands out to you?
 >
