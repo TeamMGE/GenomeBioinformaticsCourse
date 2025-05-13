@@ -1,6 +1,6 @@
 ---
 title: "Block 3 - COOI: Recent ploidy changes in the Saccharomycotina (part 3)"
-start: true
+start: false
 teaching: 0
 exercises: 60
 
