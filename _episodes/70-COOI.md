@@ -96,8 +96,8 @@ We can now generate a graphical representation of the k-mer profile, similar to 
 >> ## Solution
 >>
 >> ~~~
->> import import matplotlib
->> import matplotlib.use('Agg') # Non-GUI backend
+>> import matplotlib
+>> matplotlib.use('Agg') # Non-GUI backend
 >> import seaborn as sns #imports seaborn
 >> import pandas as pd #imports pandas
 >> import matplotlib.pyplot as plt #imports matplotlib
