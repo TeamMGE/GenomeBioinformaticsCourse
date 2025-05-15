@@ -1,6 +1,6 @@
 ---
 title: "Block 3 - COOII: Large-scale chromosomal variation in Saccharomyces cerevisiae (part 1)"
-start: false
+start: true
 teaching: 0
 exercises: 90
 
