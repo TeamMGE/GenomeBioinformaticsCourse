@@ -103,7 +103,7 @@ Lastly, we will use [Delly](https://academic-oup-com.utrechtuniversity.idm.oclc.
 
 Delly first calls variants based on the read mapping information provided by a bam file. 
 ~~~
-$ delly call -g Yue2017_UWOPS034614.genome.fa Yue2017_UWOPS034614.resequencing.sort.bam -q 20 -o Yue2017_UWOPS034614.resequencing.sv.bcf
+$ delly call -g Yue2017_S288C.genome.fa Yue2017_UWOPS034614.resequencing.sort.bam -q 20 -o Yue2017_UWOPS034614.resequencing.sv.bcf
 ~~~
 {: .bash}
 
@@ -122,8 +122,8 @@ $ bcftools view Yue2017_UWOPS034614.resequencing.sv.bcf | grep -P "\tPASS" | cut
 > 
 >> ## Solution
 >>
->>  49 SVTYPE=BND, 212 SVTYPE=DEL, 11 SVTYPE=DUP, 6 SVTYPE=INV 
->> 
+>>  54 SVTYPE=BND, 267 SVTYPE=DEL, 13 SVTYPE=DUP, 5 SVTYPE=INS, 8 SVTYPE=INV 
+>>
 > {: .solution}
 {: .challenge}
 
