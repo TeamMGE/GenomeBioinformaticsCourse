@@ -127,7 +127,7 @@ $ ln -s ~/data_bb3bcg20/Block1/COOI/Intermediate_files/Assembly/flye/ .
 > ## Exercise: Examine the flye assembly
 > How many contigs did flye identify? How does the distribution of contig sizes compare to the results by miniasm?
 >> ## Solution
->> `$ conda activate python3.11`
+>> `$ python3.11`
 >> 
 >> `$ python ~/data_bb3bcg20/bin/scripts/fasta_length.py flye/assembly.fasta | cut -f2 > assembly_flye.contigLengths`
 >> 
