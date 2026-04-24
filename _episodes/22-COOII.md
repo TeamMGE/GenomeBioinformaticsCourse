@@ -133,8 +133,8 @@ all your 16S rRNA fasta files, together with the database 16S rRNA file. Write t
 {: .challenge}
 
 Next, we can go ahead an align these sequences. To do this, we will use “MAFFT”, a common aligner software. MAFFT includes multiple
-algorithms, and it adjusts its algorithm automaticaly based on the size of the input alignment. Run mafft with no arguments 
-(just `$ mafft`) to learn how to provide input and output file names, and then run it on your sequence file. The process may take
+algorithms, and it adjusts its algorithm automaticaly based on the size of the input alignment. Run mafft with the 'help' argument 
+(`$ mafft -h`) to learn how to provide input and output file names, and then run it on your sequence file. The process may take
 about a minute.
 
 Let’s take a look at the resulting alignment. In the 'scripts' folder, you will find a tool called 'alan_dt', which is a version of 
