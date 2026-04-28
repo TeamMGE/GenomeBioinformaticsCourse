@@ -19,7 +19,7 @@ One of them had a somewhat unclear affiliation based on the 16S rRNA gene, but a
 bona fide Asgard archaeon. 
 
 Chatting with another research group, you realise they have recently recovered genomes that are quite similar. 
-But there is one particularity: they have obtained said genomes from hot springs.
+But there is one particularity: they have obtained said genomes from hot springs, at constant temperatures over 70 degrees Celsius.
 
 In order to better understand how this group may have adapted to both mesophilic and thermophilic environments, you decide
 to partner up and work on this together. 
