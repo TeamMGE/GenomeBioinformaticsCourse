@@ -36,7 +36,7 @@ In the uniprot page, click on sequence & isoforms, and there click on download. 
 
 We need this sequence to be on gemini in order to look for homologous sequences in other species in order to make a gene tree. 
 
-One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser eand do `wget copied_url_of_your_protein_sequence`. 
+One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser and do `wget [copied_url_of_your_protein_sequence]`. 
 
 Another way to do this is to open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises, i.e. for example using `scp  [location_of_sequence_file/name_of_sequence_file] [your_studentnumber_here]@gemini.science.uu.nl:GenomeBioinformatics/Block2/COOI/`
 
