@@ -93,7 +93,7 @@ Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of ali
 
 Then run iq tree e.g. `iqtree -s  homs.msa –m LG+G4`
 
-[//]: # (for some reason for some students, they get a weird error if they do this .... )
+[comment]: # (for some reason for some students, they get a weird error if they do this .... )
 
 Download the output tree (i.e. `homs.msa.treefile`) using `scp` to your laptop or perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
 
