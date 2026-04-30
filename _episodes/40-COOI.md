@@ -23,7 +23,7 @@ In the uniprot page, click on sequence & isoforms, and there click on download. 
 
 Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
 
-[//]: # (maybe give syntax for doing the scp???? or use wget ????)
+[comment]: # (maybe give syntax for doing the scp???? or use wget ????)
 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
 
