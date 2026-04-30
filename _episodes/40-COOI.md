@@ -26,22 +26,25 @@ $ cd Block2/COOI
 ~~~
 {: .bash}
 
+## getting a sequence 
+
 In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
 Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases uniprot cross references. 
 
-In the uniprot page, click on sequence & isoforms, and there click on download. Copy all the text, i.e. the sequence and the fasta header. (see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format) if you want to know what a fasta header is / means)
+In the uniprot page, click on sequence & isoforms, and there click on download. You should see the sequence and the fasta header of this enzyme. If you do not know what the fasta format entails see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format)
 
+We need this sequence to be on gemini in order to look for homologous sequences in other species in order to make a gene tree. 
 
+One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser eand do `wget copied_url_of_your_protein_sequence`. 
 
-
-Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
+Another way to do this is to open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises, i.e. for example using `scp 
 
 [comment]: # (maybe give syntax for doing the scp???? or use wget ????)
 
-Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`.
+Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`; or `more Q16877.fasta` if you obtained the fasta file via `wget`
 
-[//]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
+[comment]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ~/data_bb3bcg20/Block2/COOI/proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. `more tmp.out` or `less tmp.out`). Proteins starting with HSAP are human. ATHA is a plant, CELE is a nematode worm, DMEL is the fruitfly, SCER is baker’s yeast, SPOM is fission yeast. 
@@ -90,7 +93,7 @@ Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of ali
 Then run iq tree e.g. `iqtree -s  homs.msa –m LG+G4`
 [//]: # (for some reason for some students, they get a weird error if they do this .... )
 
-Download the output tree (i.e. `homs.msa.treefile`) to your laptop but perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
+Download the output tree (i.e. `homs.msa.treefile`) to your laptop or perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
 
 Okay now we get to the interpretation. Look at the tree and reroot it to make some kind of biological sense. You can reroot trees by clicking on a branch -> Tree structure -> re-root the tree here. Sketch the resulting tree on paper or copy a picture of the resulting tree into a program which allows to draw on top of it (e.g. powerpoint, paint, inkscape). Annotate the tree in terms of duplications and speciations. 
 
