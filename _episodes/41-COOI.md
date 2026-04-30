@@ -14,7 +14,7 @@ keypoints:
 
 RasGEFs are important signalling proteins that diversified predominantly in amoebozoa and opisthokonta (a.k.a. fungimals/funimals, i.e.  fungi & animals; see [https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(19)30257-5](https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(19)30257-5) for a review on the relationship among eukaryotes). We want to reconstruct the gene duplications and losses of this dynamic gene family within amoebozoa and opisthokonta. However, this subtree of the RasGEF’s is a real life tree and real life is not so easy. Look at the following tree of RasGEF(CDC25) containing proteins .
 
-![atree1](../fig/block2_rasgef_genetree2.png)
+![atree1](../fig/block2_RasGEFgenetree3.png)
 
 The six letter abbreviations are as follows HOMSAP; human, DROMEL: fruitfly; CAEELE: nematode worm; DYCDIS: slime mold; USTMAY: basidomycete corn smut fungus; NEUCRA ascomycete red bread mould fungus; SACCER ascomycete baker's yeast.
 
