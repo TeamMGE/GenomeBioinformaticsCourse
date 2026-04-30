@@ -38,13 +38,13 @@ We need this sequence to be on gemini in order to look for homologous sequences 
 
 One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser eand do `wget copied_url_of_your_protein_sequence`. 
 
-Another way to do this is to open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises, i.e. for example using `scp 
-
-[comment]: # (maybe give syntax for doing the scp???? or use wget ????)
+Another way to do this is to open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises, i.e. for example using `scp  [location_of_sequence_file/name_of_sequence_file] [your_studentnumber_here]@gemini.science.uu.nl:GenomeBioinformatics/Block2/COOI/`
 
 Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`; or `more Q16877.fasta` if you obtained the fasta file via `wget`
 
 [comment]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
+
+## running blast
 
 Now we are going to run blast with the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase  as a starting point. We are going to do this via `blastp -query query.txt -db ~/data_bb3bcg20/Block2/COOI/proteomes1.fa > tmp.out`
 Look at the output, using (for example e.g. `more tmp.out` or `less tmp.out`). Proteins starting with HSAP are human. ATHA is a plant, CELE is a nematode worm, DMEL is the fruitfly, SCER is baker’s yeast, SPOM is fission yeast. 
@@ -86,14 +86,14 @@ Still looking at the blastoutput file, look at the pairwise alignment between yo
 
 We want to create a fasta file in order to make a tree of the hits in plants, in animals (fly, worm, human) with E-value < 1e-10; and of the best hit in fission yeast (SPOM) and the best hit in baker’s yeast SCER. To do so:
 
-Copy the identifiers of the sequences you want for the tree into a text file on your laptop, each identifier should be followed by a newline. Copy this file to gemini using `scp`. Then use `seqtk subseq [fasta database] [name of your list of identifiers] > [your new file of homologous e.g. homs.fa]`   
+Copy the identifiers of the sequences you want for the tree into a text file on your laptop, each identifier should be followed by a newline. Copy this file to gemini using `scp` (see instructions above for copying the fasta file). Then use `seqtk subseq [fasta database] [name of your list of identifiers] > [your new file of homologous e.g. homs.fa]`   
 
 Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of alignment file, e.g. homs.msa]`
 
 Then run iq tree e.g. `iqtree -s  homs.msa –m LG+G4`
 [//]: # (for some reason for some students, they get a weird error if they do this .... )
 
-Download the output tree (i.e. `homs.msa.treefile`) to your laptop or perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
+Download the output tree (i.e. `homs.msa.treefile`) using `scp` to your laptop or perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
 
 Okay now we get to the interpretation. Look at the tree and reroot it to make some kind of biological sense. You can reroot trees by clicking on a branch -> Tree structure -> re-root the tree here. Sketch the resulting tree on paper or copy a picture of the resulting tree into a program which allows to draw on top of it (e.g. powerpoint, paint, inkscape). Annotate the tree in terms of duplications and speciations. 
 
