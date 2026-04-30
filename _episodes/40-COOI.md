@@ -36,11 +36,12 @@ In the uniprot page, click on sequence & isoforms, and there click on download. 
 
 We need this sequence to be on gemini in order to look for homologous sequences in other species in order to make a gene tree. 
 
-One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser and do `wget [copied_url_of_your_protein_sequence]`. 
+One way to do this is to use `wget` while you are in your working folder. Copy the URL (i.e. the web address) of the fasta file from your browser and do `wget [copied_url_of_your_protein_sequence]`. When we are going to do blast, the instructions assume the protein sequence that is going to serve as query is called `query.txt`. So maybe you should use `cp` to copy the file you obtained via `wget` to a file called `query.txt`. 
+
 
 Another way to do this is to open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises, i.e. for example using `scp  [location_of_sequence_file/name_of_sequence_file] [your_studentnumber_here]@gemini.science.uu.nl:GenomeBioinformatics/Block2/COOI/`
 
-Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`; or `more Q16877.fasta` if you obtained the fasta file via `wget`
+Check how your file looks on gemini by typing e.g. `more query.txt`, or `less query.txt`; (or `more Q16877.fasta` if you obtained the fasta file via `wget`and did not yet copy it into `query.txt`)
 
 [comment]: # (maybe turn this into an exercise solution queston so that people can check that they got the correct file)
 
@@ -91,6 +92,7 @@ Copy the identifiers of the sequences you want for the tree into a text file on 
 Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of alignment file, e.g. homs.msa]`
 
 Then run iq tree e.g. `iqtree -s  homs.msa –m LG+G4`
+
 [//]: # (for some reason for some students, they get a weird error if they do this .... )
 
 Download the output tree (i.e. `homs.msa.treefile`) using `scp` to your laptop or perhaps easier, on the command line do `cat homs.msa.treefile` and copy the text from the screen to paste to view the tree in iToL [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
