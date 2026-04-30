@@ -15,11 +15,25 @@ keypoints:
 [comment]: # (maybe give instructions on making a folder block2 and make a folder COOI to work in, use examples from Dani)
 
 
+## Set up your environment 
+
+As instructed in the first computer exercises of block1, get to your work environment and get prepared for this COO. i.e. do something like
+
+~~~
+$ cd GenomeBioinformatics/
+$ mkdir -p Block2/COOI
+$ cd Block2/COOI
+~~~
+{: .bash}
+
 In this exercise, our goal is to infer the evolutionary history of a human protein starting from its sequence. This evolutionary history should reveal the orthologs in other species and the timing of the duplicates of our protein. We are going to use the human 6-phosphofructo-2-kinase / fructose-2,6-bisphosphatase as a starting point. This bi-functional enzyme (hence the long name) is an enzyme that catalyzes formation as well as degradation of a significant allosteric regulator of glycolysis and gluconeogenesis:  fructose-2,6-bisphosphate. 
           
 Go to  [http://www.uniprot.org/uniprot/Q16877](http://www.uniprot.org/uniprot/Q16877) . Quickly scan the page. And see what kind of information uniprot has available and to what kind of databases uniprot cross references. 
 
 In the uniprot page, click on sequence & isoforms, and there click on download. Copy all the text, i.e. the sequence and the fasta header. (see [https://en.wikipedia.org/wiki/FASTA_format](https://en.wikipedia.org/wiki/FASTA_format) if you want to know what a fasta header is / means)
+
+
+
 
 Open a text editor on your local laptop (e.g. textedit, notepad++) , and copy the protein sequence of Q16877 into a text file. Save the protein sequence as a text file named “query.txt”. Then use `scp` to copy the text file to your gemini folder where we are doing these exercises.
 
