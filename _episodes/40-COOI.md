@@ -87,7 +87,7 @@ Still looking at the blastoutput file, look at the pairwise alignment between yo
 
 We want to create a fasta file in order to make a tree of the hits in plants, in animals (fly, worm, human) with E-value < 1e-10; and of the best hit in fission yeast (SPOM) and the best hit in baker’s yeast SCER. To do so:
 
-Copy the identifiers of the sequences you want for the tree into a text file on your laptop, each identifier should be followed by a newline. Copy this file to gemini using `scp` (see instructions above for copying the fasta file). Then use `seqtk subseq [fasta database] [name of your list of identifiers] > [your new file of homologous e.g. homs.fa]`   
+Copy the identifiers of the sequences you want for the tree into a text file on your laptop, each identifier should be followed by a newline. Copy this file to gemini using `scp` (see instructions above for copying the fasta file). Then use `seqtk subseq [fasta database] [name of your list of identifiers] > [your new file of homologous e.g. homs.fa]`   The fasta file you should use is the original database against which we performed our blast, e.g.`~/data_bb3bcg20/Block2/COOI/proteomes1.fa`. 
 
 Run mafft on your fasta file. i.e. `mafft [yourfile e.g. homs.fa] > [name of alignment file, e.g. homs.msa]`
 
