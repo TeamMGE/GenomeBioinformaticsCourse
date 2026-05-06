@@ -21,7 +21,7 @@ Genome sequences of individuals of the same species can differ significantly, e.
 
 Bakers’ yeast has been traditionally used as a model to study how genotypic variations is mechanistically established. The availability of sequencing data of hundreds of different yeast isolates enables us to study the emergence and consequences of structural variation in detail. We here will work with assembled genome sequences (you have learnt how genomes are assembled in Block 1).
 
-## Comparision between two *S. cerevisiae* strains
+## 2. Comparision between two *S. cerevisiae* strains
 
 Thus far, we compared two genome assembly versions of the same *S. cerevisiae*. In this excercise, we will focus on the comparision between genome sequences of two different *S. cerevisiae* strains, the reference strain S288C (Yue2017_S288C.genome.fa) that we have analyzed before and the strain UWOPS03-461.4, which has been isolated in the rain forest in Bertram palm in Malaysia.
 
