@@ -22,10 +22,10 @@ Genome sequences of individuals of the same species can differ significantly, e.
 
 Bakers’ yeast has been traditionally used as a model to study how genotypic variations is mechanistically established. The availability of sequencing data of hundreds of different yeast isolates enables us to study the emergence and consequences of structural variation in detail. Heree, we will work directly with sequencing reads.
 
-## Determine structural variants using sequence-read mapping (~120 min)
+## 1. Determine presence/absence variants using sequence-read mapping (~60 min)
 So far, we made use of genome assemblies and whole-genome alignments to identify large-scale chromosomal rearrangemnents. However, high-quality genome assemblies that allow whole-genome alignments to an sufficient level are very often not available for multiple individuals or strains of the same species. Genomic re-sequencing of a large number of different individuals (e.g. humans), cultivars (e.g. crops), or strains (e.g. fungi or bacteria) has become an important approach to study the genetic diversity between individual within a population. These approaches typically sequence genomes with short-read sequencing technologies (e.g. Illumina). Short-read data is then not assembled into a genome sequence but is mapped onto a single reference genome to identify genetic variation. The mapping of the short-read data provides information about the nucleotide diversity in the population, e.g. the number of single-nucleotide polymorphisms. Furthermore, short-read sequencing data allows to analyze the mapping patterns to identify structural variations in the re-sequenced indidviduals/isolates compared with the reference genome assembly.
 
-We will be using sequencing data from *S. cerevisiae* strain UWOPS03-461.4 to identify structural variations compared to the *S. cerevisiae* S288C long-read genome assembly. To identify structual variant we will **i)** map the reads to the genome assembly, and **ii)** use bioinformatics programms that exploit mapping information to identify structural variants (see Mahmoud and colleagues, [Fig. 1](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1828-7).
+We will be using sequencing data from *S. cerevisiae* strain UWOPS03-461.4 to identify structural variations compared to the *S. cerevisiae* S288C long-read genome assembly. To identify structual variant we will **i)** map the reads to the genome assembly, and **ii)** use bioinformatics programms that exploit mapping information to identify structural variants (see Mahmoud and colleagues, [Fig. 1](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1828-7)).
 
 Use commands including ls and pwd to localize llumina short-read sequencing data of strain UWOPS03-461.4 in the data storage folder (**~/data_bb3bcg20**). Then create a symbolic link to your own folder with the `ln -s` command.
 
@@ -99,7 +99,8 @@ $ bedtools merge -d 5000 -i Yue2017_UWOPS034614.sort.bed
 > {: .solution}
 {: .challenge}
 
-Lastly, we will use [Delly](https://academic-oup-com.utrechtuniversity.idm.oclc.org/bioinformatics/article/28/18/i333/245403), one of the many available bioinformatic tools designated to systematically analyse the mapping information of paired-end sequencing reads to identify different types of structural variants. Delly uses both split-reads and read mapping analyses (discordant mapping) to identify duplications and deletions as well as inversions and translocation; see the paper for details.
+## 2. Determine structural variants using sequence-read mapping (~60 min)
+We will now use [Delly](https://academic-oup-com.utrechtuniversity.idm.oclc.org/bioinformatics/article/28/18/i333/245403), one of the many available bioinformatic tools designated to systematically analyse the mapping information of paired-end sequencing reads to identify different types of structural variants. Delly uses both split-reads and read mapping analyses (discordant mapping) to identify duplications and deletions as well as inversions and translocation; see the paper for details.
 
 Delly first calls variants based on the read mapping information provided by a bam file. 
 ~~~
@@ -144,7 +145,7 @@ We have previously seen that *S. cerevisiae* strain UWOPS03-461.4 has a large nu
 
 > ## Exercise
 >
-> Can you identify some of these translocations in the read mapping? Why could it be challanging to identify translocations using short-read data? How could this potential challenges be addresed?
+> Can you identify some of these translocations, e.g., on chromosome chrVII, in the read mapping? Why could it be challanging to identify translocations using short-read data? How could this potential challenges be addresed?
 > 
 >> ## Solution
 >>
@@ -153,4 +154,35 @@ We have previously seen that *S. cerevisiae* strain UWOPS03-461.4 has a large nu
 > {: .solution}
 {: .challenge}
 
+To try to identify some of these large-scale translocations on chromosome VII, we will try to make usage of long-read sequencing data (pacbio) that we have available for *S. cerevisiae* strain UWOPS03-461.4. The reads can be found in the storage folder for COOIII.
+
+We will map these reads to the long-read reference genome assembly S288C using `ngmlr`, which is a read mapper designed for aligning long-reads such as PacBio or Oxford Nanopore.
+
+~~~
+$ ngmlr -r Yue2017_S288C.genome.fa -q Yue2017_UWOPS034614.pacbio.fastq.gz -o Yue2017_UWOPS034614.pacbio.ngmlr.sam -t 10
+$ samtools view -Sb Yue2017_UWOPS034614.pacbio.ngmlr.sam | samtools sort - -o Yue2017_UWOPS034614.pacbio.ngmlr.sorted.bam
+~~~
+{: .bash}
+
+Read mapping will take some minutes (5-10, depending on server load). To be able to continue within the timeframe of this excercise, you might want to consider to obtain the already mapped bam file from the intermediate folder.
+
+We can then use [sniffles](https://www.nature.com/articles/s41592-018-0001-7) that has been designed to detect structural variations from long reads that have been aligned with `ngmlr`.
+
+~~~
+$ sniffles -m Yue2017_UWOPS034614.pacbio.ngmlr.sorted.bam -v Yue2017_UWOPS034614.pacbio.ngmlr.sorted.vcf
+~~~
+{: .bash}
+
+> ## Exercise
+>
+> Can you identify some the three deletions as well as some of the translocations, especially those on chromosome chrVII, in the long-read data? Can you find these back in the dotplot? 
+>  
+>> ## Solution
+>> 
+>>  The three deletions on chromosome VII discussed above seem to be correctly identified. The translocations involving reference chromosome VII seem to be correctly identified, see dotplot between UWOPS03-461.4 and the S288C reference strain. For example, focus one the translocation that impacted chromosome VII and XI of UWOPS03-461.4 in relation to chromosome VII of S288C.
+>>  Tip: Try to visualize the chromosomes in UWOPS03-461.4 and how reads derived from there would map to the reference chromosomes (you can find some information on how structural variants are encoded in a vcf file [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  
+>>  Nevertheless, it remains obvious that finding structural variations, even with long read data, is challenging. Information from populations and genome-based analyses (pan-genomes) might help to further improve structural variation identification and subsequent analyses in the biological impact of these. 
+>>
+> {: .solution}
+{: .challenge}
 

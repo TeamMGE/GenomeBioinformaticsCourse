@@ -43,7 +43,8 @@ We will study the structural similarity of these two strains by using MUMMER (`n
 >> $ mummerplot --png --color S288CvUWOPS034614.delta
 >> ~~~
 >> {: .bash}
->> The genome alignment is overall still largely co-linear with most chromosomes being conserved. This would be expected from strain of the same species. Few chromosomes (e.g chromosome VII) display clear signs of translocations and way more deletions/insertions. Dfferences in karyotypes (chromosomes) can lead to reproductive isolation and slowly into formation of new species. However, large-scale translocations are commonly observed in fungi.
+>> The genome alignment is overall still largely co-linear with most chromosomes being conserved; if you cannot see the pattern clearly due to too many matches of small repeats, please consider filtering the alignment using delta-filter. 
+ This would be expected from strain of the same species. Few chromosomes (e.g chromosome VII) display clear signs of translocations and way more deletions/insertions. Dfferences in karyotypes (chromosomes) can lead to reproductive isolation and slowly into formation of new species. However, large-scale translocations are commonly observed in fungi.
 >> 
 > {: .solution}
 {: .challenge}
