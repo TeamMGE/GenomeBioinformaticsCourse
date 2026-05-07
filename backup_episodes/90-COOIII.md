@@ -99,7 +99,7 @@ $ bedtools merge -d 5000 -i Yue2017_UWOPS034614.sort.bed
 > {: .solution}
 {: .challenge}
 
-## 2. Determine structural variants using sequence-read mapping (~60 min)
+## 2. Determine structural variants using sequence-read mapping (~120 min)
 We will now use [Delly](https://academic-oup-com.utrechtuniversity.idm.oclc.org/bioinformatics/article/28/18/i333/245403), one of the many available bioinformatic tools designated to systematically analyse the mapping information of paired-end sequencing reads to identify different types of structural variants. Delly uses both split-reads and read mapping analyses (discordant mapping) to identify duplications and deletions as well as inversions and translocation; see the paper for details.
 
 Delly first calls variants based on the read mapping information provided by a bam file. 
