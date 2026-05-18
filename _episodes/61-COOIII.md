@@ -153,7 +153,7 @@ So we have now searched for difficult to find homologs. Take a step back and con
 > ## Exercise: are all of your hits also orthologs?
 >
 >> ## solution
->> We do not know. We have not made a tree. But given that I see no duplicates in any species, I think there is a higgh likelihood that all homologs are also orthologs
+>> We do not know. We have not made a tree. But given that I see no duplicates in any species, I think there is a high likelihood that all homologs are also orthologs
 >>
 >> i.e. if there are no ancient duplications everything is likely orthologous
 >{: .solution}
