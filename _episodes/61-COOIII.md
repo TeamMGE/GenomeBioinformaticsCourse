@@ -139,7 +139,7 @@ Then do a JACKHMMER search as described above for this query. Store the output i
 >{: .solution}
 {: .challenge}
 
-Go back to your jackhammer search with human med11 as the query and search for this this Trichomonas sequence in the JACKHMMER output? (using e.g. grep or less)
+Go back to your JACKHMMER search with human med11 as the query. In the output of this JACKHMMER search look for this Trichomonas med11 sequence (using e.g. grep or less). Can you find it? 
 
 > ## Exercise: is this trichomonas sequence there? 
 >
@@ -162,8 +162,8 @@ So we have now searched for difficult to find homologs. Take a step back and con
 > ## Exercise: If we would have run orthofinder. Would orthofinder have made a correct orthogroup?
 > 
 >> ## solution
->> Likely orthofinder would fail, because the blast output cannot connect all orthologs. Consequently you get disconnected clusters or singleton sequences in your blast BBH network/graph.
+>> Likely orthofinder would fail, because the blast (i.e. sequence vs seqeunce without profiles) output cannot connect all orthologs. Consequently you get disconnected clusters or singleton sequences in your blast BBH network/graph.
 >>
->> If you would want a network that connects these sequences you need profile searches network to start from. Although even then, how would Trichomonas ever make a bidirectional/reciporcal best hit? 
+>> If you would want a network that connects these sequences you would need a profile searches network to start from. Although that might not solve all the problems because even when you would that e.g. the Trichomonas sequence would never make a bidirectional/reciporcal best hit because it cannot get its profile going.  
 >{: .solution}
 {: .challenge}
